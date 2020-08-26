@@ -1,0 +1,881 @@
+.author-content
+{
+    width: 100%;
+    height: 1000px;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    overflow-y: auto;
+}
+.author-content::-webkit-scrollbar
+{
+    display: none;
+}
+.author-top
+{
+    grid-column: 1/10;
+    grid-row: 1/2;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 15.5px;
+    background-color: #121212;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin-bottom: 0px;
+}
+.author-main
+{
+    grid-column: 1/10;
+    grid-row: 2/11;
+    box-sizing: border-box;
+    float: left;
+    margin-bottom: 30px;
+    background-color: #121212;
+    position: relative;
+}
+
+.author-image
+{
+    grid-column: 1/5;
+    grid-row: 1/4;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 15.5px;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.author-image img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+.author-name
+{
+    grid-column: 5/10;
+    grid-row: 1/4;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 17.5px;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.author-label
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 16.5px;
+}
+
+.author-bio
+{
+    width: 100%;
+    height: 20vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 15.5px;
+    text-align: justify;
+    position: relative;
+    background-color: #252525;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.author-songs
+{
+    grid-column: 1/10;
+    min-height: 20vh;
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 17.5px;
+    background-color: #252525;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.author-buttons
+{
+    float: left;
+    width: 100%;   
+    min-height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    background-color: #252525;
+}
+.author-button
+{
+    float: right;
+    border: none;
+    background-color: #252525;
+    height: 24px;
+    min-width: auto;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+    margin-right: 15px;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 7;
+    cursor: pointer;
+    
+}
+
+.author-collection
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16.5px;
+    background-color: #252525;
+    margin-bottom: 30px;
+}
+.author-collection > p
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+}
+.author-metric > p
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+.albumList
+{
+    width: 100%;
+    max-height: 30vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    
+    font-size: 14.5px;
+    overflow-y: auto;
+    padding: 15px;
+    padding-top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+.author-metric
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 16.5px;
+    background-color: #252525;
+
+}
+.author-info
+{
+    width: 100%;
+    min-height: 4.5vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 30px;
+    padding-left: 30px;
+    font-size: 14.5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.authorImageSize
+{
+    height: 24px;
+}
+
+.authorSong
+{
+    width: 100%;
+    float: left;
+    height: 5.5vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+.authorSong:hover
+{
+    height: calc(5.5vh - 1px);
+    border-bottom: 1px solid #121212;
+}
+.author-album-name
+{
+    position: absolute;
+    height: 5.5vh;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    float: right;
+    box-sizing: border-box;
+    display: none;
+}
+.author-album-name-bar
+{
+    min-width: 10%;
+    height: 5.5vh;
+    float: right;
+    box-sizing: border-box;
+    position: relative;
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-bottom: 2px;
+    display: none;
+}
+.author-topbar-info
+{
+    float: left;
+    width: 100%;
+    height: 5.5vh;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 17.5px;
+    border-bottom: 2px solid #252525;
+}
+.author-songs > .topbar-info
+{
+    float: left;
+    width: 100%;
+    height: 5.5vh;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 2px solid #121212;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 640px){
+.author-content
+{
+    width: 100%;
+    height: 1000px;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    overflow-y: auto;
+}
+.author-top
+{
+    grid-column: 1/10;
+    grid-row: 1/3;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 19.5px;
+    background-color: #121212;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin-bottom: 0px;
+}
+.author-main
+{
+    grid-column: 1/10;
+    grid-row: 3/11;
+    box-sizing: border-box;
+    float: left;
+    margin-bottom: 30px;
+    background-color: #121212;
+    position: relative;
+    font-size: 19.5px;
+}
+
+.author-image
+{
+    grid-column: 1/5;
+    grid-row: 1/4;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 15.5px;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.author-name
+{
+    grid-column: 5/10;
+    grid-row: 1/4;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 19.5px;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.author-label
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 16.5px;
+}
+
+.author-bio
+{
+    width: 100%;
+    height: 30vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 17.5px;
+    text-align: justify;
+    position: relative;
+    background-color: #252525;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.author-songs
+    {
+        grid-column: 1/10;
+        min-height: 20vh;
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 17.5px;
+        background-color: #252525;
+        margin-bottom: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-left: 0;
+    }
+
+.author-buttons
+{
+    float: left;
+    width: 100%;   
+    min-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    background-color: #252525;
+}
+.author-button
+{
+    float: right;
+    border: none;
+    background-color: #252525;
+    height: 24px;
+    min-width: auto;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 7;
+    cursor: pointer;
+    
+}
+
+.author-collection
+{
+    grid-column: 1/10;
+    grid-row: 8/13;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 17.5px;
+    background-color: #252525;
+    margin-bottom: 30px;
+}
+.author-collection > p
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+}
+.author-metric > p
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 17.5px;
+}
+.albumList
+{
+    width: 100%;
+    max-height: 30vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    
+    font-size: 14.5px;
+    overflow-y: auto;
+    padding: 15px;
+    padding-top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+.author-metric
+{
+    grid-column: 1/10;
+    grid-row: 13/16;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 16.5px;
+    background-color: #252525;
+}
+.author-info
+{
+    width: 100%;
+    min-height: 4.5vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 30px;
+    padding-left: 30px;
+    font-size: 14.5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+.authorImageSize
+{
+    height: 100%;
+}
+
+.author-album-name
+{
+    position: absolute;
+    height: 5.5vh;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    float: right;
+    box-sizing: border-box;
+}
+.author-album-name-bar
+{
+    min-width: 10%;
+    height: 5.5vh;
+    float: right;
+    box-sizing: border-box;
+    position: relative;
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-bottom: 2px;
+}
+
+}
+
+
+@media (min-width: 1023px){
+    .author-content
+    {
+        width: 100%;
+        height: 1200px;
+        float: left;
+        box-sizing: border-box;
+        font-size: 14.5px;
+        position: relative;
+        background-color: #121212;
+        margin-bottom: 2vh;
+        color: #7f7f7f;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(10,1fr);
+        overflow-y: auto;
+    }
+    .author-top
+    {
+        grid-column: 1/10;
+        grid-row: 1/3;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        font-size: 19.5px;
+        background-color: #121212;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(3,1fr);
+        margin-bottom: 0px;
+    }
+    .author-main
+    {
+        grid-column: 1/10;
+        height: auto;
+        box-sizing: border-box;
+        float: left;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: #121212;
+        position: relative;
+        font-size: 19.5px;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(12,1fr);
+    }
+    .author-songs
+    {
+        grid-column: 6/10;
+        grid-row: 2/13;
+        
+        width: calc(100% - 30px);
+
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 17.5px;
+        background-color: #252525;
+        margin-bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-left: 30px;
+    }
+    .author-image
+    {
+        grid-column: 1/5;
+        grid-row: 1/4;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding: 15px;
+        font-size: 15.5px;
+        background-color: #252525;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .author-name
+    {
+        grid-column: 5/10;
+        grid-row: 1/4;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding: 15px;
+        font-size: 19.5px;
+        background-color: #252525;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .author-label
+    {
+        width: 100%;
+        min-height: 5.5vh;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom: 15px;
+        font-size: 16.5px;
+    }
+    
+    .author-bio
+    {
+        grid-column: 1/6;
+        
+        height: auto;
+        grid-row: 1/5;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 17.5px;
+        text-align: justify;
+        position: relative;
+        background-color: #252525;
+        margin-bottom: 30px;
+        padding: 15px;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    
+    .author-buttons
+    {
+        float: left;
+        grid-column: 6/10;
+        grid-row: 1/2;  
+        width: calc(100% - 30px);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        margin-left: 30px;
+        margin-top: 0;
+        position: relative;
+        background-color: #252525;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+    }
+    .author-button
+    {
+        float: right;
+        border: none;
+        background-color: #252525;
+        height: 24px;
+        min-width: auto;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 14.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 7;
+        cursor: pointer;
+        
+    }
+    
+    .author-collection
+    {
+        grid-column: 1/6;
+        grid-row: 5/9;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 17.5px;
+        background-color: #252525;
+        margin-bottom: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .author-collection > p
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .author-metric > p
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 17.5px;
+    }
+    .albumList
+    {
+        width: 100%;
+        max-height: 30vh;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        
+        font-size: 14.5px;
+        overflow-y: auto;
+        padding: 15px;
+        padding-top: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+    }
+    .author-metric
+    {
+        grid-column: 1/6;
+        grid-row: 9/13;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding: 15px;
+        font-size: 16.5px;
+        background-color: #252525;
+        padding-left: 15px;
+        padding-right: 15px;
+        
+    }
+    .author-info
+    {
+        width: 100%;
+        min-height: 4.5vh;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 30px;
+        padding-left: 30px;
+        font-size: 14.5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 1vh;
+    }
+    .author-album-name
+    {
+        position: absolute;
+        height: 5.5vh;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        float: right;
+        box-sizing: border-box;
+    }
+    .author-album-name-bar
+    {
+        min-width: 10%;
+        height: 5.5vh;
+        float: right;
+        box-sizing: border-box;
+        position: relative;
+        background-color: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-bottom: 2px;
+    }
+    
+    }

@@ -1,0 +1,293 @@
+
+.addSongBtn
+{
+    border: none;
+    background-color: #fff;
+    height: 30px;
+    min-width: 5.5vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+    font-size: 14.5px;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.songInputView
+{
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    background-color: #2a2a2a;
+    min-width: 90%;
+    min-height: 30vh;
+    z-index: 9;
+    border: 1vh solid #252525;
+    box-sizing: border-box;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.inputSongLabel
+{
+    width: 95%;
+    box-sizing: border-box;
+    min-height: 6.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 15.5px;
+    background-color: #2a2a2a;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.inputSongInfo
+{
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 5.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    background-color: #2a2a2a;
+    padding-left: 15px;
+    border: none;
+    color: #fff;
+    border-bottom: 0.5vh solid #252525;
+}
+.inputSongInfo::placeholder
+{
+    color: lightblue;
+    font-size: 13.5px;
+}
+.inputSongInfo:hover, .inputSongInfo:focus
+{
+    border: none;
+    background-color: #2a2a2a;
+}
+.selectSongLabel
+{
+    width: 95%;
+    box-sizing: border-box;
+    min-height: 6.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 15.5px;
+    background-color: #2a2a2a;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.selectSongInfo
+{
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 5.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    background-color: #2a2a2a;
+    padding-left: 15px;
+    border: none;
+    color: #fff;
+    border-bottom: 0.5vh solid #252525;
+}
+.textSongLabel
+{
+    width: 95%;
+    box-sizing: border-box;
+    min-height: 30vh;
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 15.5px;
+    background-color: #2a2a2a;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.textSongArea
+{
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 11.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    background-color: #2a2a2a;
+    padding-left: 15px;
+    border: none;
+    color: #fff;
+    border-bottom: 0.5vh solid #252525;
+    resize: none;
+}
+.textSongArea::placeholder
+{
+    color: lightblue;
+    font-size: 13.5px;
+}
+.nextButton
+{
+    border: none;
+    background-color: #fff;
+    height: 30px;
+    min-width: 5.5vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    margin-right: 1vh;
+    font-size: 14.5px;
+    float: right;
+}
+button:focus
+{
+    color: green;
+}
+
+select:required:invalid
+{
+    color: lightblue;
+    font-size: 13.5px;
+}
+select option
+{
+    color: #fff;
+}
+select:hover
+{
+    border: none;
+}
+.alert-danger
+{
+    color: #B22222;
+    height: 30px;
+    width: 50%;
+
+    position: absolute;
+    top: 15px;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+    font-size: 14.5px;
+    font-weight: 700;
+    z-index: 10;
+}
+.alert-success
+{
+    color: green;
+    height: 30px;
+    width: 50%;
+
+    position: absolute;
+    top: 15px;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+    font-size: 14.5px;
+    font-weight: 700;
+    z-index: 10;
+}
+.x-top-right
+{
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: #B22222;
+    background-color: #2a2a2a;
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+    font-size: 15.5px;
+    z-index: 1;
+    cursor: pointer;
+}
+button
+{
+    cursor: pointer;
+}
+
+.addshadow
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: 8;
+    background-color: #252525;
+    
+}
+.add-mrg-right
+{
+    margin-right: 2.5%;
+}
+.add-mrg-left
+{
+    margin-left: 2.5%;
+}
+
+.avatarForm
+    {
+        height: 35px;
+        width: 100%;
+        
+        box-sizing: border-box;
+        background-color: #202020;
+        color: #7f7f7f;
+        font-weight: 400;
+        text-align: center;
+        z-index: 5;
+        font-size: 14.5px;
+        box-sizing: border-box;
+        border: none;
+        border-top: 1px solid #2a2a2a;
+        border-bottom: 1px solid #2a2a2a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+.add-avatar
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15.5px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}

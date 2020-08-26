@@ -1,0 +1,21 @@
+const mongoose = require('mongoose');
+const config = require('config');
+const db = config.get('mongoPublicURI');
+
+
+const connect = async () => {
+    try{
+        mongoose.connect(db, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false
+        });
+        console.log('Ciao, MongoDB connected...');
+    }
+    catch(err){
+        console.error(err.message);
+        process.exit(1);
+    }
+}
+module.exports = connect;

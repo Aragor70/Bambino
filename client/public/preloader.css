@@ -1,0 +1,59 @@
+
+#preloader
+{
+    background: #49c500 linear-gradient(to right, #49c500, #00d8ff);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+.dot
+{
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+    border: 3.5px solid #ffffff;
+    border-radius: 50%;
+    animation: show-hide 1s ease infinite;
+}
+
+.dot:nth-child(2)
+{
+    animation-delay: 300ms;
+}
+.dot:nth-child(3)
+{
+    animation-delay: 600ms;
+}
+
+
+@keyframes show-hide
+{
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.preloader-hiding
+{
+    opacity: 0;
+}
+.preloader-hidden
+{
+    display: none !important;
+}

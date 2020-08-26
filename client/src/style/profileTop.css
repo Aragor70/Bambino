@@ -1,0 +1,493 @@
+.account-nav-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-top: 2vh;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(9,1fr);
+    padding: 15px;
+    padding-bottom: 0;
+    text-align: justify;
+    display: none;
+}
+.profile-top
+{
+    grid-column: 1/10;
+    grid-row: 1/10;
+    box-sizing: border-box;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+}
+.avatarField
+{
+    grid-column: 4/10;
+    grid-row: 1/10;
+    float: left;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+    box-sizing: border-box;
+    padding: 15px;
+    display: none;
+}
+.avatarField:hover
+{
+    background-color: #2a2a2a;
+}
+.profile-top .nav
+{
+    width: 100%;
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+.profile-top .nav:hover
+{
+    border-left: 5px solid #fff;
+}
+.profile-nav .nav:hover
+{
+    border-left: 5px solid #fff;
+}
+.profile-nav
+{
+    width: calc(100% - 15px);
+    box-sizing: border-box;
+    z-index: 7;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 9vh;
+    left: 15px;
+}
+.profile-nav .nav
+{
+    width: calc(100% - 15px);
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+    z-index: 7;
+}
+
+.profile-mid
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,1fr);
+    padding: 15px;
+    margin-bottom: -2vh;
+
+}
+
+.profile-page-title
+{
+    height: 35px;
+    grid-column: 1/10;
+    grid-row: 1/4;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-align: justify;
+    z-index: 5;
+    font-size: 20.5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#profile-addSong-button
+{
+    
+    height: 35px;
+
+    grid-column: 9/10;
+    grid-row: 1/4;
+    
+    box-sizing: border-box;
+    background-color: #252525;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-align: justify;
+    z-index: 8;
+    font-size: 22.5px;
+    box-sizing: border-box;
+    padding: 15px;
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    margin-left: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#profile-addSong-button:hover
+{
+    background-color: #2a2a2a;
+}
+#profile-addSong-button img
+{
+    height: 24px;
+}
+
+
+
+
+
+
+
+@media (min-width: 640px){
+.account-nav-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-top: 2vh;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(9,1fr);
+    padding: 15px;
+    padding-bottom: 0;
+    text-align: justify;
+}
+.profile-top
+{
+    grid-column: 1/4;
+    grid-row: 1/10;
+    box-sizing: border-box;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+}
+.avatarField
+{
+    grid-column: 4/10;
+    grid-row: 1/10;
+    float: left;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+    box-sizing: border-box;
+    padding: 15px;
+    overflow: hidden;
+}
+.avatarField img
+{
+    max-height: 32vh;
+    max-width: 100%;
+}
+.profile-top .nav
+{
+    width: 100%;
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+
+.profile-nav
+{
+    width: 50%;
+    box-sizing: border-box;
+    z-index: 7;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 9vh;
+    left: 15px;
+}
+.profile-nav .nav
+{
+    width: calc(100% - 15px);
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+    z-index: 7;
+}
+
+.profile-mid
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(3,1fr);
+    padding: 15px;
+}
+
+.profile-page-title
+{
+    height: 35px;
+    grid-column: 1/6;
+    grid-row: 1/4;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-align: justify;
+    z-index: 5;
+    font-size: 20.5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-addSong-button
+{
+    
+    height: 35px;
+
+    grid-column: 10/11;
+    grid-row: 1/4;
+    
+    box-sizing: border-box;
+    background-color: #252525;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-align: justify;
+    z-index: 8;
+    font-size: 22.5px;
+    box-sizing: border-box;
+    padding: 15px;
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    margin-left: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#profile-addSong-button:hover
+{
+    background-color: #2a2a2a;
+}
+#profile-addSong-button img
+{
+    height: 24px;
+}
+
+}
+@media (min-width: 1023px){
+.profile-mid
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 13.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,1fr);
+    padding: 15px;
+}
+
+.profile-page-title
+{
+    height: 35px;
+    grid-column: 1/4;
+    grid-row: 1/4;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-align: justify;
+    z-index: 5;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-addSong-button
+{
+    
+    height: 78px;
+
+    grid-column: 7/10;
+    grid-row: 1/4;
+    
+    box-sizing: border-box;
+    background-color: #252525;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-align: justify;
+    z-index: 8;
+    font-size: 22.5px;
+    box-sizing: border-box;
+    padding: 15px;
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    margin-left: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#profile-addSong-button:hover
+{
+    background-color: #2a2a2a;
+}
+#profile-addSong-button img
+{
+    height: 48px;
+}
+
+.profile-nav
+{
+    width: calc(36% - 15px);
+    box-sizing: border-box;
+    z-index: 7;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 9vh;
+    left: 15px;
+}
+.profile-nav .nav
+{
+    width: calc(100% - 15px);
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+    z-index: 7;
+}
+}
+
+@media (min-width: 1300px){
+
+.profile-nav
+{
+    width: calc(36% - 23px);
+    box-sizing: border-box;
+    z-index: 7;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 9vh;
+    left: 15px;
+}
+.profile-nav .nav
+{
+    width: calc(100% - 15px);
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+    z-index: 7;
+}
+}

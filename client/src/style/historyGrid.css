@@ -1,0 +1,630 @@
+.history-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    overflow-y: auto;
+}
+.view-history
+{
+    grid-column: 1/10;
+    grid-row: 1/11;
+    box-sizing: border-box;
+    float: left;
+    background-color: #252525;
+    position: relative;
+    padding: 15px;
+
+}
+.history-title
+{
+    float: left;
+    height: 5.5vh;
+    width: 100%;
+    
+    padding-left: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+}
+.history-views-day
+{
+    float: left;
+    min-height: 4.5vh;
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #7f7f7f;
+    background-color: #252525;
+    box-sizing: border-box;
+}
+.history-views
+{
+    float: left;
+    min-height: 9vh;
+    width: 100%;
+    padding: 15px;
+    color: #7f7f7f;
+    background-color: #252525;
+    box-sizing: border-box;
+}
+.view-box
+{
+    float: left;
+    min-height: auto;
+    width: 100%;
+    color: #7f7f7f;
+    background-color: #202020;
+    box-sizing: border-box;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+}
+
+.head-view
+{
+    width: 100%;
+    min-height: 14vh;
+    background-color: #2a2a2a;
+    float: left;
+    color: #000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,1fr);
+    overflow-y: hidden;
+}
+.head-view-avatar
+{
+    grid-column: 1/4;
+    grid-row: 2/4;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-view-title
+{
+    grid-column: 4/10;
+    grid-row: 2/3;
+
+    float: left;
+    padding-left: 0;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.head-view-author
+{
+    float: left;
+    grid-row: 3/4;
+    grid-column: 4/10;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 400;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+.head-view-buttons
+{
+    grid-column: 1/10;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    float: left;
+    margin-bottom: 1vh;
+}
+.head-view-button
+{
+    border: none;
+    background-color: #2a2a2a;
+    height: 30px;
+    min-width: 5.5vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-left: 1vh;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    cursor: pointer;
+}
+
+
+.content-view
+{
+    width: 100%;
+    height: 21vh;
+    float: left;
+    display: flex;
+    justify-content: left;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: none;
+}
+.song-image-view
+{
+    width: 100%;
+    max-height: 35vh;
+    min-height: 30px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 15px;
+}
+.song-text-view
+{
+    min-height: 30px;
+    display: inline;
+    justify-content: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: left;
+    padding: 15px;
+}
+.song-text-view p
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4px;
+}
+.song-text-view br
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.8px;
+}
+
+@media (min-width: 640px){
+.history-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    overflow-y: auto;
+}
+.view-history
+{
+    grid-column: 1/10;
+    grid-row: 1/11;
+    box-sizing: border-box;
+    float: left;
+    background-color: #252525;
+    position: relative;
+    padding: 15px;
+
+}
+.history-title
+{
+    float: left;
+    height: 5.5vh;
+    width: 100%;
+    
+    padding-left: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+}
+.history-views-day
+{
+    float: left;
+    min-height: 4.5vh;
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #7f7f7f;
+    background-color: #252525;
+    box-sizing: border-box;
+}
+.history-views
+{
+    float: left;
+    min-height: 9vh;
+    width: 100%;
+    padding: 15px;
+    color: #7f7f7f;
+    background-color: #252525;
+    box-sizing: border-box;
+}
+.view-box
+{
+    float: left;
+    min-height: 30vh;
+    width: 100%;
+    color: #7f7f7f;
+    background-color: #202020;
+    box-sizing: border-box;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+.head-view
+{
+    width: 100%;
+    min-height: 14vh;
+    background-color: #2a2a2a;
+    float: left;
+    color: #000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,1fr);
+    overflow-y: hidden;
+}
+.head-view-avatar
+{
+    grid-column: 1/4;
+    grid-row: 2/4;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-view-title
+{
+    grid-column: 4/10;
+    grid-row: 2/3;
+
+    float: left;
+    padding-left: 0;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.head-view-author
+{
+    float: left;
+    grid-row: 3/4;
+    grid-column: 4/10;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 400;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+.head-view-buttons
+{
+    grid-column: 5/10;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    float: left;
+    margin-bottom: 1vh;
+}
+.head-view-button
+{
+    border: none;
+    background-color: #2a2a2a;
+    height: 30px;
+    min-width: 5.5vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-left: 1vh;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    cursor: pointer;
+}
+
+
+.content-view
+{
+    width: 100%;
+    height: 21vh;
+    float: left;
+    display: flex;
+    justify-content: left;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.song-image-view
+{
+    width: 100%;
+    max-height: 35vh;
+    min-height: 30px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 15px;
+}
+.song-text-view
+{
+    min-height: 30px;
+    display: inline;
+    justify-content: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: left;
+    padding: 15px;
+}
+.view-user
+{
+    width: 100%;
+    text-align: right;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 12.5px;
+    background-color: #202020;
+}
+}
+
+@media (min-width: 1023px){
+    .history-content
+    {
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+        font-size: 14.5px;
+        position: relative;
+        background-color: #121212;
+        margin-bottom: 2vh;
+        color: #7f7f7f;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(10,1fr);
+        overflow-y: auto;
+    }
+    .view-history
+    {
+        grid-column: 1/10;
+        grid-row: 1/11;
+        box-sizing: border-box;
+        float: left;
+        background-color: #252525;
+        position: relative;
+        padding: 15px;
+    
+    }
+    .history-title
+    {
+        float: left;
+        height: 5.5vh;
+        width: 100%;
+        
+        padding-left: 15px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .history-views-day
+    {
+        float: left;
+        min-height: 4.5vh;
+        width: 100%;
+        padding: 15px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        color: #7f7f7f;
+        background-color: #252525;
+        box-sizing: border-box;
+    }
+    .history-views
+    {
+        float: left;
+        min-height: 9vh;
+        width: 100%;
+        padding: 15px;
+        color: #7f7f7f;
+        background-color: #252525;
+        box-sizing: border-box;
+    }
+    .view-box
+    {
+        float: left;
+        min-height: 30vh;
+        width: 100%;
+        color: #7f7f7f;
+        background-color: #202020;
+        box-sizing: border-box;
+        border: none;
+        position: relative;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+    }
+    
+    .head-view
+    {
+        width: 100%;
+        min-height: 14vh;
+        background-color: #2a2a2a;
+        float: left;
+        color: #000;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(3,1fr);
+        overflow-y: hidden;
+    }
+    .head-view-avatar
+    {
+        grid-column: 1/4;
+        grid-row: 2/4;
+        float: left;
+        padding: 15px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .head-view-title
+    {
+        grid-column: 4/10;
+        grid-row: 2/3;
+    
+        float: left;
+        padding-left: 0;
+        box-sizing: border-box;
+        color: #000;
+        font-weight: 600;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .head-view-author
+    {
+        float: left;
+        grid-row: 3/4;
+        grid-column: 4/10;
+        box-sizing: border-box;
+        color: #000;
+        font-weight: 400;
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+    }
+    .head-view-buttons
+    {
+        grid-column: 6/10;
+        grid-row: 1/2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        float: left;
+        margin-bottom: 1vh;
+    }
+    .head-view-button
+    {
+        border: none;
+        background-color: #2a2a2a;
+        height: 30px;
+        min-width: 5.5vw;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        margin-left: 1vh;
+        font-size: 14.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+        cursor: pointer;
+    }
+    
+    
+    .content-view
+    {
+        width: 100%;
+        height: 21vh;
+        float: left;
+        display: flex;
+        justify-content: left;
+        box-sizing: border-box;
+        overflow-y: hidden;
+        overflow-x: auto;
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .song-image-view
+    {
+        width: 100%;
+        max-height: 35vh;
+        min-height: 30px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 15px;
+    }
+    .song-text-view
+    {
+        min-height: 30px;
+        display: inline;
+        justify-content: left;
+        box-sizing: border-box;
+        overflow: hidden;
+        word-wrap: break-word;
+        text-align: left;
+        padding: 15px;
+    }
+}

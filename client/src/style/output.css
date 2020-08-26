@@ -1,0 +1,403 @@
+.space
+{
+    width: 100%;
+    height: 9vh;
+    float: left;
+    background-color: lightblue;
+    display: block;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.fa
+{
+    color: #7f7f7f;
+}
+.song-list
+{
+    width: 70%;
+    min-height: 50vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: lightgray;
+    border: 1px solid #303030;
+    font-size: 15.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.song-list-single-metric
+{
+    padding: 5px;
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.song-list-single-metric p
+{
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20px;
+    border: 1px solid #303030;
+    margin: 0;
+    
+
+    width: 20%;
+    box-sizing: border-box;
+}
+.song-list-single-metric h1
+{
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #303030;
+    margin: 0;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+.song-list hr
+{
+    width: 90%;
+}
+
+
+
+.search-list
+{
+    width: calc(100vw / 64 * 8 + 15px + 38vw);
+    min-height: auto;
+    
+    position: absolute;
+    top: 9vh;
+    right: 0;
+    justify-content: center;
+    text-align: justify;
+    color: #7f7f7f;
+    box-sizing: border-box;
+    z-index: 10;
+    background-color: #121212;
+}
+.search-data
+{
+    min-width: 100%;
+    height: 5.5vh;
+    
+    display: flex;
+    justify-content: left;
+    text-align: justify;
+    align-items: center;
+    color: #7f7f7f;
+    float: left;
+    box-sizing: border-box;
+    padding: 5px;
+    padding-left: 15px;
+    position: relative;
+    font-size: 14.5px;
+}
+.search-data:hover
+{
+    border-left: 5px solid green;
+}
+.search-bar
+{
+    min-width: 100%;
+    height: 5.5vh;
+    
+    display: flex;
+    justify-content: left;
+    text-align: justify;
+    align-items: center;
+    color: green;
+    float: left;
+    border-bottom: 1px solid green;
+    box-sizing: border-box;
+    padding: 5px;
+    position: relative;
+    font-size: 14.5px;
+}
+.search-list img
+{
+    margin-right: 5px;
+}
+.more-btn
+{
+    height: 5.5vh;
+    width: auto;
+    border: none;
+    font-size: 14.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    min-height: auto;
+    background-color: #121212;
+    color: #49c500;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+}
+.more-btn > a:link
+{
+    color: #49c500;
+}
+.more-btn > a:visited
+{
+    color: #49c500;
+}
+.more-btn > a:link:focus
+{
+    color: #49c500;
+}
+.more-btn > a:visited:focus
+{
+    color: #49c500;
+}
+.list-content
+{
+    position: relative;
+}
+.more-btn:hover
+{
+    color: green;
+    border-bottom: 1px solid green;
+}
+
+.shield
+{
+    width: 100vw;
+    min-height: auto;
+    padding-left: calc(100vw / 64 * 8);
+    padding-right: calc(100vw / 64 * 8);
+    box-sizing: border-box;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #7f7f7f;
+    background-color: #121212;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.shield-personal
+{
+    width: 100vw;
+    height: auto;
+    padding-left: calc(100vw / 64 * 8);
+    padding-right: calc(100vw / 64 * 8);
+    box-sizing: border-box;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #7f7f7f;
+    background-color: #121212;
+    position: relative;
+    float: left;
+}
+
+.post
+{
+    width: 100%;
+    min-height: 9vh;
+    padding: 15px;
+    box-sizing: border-box;
+
+}
+.song-label .avatar
+{
+    height: 3.5vh;
+}
+
+
+
+.song-title-bar
+{
+    width: 100%;
+    height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 15.5px;
+}
+.comment-text
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    padding-left: 30px;
+    box-sizing: border-box;
+    text-align: justify;
+    font-size: 15.5px;
+}
+.song-info td
+{
+    padding: 0;
+    margin: 0;
+    margin-right: 15px;
+    
+}
+.about-info td
+{
+    padding: 0;
+    margin: 0;
+    margin-right: 15px;
+    
+}
+.song-info a
+{
+    color: blue;
+    font-size: 14.5px;
+}
+.song-text
+{
+    width: 100%;
+    min-height: 9vh;
+    box-sizing: border-box;
+    float: left;
+    text-align: justify;
+    font-size: 17.5px;
+    color: #7f7f7f;
+    font-weight: normal;
+    padding: 1.5vh;
+    font-family: 'Lato', sans-serif;
+}
+
+.song-text p
+{
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+
+
+.ftrs-buttons
+{
+    position: absolute;
+    right: 1vh;
+    top: 1vh;
+    
+    height: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.avatar-update
+{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    
+    height: 24px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.comm-buttons
+{
+    height: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-top: 1vh;
+    margin-right: 1vh;
+    float: right;
+}
+.ftrs-button
+{
+    border: none;
+    background-color: #252525;
+    height: 30px;
+    min-width: 5.5vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    margin-left: 1vh;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 7;
+    cursor: pointer;
+}
+
+.rm-button
+{
+    border: none;
+    background-color: #B22222;
+    min-width: 30px;
+    height: 30px;
+    margin-left: 2vh;
+    font-size: 14.5px;
+    cursor: pointer;
+}
+.author-bar
+{
+    width: 100%;
+    min-height: 9vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 15.5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.author-label-half
+{
+    width: 50%;
+    min-height: 39vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    padding-bottom: 15px;
+    font-size: 16.5px;
+    
+}
+
+
+
+.mini-label
+{
+    
+    font-size: 13px;
+    position: absolute;
+    top: 7.5px;
+    left: 0;
+    box-sizing: border-box;
+}
+.x-bottom-right
+{
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: #B22222;
+    background-color: #2a2a2a;
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+    font-size: 15.5px;
+    z-index: 1;
+}
