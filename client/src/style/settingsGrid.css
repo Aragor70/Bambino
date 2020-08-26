@@ -1,0 +1,252 @@
+.settings-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(14,1fr);
+    padding: 15px;
+    text-align: justify;
+}
+.marks-settings
+{
+    grid-column: 1/10;
+    grid-row: 1/4;
+
+    box-sizing: border-box;
+    margin-top: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+}
+.content-box-settings
+{
+    grid-column: 1/10;
+    grid-row: 4/14;
+    
+    float: left;
+    
+    min-height: auto;
+    
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mark
+{
+    width: 100%;
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+.mark:hover
+{
+    border-left: 5px solid #fff;
+    color: #fff;
+}
+
+.security-content
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.securityLabel
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 6.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    font-size: 14.5px;
+    background-color: #2a2a2a;
+
+}
+.securitLabel-info
+{
+    width: calc(60% - 30px);
+    box-sizing: border-box;
+    height: calc(13vh + 2px);
+    justify-content: left;
+    text-align: left;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    background-color: #2a2a2a;
+    margin-left: 30px;
+    padding: 15px;
+}
+.security-submit
+{
+    width: 7vw;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    float: left;
+    margin-top: 30px;
+}
+
+
+@media (min-width: 640px){
+
+.settings-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(14,1fr);
+    padding: 15px;
+    text-align: justify;
+}
+.marks-settings
+{
+    grid-column: 1/10;
+    grid-row: 1/4;
+
+    box-sizing: border-box;
+    margin-top: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+}
+.content-box-settings
+{
+    grid-column: 1/10;
+    grid-row: 4/14;
+    
+    float: left;
+    
+    min-height: auto;
+    
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mark
+{
+    width: 100%;
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+}
+
+@media (min-width: 1023px){
+    
+    .settings-content
+    {
+        width: 100%;
+        height: auto;
+        float: left;
+        box-sizing: border-box;
+        font-size: 14.5px;
+        position: relative;
+        background-color: #121212;
+        margin-bottom: 2vh;
+        color: #7f7f7f;
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(14,1fr);
+        padding: 15px;
+        text-align: justify;
+    }
+    .marks-settings
+    {
+        grid-column: 1/3;
+        grid-row: 1/6;
+        
+        box-sizing: border-box;
+        margin-top: 2vh;
+        margin-left: 0;
+        margin-right: 30px;
+        margin-bottom: 2vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        float: left;
+        
+    }
+    .content-box-settings
+    {
+        grid-column: 3/10;
+        grid-row: 1/14;
+        
+        float: left;
+        
+        min-height: auto;
+        
+        box-sizing: border-box;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+    .mark
+    {
+        width: 100%;
+        min-height: 7.5vh;
+        box-sizing: border-box;
+        float: left;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-left: 15px;
+        border-top: 1px solid #2a2a2a;
+        border-bottom: 1px solid #2a2a2a;
+        background-color: #1a1a1a;
+    }
+}

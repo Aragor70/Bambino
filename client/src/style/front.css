@@ -1,0 +1,240 @@
+.front-news
+{
+    width: 97%;
+    min-height: 45vh;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.slider
+{
+    width: 45%;
+    height: 55vh;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 2.5vh;
+    float: left;
+    background-color: #2a2a2a;
+    display: flex;
+    padding: 15px;
+    color: #fff;
+    font-weight: 400;
+    overflow-y: auto;
+}
+.front-news .news
+{
+    width: 22.5%;
+    height: 25vh;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 2.5vh;
+    float: right;
+    background-color: #2a2a2a;
+    display: flex;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1em;
+}
+.pop-bar .news
+{
+    width: 23.5%;
+    height: 25vh;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 2.5vh;
+    float: left;
+    background-color: lightblue;
+    display: block;
+    display: flex;
+
+}
+
+
+.front-song-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    
+    color: #fff
+}
+
+.song-container
+{
+    width: 100%;
+    min-height: 45vh;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    color: #fff;   
+    background-color: #252525;
+    margin-bottom: 2vh;
+    
+}
+.song-list-content
+{
+    width: 100%;
+    height: 22.5vh;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #252525;
+    overflow-y: auto;
+    color: #fff
+}
+.song-info-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #252525;
+    
+    color: #fff
+}
+.song-front-info:hover
+{
+    background-color: #2a2a2a;
+}
+
+.song-front-list
+{
+    width: 50%;
+    min-height: 25.5vh;
+    box-sizing: border-box;
+    
+    position: relative;
+    justify-content: center;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    color: #7f7f7f;   
+    background-color: #252525;
+    text-align: justify;
+    float: left;
+    
+}
+.song-front-info
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 14.5px;
+    
+}
+.front-heading
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 15.5px;
+    
+}
+
+.song-container .song-half
+{
+    width: 45%;
+    min-height: 55vh;
+    box-sizing: border-box;
+    justify-content: left;
+    padding: calc(1.5vh + 15px);
+    float: left;
+    position: relative;
+    
+}
+.song-choice
+{
+    width: 100%;
+    height: 30px;
+    font-size: 14.5px;
+    font-weight: 500;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    
+    color: #7f7f7f;
+    float: left;
+    padding-left: 15px;
+}
+
+.song-container .song-sechalf
+{
+    width: 55%;
+    min-height: 55vh;
+    box-sizing: border-box;
+    padding: calc(1.5vh + 15px);
+    float: left;
+}
+.song-textbox
+{
+    width: 100%;
+    min-height: 9vh;
+    float: left;
+    box-sizing: border-box;
+    
+    text-align: center;
+    font-size: 17.5px;
+    font-weight: 500;
+    
+}
+.song-tab
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 22.5px;
+    display: flex;
+    justify-content: left;
+    padding-left: 15px;
+}
+.song-author
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 17.5px;
+    display: flex;
+    justify-content: left;
+    padding-left: 15px;
+}

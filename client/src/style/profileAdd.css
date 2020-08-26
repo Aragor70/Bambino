@@ -1,0 +1,74 @@
+.profile-adding-content
+{
+    position: absolute;
+    top: 9vh;
+    left: 5%;
+    right: 5%;
+    background-color: #121212;
+    width: 90%;
+    min-height: auto;
+    z-index: 9;
+    border: 1vh solid #252525;
+
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(12,1fr);
+
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 0;
+}
+.profile-adding-content::-webkit-scrollbar
+{
+    display: none;
+}
+
+.profile-picture-button
+{
+    grid-column: 1/10;
+    grid-row: 10/13;
+    box-sizing: border-box;
+    float: left;
+    background-color: #121212;
+    position: relative;
+    z-index: 9;
+}
+
+.profile-post-button
+{
+    grid-column: 1/10;
+    grid-row: 1/4;
+    box-sizing: border-box;
+    float: left;
+    background-color: #121212;
+    position: relative;
+    z-index: 9;
+}
+
+
+.profile-song-button
+{
+    grid-column: 1/10;
+    grid-row: 4/7;
+    box-sizing: border-box;
+    float: left;
+    background-color: #121212;
+    position: relative;
+    z-index: 9;
+    margin-bottom: 15px;
+}
+
+
+.profile-author-button
+{
+    grid-column: 1/10;
+    grid-row: 7/10;
+    box-sizing: border-box;
+    float: left;
+    background-color: #121212;
+    position: relative;
+    z-index: 9;
+}

@@ -1,0 +1,946 @@
+
+.profile-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    padding: 15px;
+}
+
+.visit-param
+{
+    margin-top: 1vh;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 12vh;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    float: left;
+    position: relative;
+}
+
+.avatar-profile
+{
+    margin-top: 2.5vh;
+    text-align: center;
+    width: 20%;
+    box-sizing: border-box;
+    height: 20vh;
+    justify-content: center;
+    display: inline-block;
+    text-align: center;
+    
+}
+.avatar-profile img
+{
+    float: left;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+.profile-news
+{
+    min-width: 57%;
+    box-sizing: border-box;
+    min-height: 5.5vh;
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    background-color: #2a2a2a;
+    margin-bottom: 2vh;
+}
+
+.expand-arrow
+{
+    cursor: pointer;
+    
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: justify;
+    float: right;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.social-button
+{
+    cursor: pointer;
+    text-align: center;
+    width: 9vh;
+    box-sizing: border-box;
+    height: 9vh;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    float: left;
+
+}
+.fyt a:link
+{
+    color: #FF0000;
+}
+.fyt a:visited
+{
+    color: #FF0000;
+}
+.ftw
+{
+    color: #1da1f2;
+}
+.ftw
+{
+    color: #1da1f2;
+}
+.ffb
+{
+    color: #3b5998;
+}
+.ffb
+{
+    color: #3b5998;
+}
+.flk
+{
+    color: #2867B2;
+}
+.flk
+{
+    color: #2867B2;
+}
+.fin
+{
+    color: #F77737;
+}
+.fin
+{
+    color: #F77737;
+}
+
+
+.personal-social
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 9vh;
+    justify-content: center;
+    text-align: center;
+    float: left;
+    display: flex;
+}
+
+
+.touchless
+{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    font-size: 20px;
+}
+
+.profile-edit
+{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15.5px;
+    box-sizing: border-box;
+    text-align: justify;
+    position: relative;
+    background-color: #252525;
+    color: #fff;
+    font-weight: 500;
+    padding-left: calc(100vw / 64 * 8);
+    padding-right: calc(100vw / 64 * 8);
+    display: inline-block;
+}
+.profile-edit::placeholder
+{
+    color: lightblue;
+    font-weight: 400;
+}
+
+.profile-edit .personal-param
+{
+    width: 100%;
+    height: 3.5vh;
+    margin-left: 5%;
+    text-align: justify;
+    border: none;
+    padding: 15px;
+    margin-right: 5%;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    font-size: 15.5px;
+    background-color: #252525;
+    color: #121212;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.profile-create
+{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15.5px;
+    box-sizing: border-box;
+    text-align: justify;
+    position: relative;
+    background-color: #121212;
+    color: #fff;
+    font-weight: 500;
+    padding-left: calc(100vw / 64 * 8);
+    padding-right: calc(100vw / 64 * 8);
+    display: inline-block;
+}
+.profile-create::placeholder
+{
+    color: lightblue;
+    font-weight: 400;
+}
+
+.profile-create .personal-param
+{
+    width: 100%;
+    height: 3.5vh;
+    margin-left: 5%;
+    text-align: justify;
+    border: none;
+    padding: 15px;
+    margin-right: 5%;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    font-size: 15.5px;
+    background-color: #252525;
+    color: #121212;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+.profile-create .personal-param:hover
+{
+    background-color: #2a2a2a;
+}
+.profileInput
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 5.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-weight: 500;
+}
+.profileInput:focus, .profileInput:hover
+{
+    border: none;
+    border-bottom: 1px solid lightblue;
+    color: lightblue;
+}
+.profileInput::placeholder
+{
+    color: lightblue;
+    font-weight: 400;
+}
+.disabled > .profileInput:focus
+{
+    border: none;
+    color: #000;
+}
+.disabled > .profileInput:hover
+{
+    border: none;
+    color: #000;
+}
+.profileTextArea
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 12.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+    resize: none;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-weight: 500;
+}
+.profileTextArea::placeholder
+{
+    color: lightblue;
+    font-weight: 400;
+}
+.profileTextArea:focus, .profileTextArea:hover
+{
+    border: none;
+    border-bottom: 1px solid lightblue;
+    color: lightblue;
+}
+.social-btn
+{
+    width: 70%;
+    box-sizing: border-box;
+    height: 3.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    float: left;
+    margin-top: 1vh;
+    border: none;
+    cursor: pointer;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+}
+.social-btn:hover
+{
+    color: lightblue;
+}
+
+.social-btn > img
+{
+    margin-left: 5px;
+}
+
+::placeholder
+{
+    color: #121212;
+}
+
+.formBtn
+{
+    width: 6vw;
+    box-sizing: border-box;
+    height: 4.5vh;
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    
+    float: left;
+    margin-top: 1vh;
+    margin-bottom: 8.5vh;
+    margin-left: 15%;
+}
+.formBtn:hover
+{
+    background-color: lightblue;
+}
+.editImage
+{
+    align-items: center;
+    position: relative;
+    float: left;
+    text-align: center;
+    justify-content: left;
+    margin-left: 5px;
+}
+.arrow-back
+{
+    align-items: center;
+    position: absolute;
+    top: 4vh;
+    left: calc(22.5% + 15px);
+    float: left;
+    text-align: center;
+    justify-content: left;
+}
+.arrow-back:hover
+{
+    background-color: lightblue;
+}
+.profileLabel
+{
+    width: 70%;
+    box-sizing: border-box;
+    height: 6.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    font-size: 14.5px;
+    background-color: #2a2a2a;
+}
+.profileTextAreaLabel
+{
+    width: 70%;
+    box-sizing: border-box;
+    height: 13.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    background-color: #2a2a2a;
+}
+.profileDateLabel
+{
+    width: 35%;
+    box-sizing: border-box;
+    height: 10vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    margin-left: 15%;
+    
+    background-color: #2a2a2a;
+}
+.profileDate
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 8.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 15%;
+
+}
+.profileDate:focus, .profileDate:hover
+{
+    border: none;
+    border-bottom: 1px solid lightblue;
+    color: lightblue;
+}
+.profileSelectLabel
+{
+    width: 35%;
+    box-sizing: border-box;
+    height: 10vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    background-color: #2a2a2a;
+}
+.profileSelect
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 8.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+    margin: 0;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-weight: 500;
+}
+.profileSelect:focus, .profileSelect:hover
+{
+    border: none;
+    border-bottom: 1px solid lightblue;
+    color: lightblue;
+}
+a:visited
+{
+    text-decoration: none;
+    color: #7f7f7f;
+    font-weight: 500;
+}
+a:link
+{
+    text-decoration: none;
+    color: #7f7f7f;
+    font-weight: 500;
+}
+
+.view
+{
+    
+    width: 100%;
+    min-height: auto;
+    box-sizing: border-box;
+    
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    
+    position: relative;
+    margin-bottom: 2vh;
+    padding: 15px;
+}
+.profile-feature
+{
+    width: 100%;
+    min-height: 12vh;
+    
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    background-color: lightblue;
+    padding: 15px;
+}
+.profile-features
+{
+    width: 55%;
+    min-height: 12vh;
+    margin-left: 22.5%;
+    margin-right: 22.5%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    float: left;
+    background-color: lightblue;
+    margin-bottom: 2vh;
+    box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
+}
+
+.createQuote
+{
+    width: 55%;
+    min-height: 70vh;
+    position: absolute;
+    top: 14vh;
+    left: 22.5%;
+    z-index: 10;
+    background-color: lightblue;
+    border-radius: 5px;
+
+}
+.createRecommendation
+{
+    width: 55%;
+    min-height: 70vh;
+    position: absolute;
+    top: 14vh;
+    left: 22.5%;
+    z-index: 10;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+.featuresLabel
+{
+    width: 90%;
+    box-sizing: border-box;
+    height: 7.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: none;
+    border-bottom: 1px solid lightblue;
+}
+.featuresInput
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 6.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+}
+.featuresTextareaInput
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 13vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+    resize: none;
+    
+}
+.featuresTextareaLabel
+{
+    width: 90%;
+    box-sizing: border-box;
+    height: 14vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: none;
+    border-bottom: 1px solid lightblue;
+}
+.featuresSelectLabel
+{
+    width: 90%;
+    box-sizing: border-box;
+    height: 9vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: none;
+    border-bottom: 1px solid lightblue;
+}
+.featuresSelectInput
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 8vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    border: none;
+}
+
+.featuresmBtn
+{
+    width: 6vw;
+    box-sizing: border-box;
+    height: 4.5vh;
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    
+    float: left;
+    margin-top: 1vh;
+    margin-left: 5%;
+}
+.featuresmBtn:hover
+{
+    background-color: lightblue;
+}
+.features-arrow-back
+{
+    align-items: center;
+    position: absolute;
+    top: 4vh;
+    left: calc(5% + 15px);
+    float: left;
+    text-align: center;
+    justify-content: left;
+}
+.features-arrow-back:hover
+{
+    background-color: lightblue;
+}
+
+#quote-create-btn
+{
+    cursor: pointer;
+    min-width: 16%;
+    box-sizing: border-box;
+    height: 4.25vh;
+    justify-content: left;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    float: left;
+    background-color: grey;
+    position: absolute;
+    right: calc(6% + 14px);
+    top: 2.25vh;
+    padding-left: 15px;
+}
+#recomm-create-btn
+{
+    cursor: pointer;
+    min-width: 16%;
+    box-sizing: border-box;
+    height: 4.25vh;
+    justify-content: left;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    float: left;
+    background-color: grey;
+    position: absolute;
+    right: -10%;
+    top: 2.25vh;
+    padding-left: 15px;
+}
+.delete-button
+{
+    cursor: pointer;
+    min-width: 10%;
+    box-sizing: border-box;
+    height: 5vh;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    float: right;
+    background-color: #B22222;
+    align-items: center;
+    margin-bottom: 1vh;
+    margin-right: 1vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.delete-button:hover
+{
+    color: #fff;
+}
+
+
+
+.showCreateQuote .shadow
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    background-color: lightpink;
+}
+.showCreateRecomm .shadow
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    background-color: lightpink;
+}
+.showfeature .shadow
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    background-color: lightpink;
+}
+.showCreateQuote .createQuote
+{
+    opacity: 1;
+}
+.showCreateRecomm .createRecommendation
+{
+    opacity: 1;
+}
+.showfeature .profile-features
+{
+    opacity: 1;
+}
+
+.settings
+{
+    width: 100%;
+    min-height: 9vh;
+    float: left;
+    background-color: #fff;
+    box-sizing: border-box;
+
+}
+.setting-box
+{
+    min-width: 90%;
+    min-height: 9vh;
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.side-menu
+{
+    width: 16vw;
+    height: 57vh;
+    position: absolute;
+    top: 9vh;
+    left: 0vh;
+    font-size: 14.5px;
+    opacity: 0.9;
+    z-index: 2;
+    background-color: lightblue;
+    color: #fff;
+    display: block;
+    box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
+    border-radius: 3px;
+}
+.side-button
+{
+    width: 100%;
+    height: 5.5vh;
+    float: left;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    padding: 15px;
+    color: #000;
+    justify-content: left;
+    align-items: center;
+    text-align: justify;
+}
+
+.profile-list
+{
+    width: 15%;
+    box-sizing: border-box;
+    min-height: 20.5vh;
+    justify-content: left;
+    text-align: justify;
+    align-items: center;
+    display: inline-block;
+    position: relative;
+    margin-left: 15px;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    font-size: 14.5px;
+
+}
+.profile-list .avatar
+{
+    height: 8vh;
+    border-radius: 25%;
+}
+
+
+.profile-card
+{
+    width: 100%;
+    box-sizing: border-box;
+    height: 10.5vh;
+    justify-content: left;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    display: flex;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid lightblue;
+    font-size: 14.5px;
+    box-sizing: border-box;
+}
+
+
+.profile-output
+{
+    width: 100vw;
+    box-sizing: border-box;
+    min-height: auto;
+    text-align: justify;
+    float: left;
+    position: relative;
+    
+    border: none;
+    font-size: 14.5px;
+    overflow-y: auto;
+}
+
+.avatar-profile img
+{
+    float: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+.profile-output .profile-stat
+{
+    width: 13vw;
+    height: 9vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile-output .profile-stats
+{
+    width: 15vw;
+    height: 50vh;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #303030;
+    display: inline-block;
+}
+
+
+
+
+

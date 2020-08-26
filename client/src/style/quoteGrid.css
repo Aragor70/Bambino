@@ -1,0 +1,124 @@
+.quotes-label
+{
+    width: 100%;
+    grid-column: 1/10;
+    grid-row: 1/11;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    font-size: 15.5px;
+    background-color: #252525;
+}
+.quotes-date
+{
+    float: right;
+    min-width: 10%;
+    height: 5.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.quotes-info
+{
+    width: 100%;
+    min-height: 5.5vh;
+    float: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: block;
+    
+    font-size: 15.5px;
+    position: relative;
+}
+.quotes-info:hover
+{
+    background-color: #2a2a2a;
+}
+.quotes-info img
+{
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+.quotes-content
+{
+    float: left;
+    width: 100%;
+    height: calc(25vh - 30px);
+    text-align: justify;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 19.5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.quotes-author
+{
+    float: right;
+    height: 4.5vh;
+    max-width: 100%;
+    text-align: justify;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 17.5px;
+}
+.quotes-user
+{
+    clear: both;
+    float: right;
+    height: 4.5vh;
+    max-width: 100%;
+    text-align: justify;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 17.5px;
+}
+
+
+@media (min-width: 640px){
+.quotes-info
+{
+    width: 50%;
+    min-height: 5.5vh;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15.5px;
+    position: relative;
+}
+    .quotes-date
+    {
+        float: right;
+        min-width: 10%;
+        height: 5.5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+    }
+
+
+
+
+}
