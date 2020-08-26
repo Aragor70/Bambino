@@ -9,7 +9,6 @@ const auth = require('../../middleware/auth');
 
 
 const User = require('../../models/User');
-const { reset } = require('nodemon');
 
 //route POST   api/users
 //description  register user
