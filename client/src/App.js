@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line
 import React, { Fragment, createElement, useState, useRef, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -41,6 +41,9 @@ import Alert from './Alert';
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
 
+    useEffect(()=> {
+        getCurrentProfile()
+    }, [user]);
     
     const [list, setList] = useState(false)
 
@@ -71,9 +74,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
 
     });
 
-    useEffect(()=> {
-        getCurrentProfile()
-    }, [isAuthenticated]);
+    
 
     return(
         <Fragment>
@@ -90,7 +91,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     user && profile && !list && <div className="hidden-list" onClick={e => setList(!list)}></div>
                 }
                 {
-                    user && !loading && profile == null ? "loading..." : list && <Fragment>
+                    user && loading == false && profile == null ? "loading..." : list && <Fragment>
                         <div className="left-side-list">
                             <div className="front-list-category">SUBSCRIBTIONS</div>
                             {
