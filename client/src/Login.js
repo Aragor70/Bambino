@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {login} from './actions/auth';
 import Alert from './Alert';
-import { Redirect, BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { Redirect, BrowserRouter as Router, withRouter, Link } from 'react-router-dom';
 
 const Login = ({login, auth: {isAuthenticated}, history}) => {
 
@@ -39,7 +39,9 @@ const Login = ({login, auth: {isAuthenticated}, history}) => {
                 <form onSubmit={e=>onSubmit(e)} className="auth-form" >
                 <label className="log-label"><input className="log-input" type="text" name="email" value={email} placeholder=" .e-mail" onChange={e=>onChange(e)} /></label>
                 <label className="log-label"><input className="log-input" type="password" name="password" value={password} placeholder=" .password" onChange={e=>onChange(e)} /></label>
+                
                 <input className="auth-button" type="submit" value="log in" />
+                <div className="log-label"> <Link to="/forgotpassword">Forgot your password?</Link> </div>
                 </form>
 
             <Alert />

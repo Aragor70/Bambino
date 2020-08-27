@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import React, { Fragment, createElement, useState, useRef, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -27,11 +28,23 @@ import History from './userAccount/History';
 import Library from './userAccount/Library';
 import AllFavorites from './userAccount/AllFavorites';
 import TopList from './TopList';
-import Uploaded from './userAccount/Uploaded';
 import Quote from './quotes/Quote';
 import Album from './songs/Album';
+import { getCurrentProfile } from './actions/profile';
+import FrontSubscribes from './FrontSubscribes';
+import ReactHtmlParser from 'react-html-parser';
+import PropTypes from 'prop-types';
+import ForgotPassword from './ForgotPassword';
+import ResetPassword from './ResetPassword';
+import Alert from './Alert';
 
-const App = ({isAuthenticated}) => {
+
+const App = ({isAuthenticated, user, profile:{profile}}) => {
+
+    useEffect(()=> {
+        getCurrentProfile();
+    }, []);
+    const [list, setList] = useState(false)
 
     const [menu, setMenu] = useState(false);
     
@@ -69,9 +82,23 @@ const App = ({isAuthenticated}) => {
                 <TopNav menu={menu} setMenu={setMenu} filterUser={filterUser} setFilterUser={setFilterUser} filterSong={filterSong} setFilterSong={setFilterSong} filterAuthor={filterAuthor} setFilterAuthor={setFilterAuthor} />
             </header>
                 {
-                    menu && <Menu menu={menu} setMenu={setMenu} />
+                    menu && <Menu menu={menu} setMenu={setMenu} setList={setList} />
                 }
-            <main className="output" ref={scrollTo} onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor('') }}>
+                {
+                    user && profile && !list && <div className="hidden-list" onClick={e => setList(!list)}></div>
+                }
+                {
+                    user && profile == null ? "loading..." : list && <Fragment>
+                        <div className="left-side-list">
+                            <div className="front-list-category">SUBSCRIBTIONS</div>
+                            {
+                                <FrontSubscribes profile={profile} setList={setList} />
+                            }
+                            <div className="border-list" onClick={e => setList(false)}></div>
+                        </div>
+                    </Fragment>
+                }
+            <main className="output" ref={scrollTo} onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
 
                 {
                     isAuthenticated ? 
@@ -87,10 +114,6 @@ const App = ({isAuthenticated}) => {
                     <Route exact path="/history">
                         
                         <History />
-                    </Route>
-                    <Route exact path="/my_uploaded">
-                        
-                        <Uploaded />
                     </Route>
 
                     
@@ -110,11 +133,14 @@ const App = ({isAuthenticated}) => {
                         <FrontPage />
                     </Route>
                     </Switch>
+                    
+
                     </Fragment> :
                     <Fragment>
                         <Switch>
                             <Route exact path="/">
                                 <FrontPage />
+                                
                             </Route>
                             <Route exact path="/about" component={About} />
                             <Route exact path="/newsletter" component={Newsletter} />
@@ -128,13 +154,25 @@ const App = ({isAuthenticated}) => {
                 <Route exact path="/songs/:id" component={Song} />
                 <Route exact path="/quotes/:id" component={Quote} />
                 <Route exact path="/authors/:author_id/album/:id" component={Album} />
+                <Route exact path="/resetpassword/:resettoken">
+                    <ResetPassword />
+                </Route>
+                <Route exact path="/forgotpassword/">
+                    <ForgotPassword />
+                </Route>
             </main>
             </Router>
         </Fragment>
     );
 }
+App.propTypes = {
+    user: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired
+}
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    user: state.auth.user,
+    profile: state.profile
 })
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {getCurrentProfile})(App);
