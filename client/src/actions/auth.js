@@ -153,3 +153,38 @@ export const editPassword = (formData, id) => async dispatch => {
             dispatch({type: User_Error, payload: {msg: err.response.statusText, status: err.response.status}})
         }
 }
+
+//forgot user password, send the email
+export const forgotPassword = (formData) => async dispatch => {
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    try{
+        await axios.post(`/api/auth/forgotpassword`, formData, config);
+        setAlert('Email sent.', 'success')
+    }
+    catch(err){
+        console.log('Server error.');
+        setAlert('Email cound not be sent.', 'danger')
+    }
+}
+export const resetPassword = (resettoken, formData) => async dispatch => {
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    try{
+        await axios.put(`/api/auth/resetpassword/${resettoken}`, formData, config);
+        setAlert('Password changed.', 'success')
+
+
+        // ${req.protocol}://${req.get('host')}/api/auth/resetpassword/${resetToken}
+    }
+    catch(err){
+        console.log('Server error.');
+        setAlert('Password cound not be changed.', 'danger')
+    } 
+}

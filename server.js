@@ -34,9 +34,8 @@ if(process.env.NODE_ENV === "production") {
     app.use('/api/newsletters', require('./routes/api/newsletters'));
     app.use('/api/quotes', require('./routes/api/quotes'));
 
-    app.use(favicon(path.resolve(__dirname, 'client', "build", "favicon.ico")));
     
-    app.get('/*', (req, res) => {
+    app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
     
