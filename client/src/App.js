@@ -39,11 +39,9 @@ import ResetPassword from './ResetPassword';
 import Alert from './Alert';
 
 
-const App = ({isAuthenticated, user, profile:{profile}}) => {
+const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
 
-    useEffect(()=> {
-        getCurrentProfile();
-    }, []);
+    
     const [list, setList] = useState(false)
 
     const [menu, setMenu] = useState(false);
@@ -73,6 +71,10 @@ const App = ({isAuthenticated, user, profile:{profile}}) => {
 
     });
 
+    useEffect(()=> {
+        getCurrentProfile()
+    }, [isAuthenticated]);
+
     return(
         <Fragment>
             <Router>
@@ -88,7 +90,7 @@ const App = ({isAuthenticated, user, profile:{profile}}) => {
                     user && profile && !list && <div className="hidden-list" onClick={e => setList(!list)}></div>
                 }
                 {
-                    user && profile == null ? "loading..." : list && <Fragment>
+                    user && !loading && profile == null ? "loading..." : list && <Fragment>
                         <div className="left-side-list">
                             <div className="front-list-category">SUBSCRIBTIONS</div>
                             {
@@ -167,7 +169,8 @@ const App = ({isAuthenticated, user, profile:{profile}}) => {
 }
 App.propTypes = {
     user: PropTypes.object.isRequired,
-    profile: PropTypes.object.isRequired
+    profile: PropTypes.object.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,

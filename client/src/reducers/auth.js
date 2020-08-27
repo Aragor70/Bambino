@@ -30,7 +30,7 @@ export default function(state= initialState, action) {
             return {...state, token: null, isAuthenticated:false, loading: false}
         case Logout:
             localStorage.removeItem('token');
-            return {...state, token: null, isAuthenticated:false, loading: false}
+            return {...state, token: null, isAuthenticated:false, user: null, loading: false}
         case Account_Deleted:
             localStorage.removeItem('token');
             return {...state, token: null, isAuthenticated:false, loading: false}
