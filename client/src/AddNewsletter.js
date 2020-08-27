@@ -51,7 +51,7 @@ const AddNewsletter = ({setAlert, newsletterView, setNewsletterView, addGuestNew
                         
                         <Alert />
                         {
-                            email !== '' ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, submit:!field.submit})}}>Next -></button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("E-mail cannot be empty.", "danger")}}>Next -></button>
+                            email !== '' ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, submit:!field.submit})}}>Next -{">"}</button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("E-mail cannot be empty.", "danger")}}>Next -{">"}</button>
                         }
 
                         <button type="button" className="nextButton" onClick={e=>setNewsletterView(!newsletterView)}>Cancel</button>
