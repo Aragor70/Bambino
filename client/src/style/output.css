@@ -179,8 +179,8 @@
 {
     width: 100vw;
     min-height: auto;
-    padding-left: calc(100vw / 64 * 8);
-    padding-right: calc(100vw / 64 * 8);
+    padding-left: 5vw;
+    padding-right: 5vw;
     box-sizing: border-box;
     padding-top: 2vh;
     padding-bottom: 2vh;
@@ -194,8 +194,8 @@
 {
     width: 100vw;
     height: auto;
-    padding-left: calc(100vw / 64 * 8);
-    padding-right: calc(100vw / 64 * 8);
+    padding-left: 5vw;
+    padding-right: 5vw;
     box-sizing: border-box;
     padding-top: 2vh;
     padding-bottom: 2vh;
@@ -400,4 +400,37 @@
     right: 1vh;
     font-size: 15.5px;
     z-index: 1;
+}
+
+@media (min-width: 1023px){
+
+.shield
+{
+    width: 100vw;
+    min-height: auto;
+    padding-left: calc(100vw / 64 * 8);
+    padding-right: calc(100vw / 64 * 8);
+    box-sizing: border-box;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #7f7f7f;
+    background-color: #121212;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.shield-personal
+{
+    width: 100vw;
+    height: auto;
+    padding-left: calc(100vw / 64 * 8);
+    padding-right: calc(100vw / 64 * 8);
+    box-sizing: border-box;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: #7f7f7f;
+    background-color: #121212;
+    position: relative;
+    float: left;
+}
 }
