@@ -48,7 +48,6 @@ const EditAuthor = ({authorId, editAuthor, getAuthor, getAuthors, author: {autho
         default: true,
         metric: false,
         text: false,
-        image: false,
         submit: false
     });
     

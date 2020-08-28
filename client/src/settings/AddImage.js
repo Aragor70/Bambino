@@ -8,12 +8,6 @@ import {updateUser, addAvatar} from '../actions/auth';
 
 const AddImage = ({setAlert, imageView, setImageView, user, addAvatar}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
 
     const [field, setField] = useState({
         default: true,
@@ -39,7 +33,12 @@ const AddImage = ({setAlert, imageView, setImageView, user, addAvatar}) => {
 
         setImageView(false);
     }    
-    
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="songInputView" ref={scrollTo}>

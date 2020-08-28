@@ -8,12 +8,7 @@ import {addNewsletter} from '../actions/newsletter';
 
 const AddNewsletter = ({currentEmail, setAlert, addNewsletter, newsletterView, setNewsletterView, user}) => {
 
-    const scrollTo = useRef(null)
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
+    
 
     const [formData, setFormData] = useState({
         email: ''
@@ -39,7 +34,12 @@ const AddNewsletter = ({currentEmail, setAlert, addNewsletter, newsletterView, s
         addNewsletter(formData);
         setNewsletterView(false);
     }
-    
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="songInputView" ref={scrollTo}>

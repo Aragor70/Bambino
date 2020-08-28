@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import moment from 'moment';
 import Moment from 'react-moment';
 import ReactHtmlParser from 'react-html-parser';
@@ -35,9 +35,14 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
             
         })
     })
-
-    console.log(findViews)
-    console.log(readyAuthors)
+    const [contentStyle, setContentStyle] = useState({height:'21vh'})
+    const handleContent = () => {
+        if(contentStyle.height == '21vh'){
+            setContentStyle({
+                height: 'auto'
+            })
+        } else {setContentStyle({height: '21vh'})}
+    }
 
 
     //<div className="head-view-avatar">{song.views[0] && song.views[0].author  ? <img src={require(`../../uploads/authors/image/${readyAuthors.images[0]}`)} height="32px" /> : <img src={require("../style/guitar.png")} height="32px" />}</div>
@@ -72,7 +77,7 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
                                     
                                     
                                 </div>
-                                <div className="content-view">
+                                <div className="content-view" style={contentStyle} onClick={e=> handleContent('auto')}>
                                     {
                                         song.image && <Fragment>
                                             <div className="song-image-view">

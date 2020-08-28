@@ -11,20 +11,20 @@ const FrontAdd = ({frontAdd, setFrontAdd, quoteView, setQuoteView, songInputView
             <button type="button" className="x-top-right" onClick={e=>setFrontAdd(!frontAdd)}>X</button>
             
             <div className="front-post-button">
-                <button className="front-button" onClick={e=>setQuoteView(!quoteView)}>New Quote</button>
+                <button className="front-button" onClick={e=>{setQuoteView(!quoteView), setFrontAdd(false)}}>New Quote</button>
             </div>
             
             <div className="front-adding-describe">describe</div>
 
             
             <div className="front-song-button">
-                <button className="front-button" onClick={e=>setSongInputView(!songInputView)}>New Song</button>
+                <button className="front-button" onClick={e=>{setSongInputView(!songInputView), setFrontAdd(false)}}>New Song</button>
                 
             </div>
             <div className="front-adding-describe" >describe</div>
 
             <div className="front-author-button">
-                <button className="front-button" onClick={e=>setAuthorInputView(!authorInputView)}>New Author</button>
+                <button className="front-button" onClick={e=>{setAuthorInputView(!authorInputView), setFrontAdd(false)}}>New Author</button>
                 
             </div>
             <div className="front-adding-describe" >describe</div>

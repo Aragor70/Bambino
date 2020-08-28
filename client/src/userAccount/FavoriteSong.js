@@ -16,7 +16,7 @@ const FavoriteSong = ({songs, songId, authorImage, user, removeLike}) => {
             <div className="boxed-song">
                 {
                     filterSongs.map(song => <Fragment key={song._id}>
-                        <div className="liked-avatar">{authorImage ? <img src={require(`../../uploads/authors/image/${authorImage}`)} height="32px" /> : <img src={require("../style/guitar.png")} height="32px" />}</div>
+                        <div className="liked-avatar">{authorImage ? <img src={require(`../../uploads/authors/image/${authorImage}`)} height="32px" width="32px" /> : <img src={require("../style/guitar.png")} height="32px" width="32px" />}</div>
                         <div className="liked-author">{song.author}</div>
                         <div className="liked-title"><Link to={`/songs/${song._id}`}> {song.title} </Link></div>
 

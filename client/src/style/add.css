@@ -21,8 +21,9 @@
     position: absolute;
     top: 9vh;
     left: 0;
+    right: 0;
     background-color: #2a2a2a;
-    min-width: 90%;
+    min-width: auto;
     min-height: 30vh;
     z-index: 9;
     border: 1vh solid #252525;
@@ -290,4 +291,22 @@ button
     font-size: 15.5px;
     margin-bottom: 2vh;
     margin-top: 2vh;
+}
+
+@media (min-width: 1023px){
+.songInputView
+{
+    position: absolute;
+    top: 9vh;
+    left: calc(100vw / 64 * 8);
+    right: calc(100vw / 64 * 8);
+    background-color: #2a2a2a;
+    min-width: auto;
+    min-height: 30vh;
+    z-index: 9;
+    border: 1vh solid #252525;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+}
 }

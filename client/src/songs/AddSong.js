@@ -18,12 +18,7 @@ const AddSong = ({getAuthors, addSong, author: {authors}, setAlert, songInputVie
         getAuthors();
     }, []);
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
+    
 
     const [field, setField] = useState({
         default: true,
@@ -61,6 +56,13 @@ const AddSong = ({getAuthors, addSong, author: {authors}, setAlert, songInputVie
         addSong(formData);
         setSongInputView(!songInputView);
     }
+
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="addInputView" ref={scrollTo}>
@@ -70,9 +72,9 @@ const AddSong = ({getAuthors, addSong, author: {authors}, setAlert, songInputVie
                         <button type="button" className="x-top-right" onClick={e=>setSongInputView(!songInputView)}>X</button>
                 <form onSubmit={e=>onSubmit(e)}>
                 {
-                    field.default && <Fragment>
+                    field.default && <Fragment> 
                         
-                        <label className="song-info">
+                        <label className="song-info" >
                             Add your favorite title and customize it.
                         </label>    
                         <label className="song-info">Please select right author or create the new one.</label>

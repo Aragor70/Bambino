@@ -14,12 +14,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const EditSong = ({songId, song:{song, loading}, getAuthors, editSong, author: {authors}, setAlert, editInputView, setEditInputView}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    })
+    
 
     const [formData, setFormData] = useState({
         title:null,
@@ -79,16 +74,27 @@ const EditSong = ({songId, song:{song, loading}, getAuthors, editSong, author: {
         editSong(song._id, formData);
         setEditInputView(!editInputView);
     }
+
+
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    },[field])
+
+    console.log(text)
+
     return (
         <Fragment>
-            <div className="songInputView">
+            <div className="songInputView" ref={scrollTo}>
                         <label className="song-label">
                             Song editor mode
                         </label>
                         <button type="button" className="x-top-right" onClick={e=>setEditInputView(!editInputView)}>X</button>
                 <form onSubmit={e=>onSubmit(e)}>
                 {
-                    field.default && <Fragment>
+                    field.default && <Fragment >
                         
                         <label className="song-info">
                             Edit title and customize it.
@@ -108,7 +114,7 @@ const EditSong = ({songId, song:{song, loading}, getAuthors, editSong, author: {
                     </Fragment>
                 }
                 {
-                    field.metric && <Fragment>
+                    field.metric && <Fragment >
                         <label className="inputSongLabel"><input type="text" value={album} name="album" onChange={e=>onChange(e)}className="inputSongInfo" placeholder=" .album (optional)" /></label>
                         <label className="inputSongLabel"><input type="text" value={language} name="language" onChange={e=>onChange(e)}className="inputSongInfo" placeholder=" .language" /></label>
                         <label className="inputSongLabel"><input type="text" value={category} name="category" onChange={e=>onChange(e)}className="inputSongInfo" placeholder=" .category (optional)" /></label>
@@ -125,7 +131,7 @@ const EditSong = ({songId, song:{song, loading}, getAuthors, editSong, author: {
                     </Fragment>
                 }
                 {
-                    field.text && <Fragment>
+                    field.text && <Fragment >
                         {
                            // <label className="textSongLabel"><textarea name="text" onChange={e=>onChange(e)} className="textSongArea" placeholder=" .song text" />
                         }
@@ -142,7 +148,7 @@ const EditSong = ({songId, song:{song, loading}, getAuthors, editSong, author: {
                     </Fragment>
                 }
                 {
-                    field.video && <Fragment>
+                    field.video && <Fragment >
                         <label className="song-info">
                             Add video url from YouTube
                         </label>
@@ -152,7 +158,7 @@ const EditSong = ({songId, song:{song, loading}, getAuthors, editSong, author: {
                     </Fragment>
                 }
                 {
-                    field.submit && <Fragment>
+                    field.submit && <Fragment >
                         <label className="song-info">
                             Have you finished the customization?
                         </label>

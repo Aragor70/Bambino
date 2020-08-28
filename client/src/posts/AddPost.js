@@ -15,12 +15,7 @@ const AddPost = ({addPost, getPosts, post: {posts}, setAlert, postInputView, set
     }, [])
     
     
-    const scrollTo = useRef(null)
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'})
-        }
-    }, [scrollTo])
+    
     
 
     const [field, setField] = useState({
@@ -48,7 +43,12 @@ const AddPost = ({addPost, getPosts, post: {posts}, setAlert, postInputView, set
         e.preventDefault();
         addPost(formData);
     }
-
+    const scrollTo = useRef(null)
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'})
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="addInputView" ref={scrollTo}>

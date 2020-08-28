@@ -9,12 +9,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const AddAuthor = ({addAuthor, getAuthors, author: {authors}, setAlert, authorInputView, setAuthorInputView, songInputView, setSongInputView}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
+    
 
     useEffect(()=> {
         getAuthors()
@@ -24,7 +19,6 @@ const AddAuthor = ({addAuthor, getAuthors, author: {authors}, setAlert, authorIn
         default: true,
         metric: false,
         text: false,
-        image: false,
         submit: false
     });
     
@@ -52,7 +46,12 @@ const AddAuthor = ({addAuthor, getAuthors, author: {authors}, setAlert, authorIn
         addAuthor(formData);
         setAuthorInputView(!authorInputView);
     }
-
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="addInputView" ref={scrollTo}>
