@@ -33,7 +33,7 @@ export default function(state= initialState, action) {
             return {...state, token: null, isAuthenticated:false, user: null, loading: false}
         case Account_Deleted:
             localStorage.removeItem('token');
-            return {...state, token: null, isAuthenticated:false, loading: false}
+            return {...state, token: null, isAuthenticated:false, user: null, loading: false}
         case Update_User:
             return {...state, user: payload, isAuthenticated: true, loading: false}
         case Add_Avatar:

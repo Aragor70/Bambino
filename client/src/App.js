@@ -43,7 +43,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
 
     useEffect(()=> {
         getCurrentProfile()
-    }, [user]);
+    }, [isAuthenticated, user, loading, getCurrentProfile]);
     
     const [list, setList] = useState(false)
 
@@ -91,7 +91,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     user && profile && !list && <div className="hidden-list" onClick={e => setList(!list)}></div>
                 }
                 {
-                    user && loading == false && profile == null ? "loading..." : list && <Fragment>
+                    user && loading ? null : profile == null ? null : list && <Fragment>
                         <div className="left-side-list">
                             <div className="front-list-category">SUBSCRIBTIONS</div>
                             {
