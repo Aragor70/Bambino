@@ -91,19 +91,6 @@ const Account = ({getCurrentProfile, auth: {user}, profile: {profile, loading}})
 
                 </PrivateRoute>
                 
-                {
-                    postInputView && <AddPost postInputView={postInputView} setPostInputView={setPostInputView}  />
-                }
-                {
-                    postInputView && <div className="addshadow"></div>
-                }
-                {
-                    pictureView && <AddPicture pictureView={pictureView} setPictureView={setPictureView} />
-                }
-                {
-                    pictureView && <div className="addshadow"></div>
-                }
-
                 
                 <Route exact path={`/profile/${user._id}/songs/:id`} component={Song} />
                 <Route exact path={`/profile/${user._id}/posts/:id`} component={Post} />
@@ -141,6 +128,12 @@ const Account = ({getCurrentProfile, auth: {user}, profile: {profile, loading}})
                 </Route>
                 <Route exact path={`/profile/${user._id}/pictures`}>
                     <div className="shield">
+                    {
+                        pictureView && <AddPicture pictureView={pictureView} setPictureView={setPictureView} />
+                    }
+                    {
+                        pictureView && <div className="addshadow"></div>
+                    }
                     <div className="profile-mid">
                     <div className="profile-page-title" onClick={e => setProfileNav(!profileNav)} >{user.name} : PICTURES</div>
                         {
@@ -155,12 +148,19 @@ const Account = ({getCurrentProfile, auth: {user}, profile: {profile, loading}})
                 </Route>
                 <Route exact path={`/profile/${user._id}/community`}>
                     <div className="shield">
+                    {
+                        postInputView && <AddPost postInputView={postInputView} setPostInputView={setPostInputView}  />
+                    }
+                    {
+                        postInputView && <div className="addshadow"></div>
+                    }
                     <div className="profile-mid">
                         <div className="profile-page-title" onClick={e => setProfileNav(!profileNav)} > {user.name} : COMMUNITY </div>
                         {
                             profileNav && <ProfileNav profile={profile} profileNav={profileNav} setProfileNav={setProfileNav} />
                         }
                         <button id="profile-addSong-button" onClick={e=>{setPostInputView(!postInputView), setProfileNav(false)}} ><img src={require('./style/plus.png')} /></button>
+                        
                     </div>
                     </div>
                     <div className="shield" onClick={e=> setProfileNav(false)}>
