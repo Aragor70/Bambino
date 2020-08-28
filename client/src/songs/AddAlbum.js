@@ -7,12 +7,7 @@ import {setAlert} from '../actions/alert';
 
 const AddAlbum = ({authorId, author:{author}, addAlbum, setAlert, albumView, setAlbumView}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
+    
 
     const [formData, setFormData] = useState({
         album: '',
@@ -22,7 +17,6 @@ const AddAlbum = ({authorId, author:{author}, addAlbum, setAlert, albumView, set
 
     const [field, setField] = useState({
         default: true,
-        image: false,
         submit: false
     });
     const onChange = (e) => {
@@ -33,7 +27,12 @@ const AddAlbum = ({authorId, author:{author}, addAlbum, setAlert, albumView, set
         addAlbum(authorId, formData);
         setAlbumView(!albumView);
     }
-    
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="songInputView" ref={scrollTo}>
@@ -55,18 +54,11 @@ const AddAlbum = ({authorId, author:{author}, addAlbum, setAlert, albumView, set
                         
                         <Alert />
                         {
-                            album !== '' || year !== '' ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, image:!field.image})}}>Next -></button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("Name and year are required values.", "danger")}}>Next -></button>
+                            album !== '' || year !== '' ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, submit:!field.submit})}}>Next -></button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("Name and year are required values.", "danger")}}>Next -></button>
                         }
 
 
                         <button type="button" className="nextButton" onClick={e=>setAlbumView(!albumView)}>Cancel</button>
-                    </Fragment>
-                }
-                {
-                    field.image && <Fragment>
-                        <label className="inputSongLabel"><input type="file" name="image" /></label>
-                        <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({image:!field.image, submit:!field.submit})}}>Next -></button>
-                        <button type="button" className="nextButton" onClick={e=>{setField({image:!field.image, default:!field.default})}}>Go back</button>
                     </Fragment>
                 }
                 {
@@ -78,7 +70,7 @@ const AddAlbum = ({authorId, author:{author}, addAlbum, setAlert, albumView, set
                             Please submit the album.
                         </label>
                         <button type="submit" className="nextButton add-mrg-right">Submit</button>
-                        <button type="button" className="nextButton" onClick={e=>{setField({submit:!field.submit, image:!field.image})}}>Go back</button>
+                        <button type="button" className="nextButton" onClick={e=>{setField({submit:!field.submit, default:!field.default})}}>Go back</button>
                         <button className="nextButton" onClick={e=>setAlbumView(!albumView)}>Cancel</button>
                     </Fragment>
                 }

@@ -8,12 +8,7 @@ import {updateUser} from '../actions/auth';
 
 const AddSecret = ({setAlert, updateUser, secretView, setSecretView, user}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
+    
 
     const [formData, setFormData] = useState({
         name: '',
@@ -42,7 +37,12 @@ const AddSecret = ({setAlert, updateUser, secretView, setSecretView, user}) => {
         updateUser(user._id, formData);
         setSecretView(false);
     }
-    
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="songInputView" ref={scrollTo}>

@@ -8,12 +8,7 @@ import { addSongImage } from '../actions/song';
 
 const AddSongImage = ({setAlert, imageInputView, setImageInputView, user, song, addSongImage}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
+    
 
     const [field, setField] = useState({
         default: true,
@@ -39,7 +34,12 @@ const AddSongImage = ({setAlert, imageInputView, setImageInputView, user, song, 
 
         setImageInputView(false);
     }    
-    
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="songInputView">

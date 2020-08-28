@@ -46,7 +46,7 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
         )
         
         const guestMenu = (
-        <div className="navi-menu" onClick={e=>setMenu(true)}>
+        <div className="navi-menu">
             <div className="navi-login"><Link to='/' onClick={e=>setMenu(!menu)}> OnLoud.uk</Link></div>
             <Link to='/login' onClick={e=>setMenu(!menu)}><div className="navi-login"> log in .</div></Link>
             <Link to='/register' onClick={e=>setMenu(!menu)}><div className="navi-signin"> sign in .</div></Link>

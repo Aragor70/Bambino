@@ -15,15 +15,9 @@ import Moment from 'react-moment';
 
 const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, getCurrentProfile, profile:{profile, loading}, getGithubRepos, repos}) => {
 
-    const scrollTo = useRef(null);
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-        }
-    }, [scrollTo])
 
     const [formData, setFormData] = useState({
-        age: '',
+        age: null,
         gender: '',
         location: '',
         passion: '',
@@ -86,7 +80,6 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
         text: false,
         github:false,
         media: false,
-        image: false,
         submit: false
     });
     
@@ -111,7 +104,12 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
     }, [githubusername]);
     
     
-    
+    const scrollTo = useRef(null);
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+        }
+    }, [field])
     return (
         <Fragment>
             {
@@ -135,7 +133,7 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
                                 
                         <label className="personalLabel"> <input className="personalInput" type="text" value={passion} name="passion" onChange={(e)=> handleChange(e)} placeholder=" .passion" /></label>
                         <label className="personalLabel"> <input className="personalInput" type="text" value={skills} name="skills" onChange={(e)=> handleChange(e)} placeholder=" .skills" /></label>
-
+                        
                         <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, text:!field.text})}}>Next -></button>
 
                         <button type="button" className="nextButton" onClick={e=>setPersonalView(!personalView)}>Cancel</button>
@@ -195,15 +193,8 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
                         <label className="personalLabel"> <input className="personalInput" type="text" name="linkedin" value={linkedin} onChange={(e)=> handleChange(e)} placeholder=" .linkedin https://..." /></label>
                         <label className="personalLabel"> <input className="personalInput" type="text" name="instagram" value={instagram} onChange={(e)=> handleChange(e)} placeholder=" .instagram https://..." /></label>
 
-                        <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({media:!field.media, image:!field.image})}}>Next -></button>
+                        <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({media:!field.media, submit:!field.submit})}}>Next -></button>
                         <button type="button" className="nextButton" onClick={e=>{setField({media:!field.media, github:!field.github})}}>Go back</button>
-                    </Fragment>
-                }
-                {
-                    field.image && <Fragment>
-                        <label className="inputSongLabel"><input type="file" name="image" /></label>
-                        <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({image:!field.image, submit:!field.submit})}}>Next -></button>
-                        <button type="button" className="nextButton" onClick={e=>{setField({image:!field.image, media:!field.media})}}>Go back</button>
                     </Fragment>
                 }
                 {
@@ -215,7 +206,7 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
                             Please submit the album.
                         </label>
                         <button type="submit" className="nextButton add-mrg-right">Submit</button>
-                        <button type="button" className="nextButton" onClick={e=>{setField({submit:!field.submit, image:!field.image})}}>Go back</button>
+                        <button type="button" className="nextButton" onClick={e=>{setField({submit:!field.submit, media:!field.media})}}>Go back</button>
                         <button className="nextButton" onClick={e=>setPersonalView(!personalView)}>Cancel</button>
                     </Fragment>
                 }

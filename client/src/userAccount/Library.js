@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { getSongs, removeLike, addLike, removeSong } from '../actions/song';
+import { getSongs, removeLike, addLike, removeSong, removeView } from '../actions/song';
 import { connect } from 'react-redux';
 import { getViews } from '../actions/profile';
 import moment from 'moment';
@@ -10,13 +10,13 @@ import SortViews from './SortViews';
 import { getAuthors } from '../actions/author';
 import { Link } from 'react-router-dom';
 
-const Library = ({getSongs, getAuthors, getViews, auth:{user}, author:{authors}, song:{songs, loading}, profile:{views}, addLike, removeLike}) => {
+const Library = ({getSongs, getAuthors, getViews, auth:{user}, author:{authors}, song:{songs, loading}, profile:{views}, addLike, removeLike, removeView}) => {
 
     useEffect(()=>{
         getSongs()
         getViews()
         getAuthors()
-    }, []);
+    }, [songs]);
 
     const filtredSongs = songs.map(song => song.likes);
     
@@ -160,4 +160,4 @@ const mapStateToProps = state => ({
     profile: state.profile,
     author: state.author
 })
-export default connect(mapStateToProps, {getSongs, getViews, removeLike, addLike, removeSong, getAuthors})(Library);
+export default connect(mapStateToProps, {getSongs, getViews, removeLike, addLike, removeSong, getAuthors, removeView})(Library);

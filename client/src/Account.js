@@ -74,6 +74,12 @@ const Account = ({getCurrentProfile, auth: {user}, profile: {profile, loading}})
             {
                 pictureScreen && <div className="addshadow" onClick={e=>setPictureScreen(false)}></div>
             }
+            {
+                imageView && <Fragment><AddImage imageView={imageView} setImageView={setImageView} user={user} /></Fragment>
+            }
+            {
+                imageView && <div className="addshadow"></div>
+            }
             </div></div>
 
                 
@@ -84,12 +90,7 @@ const Account = ({getCurrentProfile, auth: {user}, profile: {profile, loading}})
                 
 
                 </PrivateRoute>
-                {
-                    imageView && <Fragment><AddImage imageView={imageView} setImageView={setImageView} user={user} /></Fragment>
-                }
-                {
-                    imageView && <div className="addshadow"></div>
-                }
+                
                 {
                     postInputView && <AddPost postInputView={postInputView} setPostInputView={setPostInputView}  />
                 }
