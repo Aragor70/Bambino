@@ -1,7 +1,7 @@
 .user-menu
 {
     width: 60vw;
-    min-height: 68vh;
+    min-height: 60vh;
     position: absolute;
     top: 9vh;
     right: 0;
@@ -145,7 +145,7 @@ hr
     .user-menu
     {
         width: 43vw;
-        min-height: 68vh;
+        min-height: 60vh;
         position: absolute;
         top: 9vh;
         right: 0;
@@ -184,7 +184,7 @@ hr
     .user-menu
     {
         width: 43vw;
-        min-height: 68vh;
+        min-height: 60vh;
         position: absolute;
         top: 9vh;
         right: 0;
@@ -223,7 +223,7 @@ hr
     .user-menu
     {
         width: 16vw;
-        min-height: 70vh;
+        min-height: 63vh;
         position: absolute;
         top: 9vh;
         right: 0;

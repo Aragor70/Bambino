@@ -175,5 +175,9 @@ body
     float: right;
 }
 
+input:focus, button:focus
+{
+    outline: none;
+}
 
 

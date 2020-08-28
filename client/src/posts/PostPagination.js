@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
 import moment from 'moment';
 
-const PostPagination = ({user, posts, label, labelUrl, postsLimitPerPage }) => {
+const PostPagination = ({user, posts, label, labelUrl, postsLimitPerPage, numbers = true }) => {
 
 
     const [currentPosts, setCurrentPosts] = useState([]);
@@ -50,7 +50,7 @@ const PostPagination = ({user, posts, label, labelUrl, postsLimitPerPage }) => {
                 
             </Fragment>)}
             {
-                posts && pageNumbers.length > 0 && <Fragment>
+                posts && numbers && pageNumbers.length > 0 && <Fragment>
                     <div className="pageNumbers">
                     {
                     pageNumbers.map(number=><div className="pageNumber" onClick={e=>setCurrentPage(number)}> {number} </div>)
