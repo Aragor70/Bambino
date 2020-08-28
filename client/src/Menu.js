@@ -26,9 +26,11 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
                 my library
             </div></Link>
             <hr />
-            <Link to ="/my_uploading"><div className="user-menu-btn">
-                my uploading
-            </div></Link> 
+            {
+            //    <Link to ="/my_uploading"><div className="user-menu-btn">
+            //    my uploading
+            //    </div></Link>
+            }
             <Link to='/history' onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
                 history
             </div></Link>

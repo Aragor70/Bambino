@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
 
-const Pagination = ({user, songs, removeLike, addLike, label, labelUrl, songsLimitPerPage }) => {
+const Pagination = ({user, songs, removeLike, addLike, label, labelUrl, songsLimitPerPage, numbers = true }) => {
 
 
     const [currentSongs, setCurrentSongs] = useState([]);
@@ -55,7 +55,7 @@ const Pagination = ({user, songs, removeLike, addLike, label, labelUrl, songsLim
                 
             </Fragment>)}
             {
-                songs && pageNumbers.length > 0 && <Fragment>
+                songs && numbers && pageNumbers.length > 0 && <Fragment>
                     <div className="pageNumbers">
                     {
                     pageNumbers.map(number=><div className="pageNumber" onClick={e=>setCurrentPage(number)}> {number} </div>)

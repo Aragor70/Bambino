@@ -337,6 +337,7 @@
     justify-content: center;
     z-index: 7;
     cursor: pointer;
+    color: #7f7f7f;
 }
 
 .rm-button

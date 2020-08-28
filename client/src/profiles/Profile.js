@@ -49,6 +49,8 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
 
 
     //liked songs
+
+    
     const filtredSongs = songs.map(song => song.likes);
     
     let songsByUser = filtredSongs.flat(1).filter(song => song.user == match.params.id);
@@ -199,7 +201,7 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
                 
                     {
                         hiddenData && <Fragment>
-                            <div className="personal-param"> age:{ReactHtmlParser('&nbsp')} <Moment format="YYYY-DD-MM">{profile.age}</Moment></div>
+                            <div className="personal-param"> age:{ReactHtmlParser('&nbsp')} <Moment format="YYYY-MM-DD">{profile.age}</Moment></div>
                             <div className="personal-param"> location: {profile.location} </div>
                             <div className="personal-param"> passion: {profile.passion} </div>
                             <div className="personal-param"> status: {profile.status} </div>
@@ -225,7 +227,7 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
             </div>
             <div className="list-contents">
         <div className="pop-category">
-            Pictures
+        <Link to={`/profile/${profile.user._id}/pictures`}> Pictures </Link>
         </div>  
     <div className="list-content">
         
@@ -233,7 +235,7 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
         
     </div>
     <div className="pop-category">
-            Quotes
+        <Link to={`/profile/${profile.user._id}/quotes`}> Quotes </Link>
             {
                 profileQuotes.length > 2 && <button type="button" className="more-btn"><Link to={`/profile/${profile.user._id}/quotes`}>Check more !</Link></button>
             }
@@ -243,14 +245,14 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
         <QuotePagination user={profile.user} quotes={quotes} label="Quotes" labelUrl="quotes" quotesLimitPerPage="2" />
     </div>
     <div className="pop-category">
-            Community
+        <Link to={`/profile/${profile.user._id}/community`}> Community </Link>
             {
                 profilePosts.length > 5 && <button type="button" className="more-btn"><Link to={`/profile/${profile.user._id}/community`}>Check more !</Link></button>
             }
         </div> 
     <div className="list-content">
 
-        <PostPagination user={profile.user} posts={posts} label="Posts" labelUrl="posts" postsLimitPerPage="5"  />
+        <PostPagination user={profile.user} posts={posts} label="Posts" labelUrl="posts" postsLimitPerPage="5" numbers={false} />
 
     </div>
     
@@ -272,15 +274,6 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
                 </div>
                 
             </Fragment>)}
-            {
-                songs && pageNumbers.length > 0 && <Fragment>
-                    <div className="pageNumbers">
-                    {
-                    pageNumbers.map(number=><div className="pageNumber" onClick={e=>setCurrentPage(number)}> {number} </div>)
-                    }
-                    </div>
-                </Fragment>
-            }
             
             </div>
         }
@@ -288,14 +281,14 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
     </div>
 
     <div className="pop-category">
-            Song titles uploaded by {profile.user.name}
+        <Link to={`/profile/${profile.user._id}/songs`}> Song titles uploaded by {profile.user.name} </Link>
             {
                 profileSongs.length > 5 && <button type="button" className="more-btn"><Link to={`/profile/${profile.user._id}/songs`}>Check more !</Link></button>
             }
         </div> 
     <div className="list-content">
         
-        <Pagination user={profile.user} songs={songs} removeLike={removeLike} addLike={addLike} label="Songs" labelUrl="songs" songsLimitPerPage="5" />
+        <Pagination user={profile.user} songs={songs} removeLike={removeLike} addLike={addLike} label="Songs" labelUrl="songs" songsLimitPerPage="5" numbers={false} />
         
     
     </div>

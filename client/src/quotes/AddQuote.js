@@ -10,12 +10,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const AddQuote = ({setAlert, quoteView, setQuoteView, user, addQuote}) => {
 
-    const scrollTo = useRef(null)
-    useEffect(() => {
-        if(scrollTo.current){
-            scrollTo.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'})
-        }
-    }, [scrollTo])
 
     const [field, setField] = useState({
         default: true,
@@ -45,7 +39,12 @@ const AddQuote = ({setAlert, quoteView, setQuoteView, user, addQuote}) => {
         
         setQuoteView(false);
     }    
-    
+    const scrollTo = useRef(null)
+    useEffect(() => {
+        if(scrollTo.current){
+            scrollTo.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'})
+        }
+    }, [field])
     return (
         <Fragment>
             <div className="songInputView" ref={scrollTo}>
@@ -55,7 +54,7 @@ const AddQuote = ({setAlert, quoteView, setQuoteView, user, addQuote}) => {
                         <button type="button" className="x-top-right" onClick={e=>setQuoteView(!quoteView)}>X</button>
                 <form onSubmit={e=>onSubmit(e)}>
                 {
-                    field.default && <Fragment>
+                    field.default && <Fragment ref={scrollTo}>
                         
                         <label className="song-info">
                             Put quote from your favorite author, select it from history, movie, book, song, etc.
@@ -79,7 +78,7 @@ const AddQuote = ({setAlert, quoteView, setQuoteView, user, addQuote}) => {
                     </Fragment>
                 }
                 {
-                    field.text && <Fragment>
+                    field.text && <Fragment ref={scrollTo}>
                         <div className="textSongLabel"><CKEditor editor={ClassicEditor} onChange={handleText} /></div>
                         <Alert />
                         {
@@ -92,7 +91,7 @@ const AddQuote = ({setAlert, quoteView, setQuoteView, user, addQuote}) => {
                     </Fragment>
                 }
                 {
-                    field.submit && <Fragment>
+                    field.submit && <Fragment ref={scrollTo}>
                         <label className="song-info">
                             Have you finished the customization?
                         </label>

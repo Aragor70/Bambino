@@ -47,11 +47,7 @@ const ProfilePictures = ({ profile, setProfileNav, profileNav, pictureLimit='10'
                                 {
                                     pictureScreen && <div className="addshadow" onClick={e=> setPictureScreen(false)}></div>
                                 }
-                            <div className="officialArrows" >
-                                {
-                                    pageNumbers.map(number => <div className="officialArrow" key={number} onClick={e=>setCurrentPage(number + 1)}>{number + 1}</div>)
-                                }
-                            </div>
+                            
                         </div>
                     </Fragment>
                 }

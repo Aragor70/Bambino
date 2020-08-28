@@ -146,7 +146,7 @@ const Profile = ({auth: {user, loading}, profile:{profile}, getSongs, getPosts, 
                 
                 {
                     hiddenData && <Fragment>
-                        <div className="personal-param"> age:{ReactHtmlParser('&nbsp')} <Moment format="YYYY-DD-MM">{profile.age}</Moment></div>
+                        <div className="personal-param"> age:{ReactHtmlParser('&nbsp')} <Moment format="YYYY-MM-DD">{profile.age}</Moment></div>
                         <div className="personal-param"> location: {profile.location} </div>
                         <div className="personal-param"> passion: {profile.passion} </div>
                         <div className="personal-param"> status: {profile.status} </div>
@@ -169,7 +169,7 @@ const Profile = ({auth: {user, loading}, profile:{profile}, getSongs, getPosts, 
             </div>
             <div className="list-contents">
         <div className="pop-category">
-            Pictures
+            <Link to={`/profile/${user._id}/pictures`}> Pictures </Link>
         </div>  
     <div className="list-content">
               
@@ -177,7 +177,7 @@ const Profile = ({auth: {user, loading}, profile:{profile}, getSongs, getPosts, 
         
     </div>
         <div className="pop-category">
-            Quotes
+            <Link to={`/profile/${user._id}/quotes`}> Quotes </Link>
             {
                 profileQuotes.length > 2 && <button type="button" className="more-btn"><Link to={`/profile/${user._id}/quotes`}>Check more !</Link></button>
             }
@@ -187,14 +187,14 @@ const Profile = ({auth: {user, loading}, profile:{profile}, getSongs, getPosts, 
         <QuotePagination user={user} quotes={quotes} label="Quotes" labelUrl="quotes" quotesLimitPerPage="2" />
     </div>
         <div className="pop-category">
-            Community
+            <Link to={`/profile/${user._id}/community`}> Community </Link>
             {
                 profilePosts.length > 5 && <button type="button" className="more-btn"><Link to={`/profile/${user._id}/community`}>Check more !</Link></button>
             }
         </div> 
     <div className="list-content">
         
-        <PostPagination user={user} posts={posts} label="Posts" labelUrl="posts" postsLimitPerPage="5"  />
+        <PostPagination user={user} posts={posts} label="Posts" labelUrl="posts" postsLimitPerPage="5" numbers={false}  />
 
     </div>
         <div className="pop-category">
@@ -215,44 +215,27 @@ const Profile = ({auth: {user, loading}, profile:{profile}, getSongs, getPosts, 
                 </div>
                 
             </Fragment>)}
-            {
-                songs && pageNumbers.length > 0 && <Fragment>
-                    <div className="pageNumbers">
-                    {
-                    pageNumbers.map(number=><div className="pageNumber" onClick={e=>setCurrentPage(number)}> {number} </div>)
-                    }
-                    </div>
-                </Fragment>
-            }
+            
             
             </div>
         }
         
         </div>
         <div className="pop-category">
-            Titles uploaded by {user.name}
+            <Link to={`/profile/${user._id}/songs`}> Titles uploaded by {user.name} </Link>
             {
                 profileSongs.length > 5 && <button type="button" className="more-btn"><Link to={`/profile/${user._id}/songs`}>Check more !</Link></button>
             }
         </div> 
     <div className="list-content">
         
-        <Pagination user={user} songs={songs} removeLike={removeLike} addLike={addLike} label="Songs" labelUrl="songs" songsLimitPerPage="5" />
+        <Pagination user={user} songs={songs} removeLike={removeLike} addLike={addLike} label="Songs" labelUrl="songs" songsLimitPerPage="5" numbers={false} />
         
     </div>
     
         </div>
         </div>
-                
-                
-
-                <Recommendation hiddenRecomm={hiddenRecomm} showRecomm={showRecomm} />
-                <Quote hiddenQuote={hiddenQuote} showQuote={showQuote} />
-                <CreateQuote hiddenQuote={hiddenCreateQuote} showQuote={showQuote} />
-                <CreateRecommendation hiddenRecomm={hiddenCreateRecomm} showCreateRecomm={showCreateRecomm} />
-                
-                
-                
+        
                 </div>
             </Fragment>
             }
