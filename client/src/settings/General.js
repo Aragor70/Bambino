@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import {connect} from 'react-redux';
 import {removeComment, getSongs} from '../actions/song';
 import PropTypes from 'prop-types';
-import {deleteAccount} from '../actions/profile';
+import {deleteAccount, getCurrentProfile} from '../actions/profile';
 import AddSecret from '../settings/AddSecret';
 import AddPersonal from '../settings/AddPersonal';
 import AddNewsletter from '../settings/AddNewsletter';

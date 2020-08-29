@@ -62,3 +62,4 @@ export const Update_Quote = 'Update_Quote';
 export const Add_Album_Image = 'Add_Album_Image';
 export const Edit_Album = 'Edit_Album';
 export const Remove_Album = 'Remove_Album';
+export const Github_Error = 'Github_Error';

@@ -96,7 +96,7 @@ const ProfileSchema = new mongoose.Schema({
             default: Date.now
         }   
     }],
-    social:{
+    social:[{
         youtube: {
             type: String
         },
@@ -112,7 +112,7 @@ const ProfileSchema = new mongoose.Schema({
         instagram: {
             type: String
         }
-    },
+    }],
     footer:[{
         user:{
             type: mongoose.Schema.Types.ObjectId,

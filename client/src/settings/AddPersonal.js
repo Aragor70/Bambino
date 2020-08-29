@@ -7,17 +7,17 @@ import {updateUser} from '../actions/auth';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {withRouter} from 'react-router-dom';
-import {createProfile, getCurrentProfile} from '../actions/profile';
+import {createProfile} from '../actions/profile';
 import ReactHtmlParser from 'react-html-parser';
 import ProfileGithub from '../profiles/ProfileGithub';
 import {getGithubRepos} from '../actions/profile';
-import Moment from 'react-moment';
+import moment from 'moment';
 
-const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, getCurrentProfile, profile:{profile, loading}, getGithubRepos, repos}) => {
+const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, profile:{profile, loading}, getGithubRepos, repos}) => {
 
 
     const [formData, setFormData] = useState({
-        age: null,
+        age: '',
         gender: '',
         location: '',
         passion: '',
@@ -32,16 +32,12 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
         instagram: ''
         
     });
+    
     useEffect(() => {
-        getCurrentProfile();
-
-    }, []);
-    useEffect(() => {
-        getCurrentProfile();
-        getGithubRepos(githubusername);
+        
         if(profile){
             setFormData({
-                age: loading || !profile.age ? '' : profile.age,
+                age: loading || !profile.age ? '' : moment(profile.age).format("YYYY-MM-DD"),
                 gender: loading || !profile.gender ? '' : profile.gender,
                 location: loading || !profile.location ? '' : profile.location,
                 passion: loading || !profile.passion ? '' : profile.passion,
@@ -49,16 +45,22 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
                 skills: loading || !profile.skills ? '' : profile.skills,
                 bio: loading || !profile.bio ? '' : profile.bio,
                 githubusername: loading || !profile.githubusername ? '' : profile.githubusername,
-                youtube: loading || !profile.social.youtube ? '' : profile.social.youtube,
-                twitter: loading || !profile.social.twitter ? '' : profile.social.twitter,
-                facebook: loading || !profile.social.facebook ? '' : profile.social.facebook,
-                linkedin: loading || !profile.social.linkedin ? '' : profile.social.linkedin,
-                instagram: loading || !profile.social.instagram ? '' : profile.social.instagram
-            });
+                
+
+                youtube: loading || !profile.social[0].youtube ? '' : profile.social[0].youtube,
+                twitter: loading || !profile.social[0].twitter ? '' : profile.social[0].twitter,
+                facebook: loading || !profile.social[0].facebook ? '' : profile.social[0].facebook,
+                linkedin: loading || !profile.social[0].linkedin ? '' : profile.social[0].linkedin,
+                instagram: loading || !profile.social[0].instagram ? '' : profile.social[0].instagram
+            })
+            console.log(profile.status)
+            
         }
         
     }, [loading]);
 
+
+    
     const {
         age,
         gender,
@@ -131,12 +133,11 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
                         <label className="personalLabel"> <select className="personalInput" name="gender" value={gender} onChange={(e)=> handleChange(e)} ><option value={gender ? gender : null}>{gender ? gender : "gender"}</option><option value="male">male</option><option value="female">female</option></select></label>
                         <label className="personalLabel"> <select className="personalInput" name="status" value={status} onChange={(e)=> handleChange(e)} ><option value={status ? status : null}>{status ? status : "status"}</option><option value="single">single</option><option value="in a relationship">in a relationship</option></select></label>
                                 
+                        <label className="personalLabel"> <input className="personalInput" type="text" value={location} name="location" onChange={(e)=> handleChange(e)} placeholder=" .city" /></label>
                         <label className="personalLabel"> <input className="personalInput" type="text" value={passion} name="passion" onChange={(e)=> handleChange(e)} placeholder=" .passion" /></label>
                         <label className="personalLabel"> <input className="personalInput" type="text" value={skills} name="skills" onChange={(e)=> handleChange(e)} placeholder=" .skills" /></label>
                         
-                        {
-                            age ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, text:!field.text})}}>Next -></button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("Age is required value.", "danger")}}>Next -></button>
-                        }
+                        <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, text:!field.text})}}>Next -></button>
 
                         <button type="button" className="nextButton" onClick={e=>setPersonalView(!personalView)}>Cancel</button>
                     </Fragment>
@@ -223,10 +224,9 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
 AddPersonal.propTypes = {
     setAlert: PropTypes.func.isRequired,
     createProfile: PropTypes.func.isRequired,
-    getCurrentProfile: PropTypes.func.isRequired,
     getGithubRepos: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     repos: state.profile.repos
 });
-export default connect(mapStateToProps, {setAlert, updateUser, createProfile, getCurrentProfile, getGithubRepos})(AddPersonal);
+export default connect(mapStateToProps, {setAlert, updateUser, createProfile, getGithubRepos})(AddPersonal);
