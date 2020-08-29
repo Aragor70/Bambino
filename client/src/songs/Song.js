@@ -49,7 +49,7 @@ const Song = ({videoUrl, history, match, song:{song, loading, songs}, auth:{user
     }, [toggleComment])
     
     // <div className="song-label">{user && user.avatar.charAt(0) == "/" ? <img src={user.avatar} height="24px" /> : <img src={require(`../../uploads/avatar/${user.avatar}`)} height="24px" />} {song.name} </div>
-
+    
     return(
         <Fragment>
         <div className="shield">
