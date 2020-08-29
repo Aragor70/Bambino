@@ -26,11 +26,11 @@ const PostPagination = ({user, posts, label, labelUrl, postsLimitPerPage, number
 
 
     const totalPosts = currentPosts.length;
-    const lastPageNumber = totalPosts / postsPerPage;
+    const lastPageNumber = Math.ceil(totalPosts / postsPerPage);
     
     const pageNumbers = []
 
-    for(let i = 1; i < lastPageNumber + 1; i++){
+    for(let i = 1; i <= lastPageNumber; i++){
         pageNumbers.push(i)
     }
 

@@ -26,11 +26,11 @@ const Pagination = ({user, songs, removeLike, addLike, label, labelUrl, songsLim
 
 
     const totalSongs = currentSongs.length;
-    const lastPageNumber = totalSongs / songsPerPage;
+    const lastPageNumber = Math.ceil(totalSongs / songsPerPage);
     
     const pageNumbers = []
 
-    for(let i = 1; i < lastPageNumber + 1; i++){
+    for(let i = 1; i <= lastPageNumber; i++){
         pageNumbers.push(i)
     }
 

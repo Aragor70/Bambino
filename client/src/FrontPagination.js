@@ -25,15 +25,6 @@ const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, 
     const selectedSongs = currentSongs.slice(indexOfFirstPost, indexOfLastPost);
     
 
-    const totalSongs = currentSongs.length;
-    const lastPageNumber = totalSongs / songsPerPage;
-    
-    const pageNumbers = []
-
-    for(let i = 1; i <= lastPageNumber; i++){
-        pageNumbers.push(i)
-    }
-
     return (
         <Fragment>
         {

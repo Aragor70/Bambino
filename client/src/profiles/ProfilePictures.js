@@ -18,7 +18,7 @@ const ProfilePictures = ({ profile, setProfileNav, profileNav, pictureLimit='10'
 
     const pictures = profile.pictures.slice(firstIndex, lastIndex)
 
-    const lastPage = total / picturesPerPage;
+    const lastPage = Math.ceil(total / picturesPerPage);
 
     const lastPictureIndex = total - lastIndex
 
