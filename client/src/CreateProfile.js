@@ -69,7 +69,7 @@ const CreateProfile = ({createProfile, history, auth: {user}}) => {
                 
                 <div onClick={()=>toggleInputs(!displayToggleInputs)} className="social-btn" ref={scrollTo}>Social network website address <img className="editImage" src={ require('./style/add.png') } /> </div>
                 {displayToggleInputs && <Fragment>
-                    <label className="profileLabel"><input className="profileInput" type="text" name="githubusername" value={githubusername} onChange={(e)=> handleChange(e)} placeholder=" .github url" /><img className="editImage" src={ require('./style/edit.png') } /></label>
+                    <label className="profileLabel"><input className="profileInput" type="text" name="githubusername" value={githubusername} onChange={(e)=> handleChange(e)} placeholder=" .github user" /><img className="editImage" src={ require('./style/edit.png') } /></label>
                     <label className="profileLabel"><input className="profileInput" type="text" name="youtube" value={youtube} onChange={(e)=> handleChange(e)} placeholder=" .youtube url" /><img className="editImage" src={ require('./style/edit.png') } /></label>
                     <label className="profileLabel"><input className="profileInput" type="text" name="twitter" value={twitter} onChange={(e)=> handleChange(e)} placeholder=" .twitter url" /><img className="editImage" src={ require('./style/edit.png') } /></label>
                     <label className="profileLabel"><input className="profileInput" type="text" name="facebook" value={facebook} onChange={(e)=> handleChange(e)} placeholder=" .facebook url" /><img className="editImage" src={ require('./style/edit.png') } /></label>

@@ -51,11 +51,11 @@ const ProfileAbout = ({ profile }) => {
                     {
                         profile.social && <Fragment> 
                             <div className="social-label"> Follow me on:
-                                 {profile.social.youtube && <div className="about-info"><a href={profile.social.youtube}> youtube </a> </div>} 
-                                 {profile.social.twitter && <div className="about-info"><a href={profile.social.twitter}>twitter </a> </div>} 
-                                 {profile.social.facebook && <div className="about-info"><a href={profile.social.facebook}>facebook </a> </div>}
-                                 {profile.social.linkedin && <div className="about-info"><a href={profile.social.linkedin}>linkedin </a> </div>}
-                                 {profile.social.instagram && <div className="about-info"><a href={profile.social.instagram}>instagram </a> </div>} 
+                                 {profile.social[0].youtube && <div className="about-info"><a href={profile.social[0].youtube}> youtube </a> </div>} 
+                                 {profile.social[0].twitter && <div className="about-info"><a href={profile.social[0].twitter}>twitter </a> </div>} 
+                                 {profile.social[0].facebook && <div className="about-info"><a href={profile.social[0].facebook}>facebook </a> </div>}
+                                 {profile.social[0].linkedin && <div className="about-info"><a href={profile.social[0].linkedin}>linkedin </a> </div>}
+                                 {profile.social[0].instagram && <div className="about-info"><a href={profile.social[0].instagram}>instagram </a> </div>} 
 
                             </div>
                         </Fragment>

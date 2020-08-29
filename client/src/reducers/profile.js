@@ -1,4 +1,4 @@
-import { Get_Profile, Get_Profiles, Get_Repos, Profile_Error, Clear_Profile, Update_Profile, Add_Author_Subscribe, Add_File, Get_Views, Add_Picture } from "../actions/types";
+import { Get_Profile, Get_Profiles, Get_Repos, Profile_Error, Clear_Profile, Update_Profile, Add_Author_Subscribe, Add_File, Get_Views, Add_Picture, Github_Error } from "../actions/types";
 
 const initialState = {
     profile: null,
@@ -25,6 +25,8 @@ export default function(state = initialState, action){
             return {...state, profile: payload, loading: false}
         case Clear_Profile:
             return {...state, profile: null, repos: [], loading: false};
+        case Github_Error:
+            return {...state, repos:[], loading: false}
         case Profile_Error:
             return {...state, error: payload, loading: false, profile: null}
         case Add_Author_Subscribe:
