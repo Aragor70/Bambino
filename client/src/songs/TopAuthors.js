@@ -65,7 +65,7 @@ const TopAuthors = ({ profile:{profiles}, author:{authors}, getProfiles, getAuth
 
     const selectedAuthors = authorsBySubValue.slice(firstIndex, lastIndex);
         
-    const theLastPage = total / authorsPerPage;
+    const theLastPage = Math.ceil(total / authorsPerPage);
 
     const pageNumbers = []
 

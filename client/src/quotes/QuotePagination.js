@@ -27,11 +27,11 @@ const QuotePagination = ({user, quotes, label, labelUrl, quotesLimitPerPage }) =
 
 
     const totalQuotes = currentQuotes.length;
-    const lastPageNumber = totalQuotes / quotesPerPage;
+    const lastPageNumber = Math.ceil(totalQuotes / quotesPerPage);
 
     const pageNumbers = []
 
-    for(let i = 1; i < lastPageNumber + 1; i++){
+    for(let i = 1; i <= lastPageNumber; i++){
         pageNumbers.push(i)
     }
     let profileQuotes = quotes.filter(quote => quote.user == user._id);
