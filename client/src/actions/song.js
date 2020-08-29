@@ -136,7 +136,7 @@ export const addSongImage = (id, file) => async dispatch => {
     try{
         const res = await axios.post(`/api/songs/image/${id}`, formData, config)
         dispatch({type: Add_Song_Image, payload: res.data});
-        dispatch(setAlert('Song uploaded', 'success'));
+        dispatch(setAlert('Song image uploaded', 'success'));
 
     }
     catch(err){
