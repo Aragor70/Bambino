@@ -190,15 +190,15 @@ router.post('/image/:id', auth, async(req, res) => {
             image: file.name
         }
         await author.images.unshift(newImage);
-        console.log(`${__dirname}/client/uploads/authors/image/${file.name}`)
-        file.mv(`./client/uploads/authors/image/${file.name}`, err => {
+        res.json(console.log(`${__dirname}/client/uploads/authors/image/${file.name}`))
+        file.mv(`.client/uploads/authors/image/${file.name}`, err => {
             if(err){
                 console.error(err);
                 return res.status(500).send(err);
             }
         });
-        //await author.save();
-        console.log(author.images)
+        await author.save();
+        
         res.json(author.images)
 
     }
