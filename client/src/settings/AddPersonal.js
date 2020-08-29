@@ -134,7 +134,9 @@ const AddPersonal = ({setAlert, personalView, setPersonalView, createProfile, ge
                         <label className="personalLabel"> <input className="personalInput" type="text" value={passion} name="passion" onChange={(e)=> handleChange(e)} placeholder=" .passion" /></label>
                         <label className="personalLabel"> <input className="personalInput" type="text" value={skills} name="skills" onChange={(e)=> handleChange(e)} placeholder=" .skills" /></label>
                         
-                        <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, text:!field.text})}}>Next -></button>
+                        {
+                            age ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, text:!field.text})}}>Next -></button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("Age is required value.", "danger")}}>Next -></button>
+                        }
 
                         <button type="button" className="nextButton" onClick={e=>setPersonalView(!personalView)}>Cancel</button>
                     </Fragment>
