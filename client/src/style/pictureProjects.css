@@ -558,7 +558,7 @@
 .featureOfficial
 {
     min-width: 100%;
-    height: 35vh;
+    height: 45vh;
     float: left;
     box-sizing: border-box;
     font-size: 17.5px;
@@ -571,7 +571,7 @@
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-template-rows: repeat(6,1fr);
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .official0

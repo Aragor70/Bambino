@@ -147,6 +147,7 @@ const SongAuthor = ({match, getAuthor, getSongs, getAuthors, song:{songs}, autho
 
                         <div className="author-metric">
                             <p>metric details</p>
+                            
                             <div className="author-info"><div className="mini-label">nationality: </div>
                             {author.nationality ? author.nationality : "None"}
                             </div>
