@@ -191,7 +191,7 @@ router.post('/image/:id', auth, async(req, res) => {
         }
         await author.images.unshift(newImage);
         
-        file.mv(`./client/uploads/authors/image/${file.name}`, err => {
+        file.mv(`./build/uploads/authors/image/${file.name}`, err => {
             if(err){
                 console.error(err);
                 return res.status(500).send(err);
