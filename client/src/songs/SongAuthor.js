@@ -68,7 +68,7 @@ const SongAuthor = ({match, getAuthor, getSongs, getAuthors, song:{songs}, autho
     const [imageInputView, setImageInputView] = useState(false);
     const [editInputView, setEditInputView] = useState(false);
 
-    console.log(<img src={require(`../../uploads/${author.images[0].image}`)} />)
+    
 
     return (
         <Fragment>
@@ -78,7 +78,7 @@ const SongAuthor = ({match, getAuthor, getSongs, getAuthors, song:{songs}, autho
                     
                         <div className="author-top">
                         <div className="author-image">
-                        {author.images[0] ? <img src={require(`../../uploads/${author.images[0].image}`)} /> : <img src={require("../style/guitar.png")} height="32px" />}
+                        {author.images[0] ? <img src={require(`../../uploads/authors/image/${author.images[0].image}`)} /> : <img src={require("../style/guitar.png")} height="32px" />}
                             
                         </div>
                         <div className="author-name">
