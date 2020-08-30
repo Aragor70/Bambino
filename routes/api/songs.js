@@ -215,8 +215,8 @@ router.post('/image/:id', auth, async(req, res) => {
             image: file.name
         }
         song.images.unshift(newImage);
-        console.log(`${__dirname}/client/uploads/songs/image/${file.name}`)
-        file.mv(`${__dirname}/client/uploads/songs/image/${file.name}`, err => {
+        
+        file.mv(`./client/uploads/songs/image/${file.name}`, err => {
             if(err){
                 console.error(err);
                 return res.status(500).send(err);
