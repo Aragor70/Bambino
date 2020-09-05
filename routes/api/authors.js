@@ -324,7 +324,7 @@ router.post('/albumImage/:author_id/:id', auth, upload, async(req, res) => {
         }
         let album = author.albums.filter(album => album._id == req.params.id)
         
-        let albumFile = req.files.image.name.split('.');
+        let albumFile = req.files.file.name.split('.');
         const fileType = albumFile[albumFile.length - 1];
 
         const encodedName = `${uuid()}.${fileType}`
@@ -332,7 +332,7 @@ router.post('/albumImage/:author_id/:id', auth, upload, async(req, res) => {
         const params = {
             Bucket: 'onloud-storage/author/album/image',
             Key: encodedName,
-            Body: req.files.image.data
+            Body: req.files.file.data
         }
 
         s3.upload(params, (error, data) => {
