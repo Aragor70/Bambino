@@ -5,11 +5,21 @@ const {check, validationResult} = require('express-validator');
 const config = require('config');
 const axios = require('axios');
 const bcrypt = require('bcryptjs');
+const AWS = require('aws-sdk');
+const {v4: uuid} = require('uuid');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const Author = require('../../models/Author');
 const Song = require('../../models/Song');
+const upload = require('../../middleware/upload');
+
+// connect with aws amazon storage
+const s3 = new AWS.S3({
+    accessKeyId: process.env.AWS_ID,
+    secretAccessKey: process.env.AWS_SECRET
+})
+
 
 //route get    api/profile/me
 //description  get user profile
@@ -411,12 +421,13 @@ router.post('/footer', [auth, [
         res.status(500).send('Server error.');
     }
 });
-
+// upload test
 router.post('/upload', auth, async(req, res) => {
+    
     if(req.files === null){
         return res.status(400).json({msg: 'No file uploaded.'})
     }
-    const file= req.files.file;
+
     const user = await User.findById(req.user.id).select('-password');
     if(!user){
         return res.status(400).json({msg: 'User not authorised.'})
@@ -446,40 +457,49 @@ router.post('/upload', auth, async(req, res) => {
 
 });
 
-router.post('/avatar', auth, async(req, res) => {
-    
+router.post('/avatar', auth, upload, async(req, res) => {
     
     try{
-        const file = req.files.file;
-         
-    
-        if(req.files === null){
-            return res.status(400).json({msg: 'No file uploaded.'})
-        }
-        
-        //let fileName = file.name;
-        //const salt = await bcrypt.genSalt(10);
-        //fileName = await bcrypt.hash(fileName, salt);
-
-
-        let userFields = {};
-        if(file) userFields.avatar = file.name;
-
 
         let user = await User.findById(req.user.id);
         if(!user){
             return res.status(400).json({msg: 'User not authorised.'})
         }
+
+        if(req.files === null){
+            return res.status(400).json({msg: 'No file uploaded.'})
+        }
         
+        let avatarFile = req.files.image.name.split('.');
+        const fileType = avatarFile[avatarFile.length - 1];
+
+        const encodedName = `${uuid()}.${fileType}`;
+
+        const params = {
+            Bucket: 'onloud-storage/profile/avatar',
+            Key: encodedName,
+            Body: req.files.image.data
+        }
         
+
+        let userFields = {};
+        userFields.avatar = encodedName;
+
         user = await User.findByIdAndUpdate({_id:req.user.id}, userFields, {new: true});
 
-        file.mv(`./client/uploads/avatar/${file.name}`, err => {
-            if(err){
-                console.error(err);
-                return res.status(500).send(err);
+        s3.upload(params, (error, data) => {
+            if(error){
+                return res.status(400).send('File is not valid.')
             }
-        });
+        })
+
+        //file.mv(`./client/uploads/avatar/${file.name}`, err => {
+        //    if(err){
+        //        console.error(err);
+        //        return res.status(500).send(err);
+        //    }
+        //});
+
         await user.save()
         res.json(user);
     }
@@ -487,7 +507,6 @@ router.post('/avatar', auth, async(req, res) => {
         console.error(err.message);
         res.status(500).send('Server error.');
     }
-
 });
 
 router.get('/song_history', auth, async(req, res) => {
@@ -522,30 +541,56 @@ router.get('/song_history', auth, async(req, res) => {
         res.status(500).send('Server error.');
     }
 })
-router.post('/pictures', auth, async(req, res) => {
+
+
+router.post('/pictures', auth, upload, async(req, res) => {
     try{
-        const file = req.files.file;
 
-
-        if(req.files == null){
+        if(req.files === null){
             return res.status(400).json({msg: 'The file was not selected.'});
         }
         const profile = await Profile.findOne({user: req.user.id});
+        if(!profile){
+            return res.status(400).json({msg: 'Profile not found.'})
+        }
         const user = await User.findById(req.user.id).select('-password');
+        if(!user){
+            return res.status(400).json({msg: 'User not authorised.'})
+        }
+        
+        let pictureFile = req.files.image.name.split('.');
+        const fileType = pictureFile[pictureFile.length - 1];
+
+        const encodedName = `${uuid()}.${fileType}`;
+
+        const params = {
+            Bucket: 'onloud-storage/profile/picture',
+            Key: encodedName,
+            Body: req.files.image.data
+        }
+        
+
+        s3.upload(params, (error, data) => {
+            if(error){
+                return res.status(400).send('File is not valid.')
+            }
+        })
 
         profile.pictures.unshift({
             user: req.user.id,
             name: user.name,
             avatar: user.avatar,
-            fileName: file.name
-        })
+            fileName: encodedName
+        });
 
-        file.mv(`./client/uploads/picture/${file.name}`, err => {
+
+        /* file.mv(`./client/uploads/picture/${file.name}`, err => {
             if(err){
                 console.error(err);
                 return res.status(500).send(err);
             }
-        });
+        }); */
+        
         await profile.save();
         res.json(profile.pictures);
     }

@@ -3,6 +3,9 @@ require('dotenv').config({ path: './config/config.env' })
 const express = require('express');
 const connect = require('./config/db');
 const fileUpload = require('express-fileupload');
+const multer = require('multer');
+const {v4: uuid} = require('uuid');
+const AWS = require('aws-sdk')
 
 const path = require('path')
 
@@ -16,10 +19,9 @@ if(process.env.NODE_ENV === "production") {
     // connect Mongo database
     connect();
 
-    
-
     // init middleware
     app.use(express.json({ extended: false }))
+
 
     app.use(fileUpload());
     

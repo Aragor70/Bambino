@@ -20,7 +20,7 @@ const AvatarScreen = ({ pictureContent:{index, fileName}, pictureScreen, setPict
         <Fragment>
             <div className="pictureScreen" ref={scrollTo} onClick={e=>setPictureScreen(false)}>
             
-            {fileName.charAt(0) == "/" ? <img onClick={e => setPictureScreen(!pictureScreen)} src={fileName} height="100%" /> : <img onClick={e => setPictureScreen(!pictureScreen)} src={require(`../../uploads/avatar/${fileName}`)} height="100%" />}
+            {fileName.charAt(0) == "/" ? <img onClick={e => setPictureScreen(!pictureScreen)} src={fileName} height="100%" /> : <img onClick={e => setPictureScreen(!pictureScreen)} src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${fileName}`} height="100%" />}
              
             </div>
         </Fragment>

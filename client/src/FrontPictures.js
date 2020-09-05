@@ -102,7 +102,7 @@ const FrontPictures = ({authors, profiles, labelUrl, authorsLimitPerPage, author
                 
                 <div className={`picture official${index}`} key={author._id} onClick={e => {setFrontAuthors(false), setFrontAuthor(true), setAuthorContent(author)}}>
                     {
-                        author.images[0] ? <img src={require(`../uploads/authors/image/${author.images[0].image}`)} /> : <img src={require("./style/guitar.png")} />
+                        author.images[0] ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${author.images[0].image}`} /> : <img src={require("./style/guitar.png")} />
                     }  
                     <div className="officialName">{author.name}</div>
                 

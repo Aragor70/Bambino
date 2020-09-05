@@ -8,19 +8,21 @@ import ReactHtmlParser from 'react-html-parser';
 import AddSongTrack from './AddSongImage';
 import EditSong from './EditSong';
 import ReactPlayer from 'react-player';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { getAuthors } from '../actions/author';
 
-const Song = ({videoUrl, history, match, song:{song, loading, songs}, auth:{user}, getSong, addView, addLike, removeLike, addComment, removeSong}) => {
+const Song = ({videoUrl, history, match, song:{song, loading, songs}, author: {authors}, auth:{user}, getSong, getAuthors, addView, addLike, removeLike, addComment, removeSong}) => {
 
     
 
     useEffect(() => {
         addView(match.params.id);
-    }, []);
+    }, [match.params.id]);
     
     useEffect(() => {
         getSong(match.params.id);
-    }, [getSong, songs]);
+        getAuthors()
+    }, [getSong, songs, match.params.id]);
 
     const [imageInputView, setImageInputView] = useState(false);
     const [editInputView, setEditInputView] = useState(false);
@@ -47,6 +49,10 @@ const Song = ({videoUrl, history, match, song:{song, loading, songs}, auth:{user
             scrollTo.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
         }
     }, [toggleComment])
+    if(song){
+        var songAuthor = authors.filter(author => author.author == song.author)
+    }
+    console.log(songAuthor)
     
     // <div className="song-label">{user && user.avatar.charAt(0) == "/" ? <img src={user.avatar} height="24px" /> : <img src={require(`../../uploads/avatar/${user.avatar}`)} height="24px" />} {song.name} </div>
     
@@ -73,7 +79,7 @@ const Song = ({videoUrl, history, match, song:{song, loading, songs}, auth:{user
                     
         <div className="song-main">
                      
-            <div className="song-bar">{song.author} - {song.title}</div>
+            <div className="song-bar"><Link to={`/authors/${songAuthor[0]._id}`}>{song.author}</Link> - {song.title}</div>
                 <div className="song-text">{ReactHtmlParser(song.text)}</div>
                 
                 {
@@ -148,7 +154,7 @@ const Song = ({videoUrl, history, match, song:{song, loading, songs}, auth:{user
                     <td>language:</td><td>{song.language ? song.language : "None"}</td>
                     
                     </tr>
-                    <div className="post-label">{song.avatar.charAt(0) == "/" ? <img src={song.avatar} height="24px" /> : <img src={require(`../../uploads/avatar/${song.avatar}`)} height="24px" />} {song.name}, <Moment format="YYYY-MM-DD">{song.date}</Moment> </div>
+                    <div className="post-label">{song.avatar.charAt(0) == "/" ? <img src={song.avatar} height="24px" /> : <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${song.avatar}`} height="24px" />} {song.name}, <Moment format="YYYY-MM-DD">{song.date}</Moment> </div>
                 
                 </div>
                  
@@ -194,10 +200,12 @@ Song.propTypes = {
     addLike: PropTypes.func.isRequired,
     getSong: PropTypes.func.isRequired,
     removeSong: PropTypes.func.isRequired,
-    song: PropTypes.object.isRequired
+    song: PropTypes.object.isRequired,
+    getAuthors: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     auth: state.auth,
-    song: state.song
+    song: state.song,
+    author: state.author
 })
-export default connect(mapStateToProps, { getSong, removeSong, addLike, addView, removeLike, addComment })(withRouter(Song));
+export default connect(mapStateToProps, { getSong, removeSong, addLike, getAuthors, addView, removeLike, addComment })(withRouter(Song));

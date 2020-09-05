@@ -153,7 +153,7 @@ router.post('/edit/:id', [auth, [
         
         if(title) songFields.title = title;
         if(author) songFields.author = author.author;
-
+        songFields.avatar = user.avatar;
 
         song = await Song.findByIdAndUpdate({_id:req.params.id}, songFields, {new:true})
 

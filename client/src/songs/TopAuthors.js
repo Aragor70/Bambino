@@ -10,7 +10,7 @@ const TopAuthors = ({ profile:{profiles}, author:{authors}, getProfiles, getAuth
     useEffect(() => {
         getProfiles()
         getAuthors()
-    }, [])
+    }, [getAuthors])
 
     const mapSubscribes = profiles.map(profile => profile.subscribes)
     const authorsArray = mapSubscribes.flat(1).map(sub => sub.author)

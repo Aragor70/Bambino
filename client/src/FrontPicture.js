@@ -24,14 +24,14 @@ const FrontPicture = ({songs, labelUrl, authorContent, setAuthorContent, frontAu
             
                 <div className="front-author-picture">
                     {
-                        authorContent.images[0] ? <Link to={`/authors/${authorContent._id}`}><img src={require(`../uploads/authors/image/${authorContent.images[0].image}`)} /></Link> : <Link to={`/authors/${authorContent._id}`}><img src={require("./style/guitar.png")} /></Link>
+                        authorContent.images[0] ? <Link to={`/authors/${authorContent._id}`}><img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${authorContent.images[0].image}`} /></Link> : <Link to={`/authors/${authorContent._id}`}><img src={require("./style/guitar.png")} /></Link>
                     }
                 </div>
                 <div className="front-author-songs"><p>album collection:</p><div className="toScrollIt">
                     {
                         authorContent.albums.length == 0 ? "no album yet..." : authorContent.albums.map(album => <Fragment key={album._id}>
                             <div className="front-author-album" key={album._id}>
-                                <Link to={`/authors/${authorContent._id}/album/${album._id}`}> {album.album} ({album.year}){ReactHtmlParser('&nbsp')} {album.images[0] ? <img src={require(`../uploads/authors/album/${album.images[0].image}`)} /> : <img src={require("./style/guitar.png")} />} </Link>
+                                <Link to={`/authors/${authorContent._id}/album/${album._id}`}> {album.album} ({album.year}){ReactHtmlParser('&nbsp')} {album.images[0] ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/album/image/${album.images[0].image}`} /> : <img src={require("./style/guitar.png")} />} </Link>
                             </div>
                         </Fragment>)
                             

@@ -42,7 +42,7 @@ const PictureScreen = ({ pictureContent:{index, fileName}, pictures, lastIndex, 
               {
                 index !== 0 && <img className="prevPictureBtn" src={require('../style/prev.png')} onClick={e=>switchPrev()} />
               }
-              <img ref={scrollTo} src={require(`../../uploads/picture/${fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:'', fileName: ''})}} />
+              <img ref={scrollTo} src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:'', fileName: ''})}} />
               {
                 index !== 9 && index !== pictures.length - 1 && <img className="nextPictureBtn" src={require('../style/next.png')} onClick={e=>switchNext()} />
               }

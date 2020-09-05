@@ -10,7 +10,7 @@ const TopSongs = ({getSongs, song: {songs, loading}, removeLike, addLike, auth:{
 
     useEffect(() => {
         getSongs()
-    }, []);
+    }, [getSongs]);
 
     function compareLikes(a, b){
         const valueA = a.likes.length

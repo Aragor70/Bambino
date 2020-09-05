@@ -27,7 +27,7 @@ const FrontSubscribes = ({history, profile, author:{authors}, getAuthors, setLis
             {
                 theList.map((author, index) => <Fragment key={author._id}>
                     <div className="sub-row" key={author._id}>
-                <Link to={`/authors/${author._id}`} onClick={e=>setList(false)}>{author.image !== null ? <img src={require(`../uploads/authors/image/${author.image}`)} height="15.5px" /> : <img src={require("./style/guitar.png")} height="15.5px" />}{ReactHtmlParser('&nbsp')} {author.author}</Link>
+                <Link to={`/authors/${author._id}`} onClick={e=>setList(false)}>{author.image !== null ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${author.image}`} height="15.5px" /> : <img src={require("./style/guitar.png")} height="15.5px" />}{ReactHtmlParser('&nbsp')} {author.author}</Link>
                     </div>
                     </Fragment>)
             }

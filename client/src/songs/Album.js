@@ -39,6 +39,7 @@ const Album = ({match, history, getAuthor, getSongs, auth:{user}, author:{author
         })
     })
     
+    
     const [songExist, setSongExist] = useState(1);
 
 return (
@@ -54,7 +55,7 @@ return (
                                 
                                 <div className="album-page-name"><Link to={`/authors/${author._id}`}>{author.author}</Link></div>
                                 
-                                    <div id="album-picture"> {album.images[0] ? <img src={require(`../../uploads/authors/album/${album.images[0].image}`)} /> : <img src={require("../style/guitar.png")} height="32px" />} </div>
+                                    <div id="album-picture"> {album.images[0] ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/album/image/${album.images[0].image}`} /> : <img src={require("../style/guitar.png")} height="32px" />} </div>
                                     <div className="album-main">
                                         
                                         <div className="album-name-bar">

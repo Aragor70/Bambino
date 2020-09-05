@@ -14,7 +14,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture official${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -29,7 +29,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture uno${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -44,7 +44,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture duo${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -59,7 +59,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture trio${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -74,7 +74,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture quarte${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -89,7 +89,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture quinto${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -104,7 +104,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture sexto${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -119,7 +119,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture septimo${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -134,7 +134,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture octavo${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -149,7 +149,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture noveno${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {
@@ -164,7 +164,7 @@ const PictureComposition = ({official = false, pictures, pageNumbers, setCurrent
             {
                 pictures && pictures.map((picture, index) => <Fragment key={picture._id}>
                     <div className={`picture p${index}`}>
-                        <img src={require(`../../uploads/picture/${picture.fileName}`)} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
+                        <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/picture/${picture.fileName}`} onClick={e => {setPictureScreen(!pictureScreen), setPictureContent({index:index, fileName: picture.fileName})}} />
                     </div>
 
                 {

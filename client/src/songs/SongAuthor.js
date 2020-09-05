@@ -18,12 +18,12 @@ const SongAuthor = ({match, getAuthor, getSongs, getAuthors, song:{songs}, autho
 
     useEffect(() => {
         getCurrentProfile()
-    }, [])
+    }, [getCurrentProfile])
     useEffect(() => {
         getAuthor(match.params.id);
         getAuthors()
         getSongs()
-    }, []);
+    }, [match.params.id]);
     
     function compareFunction(a, b){
         const nameA = a.title;
@@ -78,7 +78,7 @@ const SongAuthor = ({match, getAuthor, getSongs, getAuthors, song:{songs}, autho
                     
                         <div className="author-top">
                         <div className="author-image">
-                        {author.images[0] ? <img src={require(`../../uploads/authors/image/${author.images[0].image}`)} /> : <img src={require("../style/guitar.png")} height="32px" />}
+                        {author.images[0] ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${author.images[0].image}`} /> : <img src={require("../style/guitar.png")} height="32px" />}
                             
                         </div>
                         <div className="author-name">

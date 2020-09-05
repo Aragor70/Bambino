@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Link, Router} from 'react-router-dom';
 import Moment from 'react-moment';
+import moment from 'moment';
 import CreateQuote from './CreateQuote';
 import CreateRecommendation from './CreateRecommendation';
 import Quote from './Quote';

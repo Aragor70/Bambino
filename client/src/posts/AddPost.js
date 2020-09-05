@@ -14,9 +14,6 @@ const AddPost = ({addPost, getPosts, post: {posts}, setAlert, postInputView, set
         getPosts()
     }, [])
     
-    
-    
-    
 
     const [field, setField] = useState({
         default: true,

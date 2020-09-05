@@ -143,7 +143,7 @@ const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, p
                         filterUser.length>0 && <Fragment> <div className="search-bar" ><b>User name:</b></div>
                             {
                                 
-                                sortUsers.map(user=> <Link to={`/profile/${user.id}`} key={user.id} ><div className="search-data" key={user.id} onClick={e=>setSearchValue('')} >{user.avatar.charAt(0) == "/" ? <img src={user.avatar} height="90%" /> : <img src={require(`../uploads/avatar/${user.avatar}`)} height="90%" />} {user.name}</div></Link>)
+                                sortUsers.map(user=> <Link to={`/profile/${user.id}`} key={user.id} ><div className="search-data" key={user.id} onClick={e=>setSearchValue('')} >{user.avatar.charAt(0) == "/" ? <img src={user.avatar} height="90%" /> : <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${user.avatar}`} height="90%" />} {user.name}</div></Link>)
                             }
                         </Fragment>
                     }

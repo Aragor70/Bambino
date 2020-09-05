@@ -13,7 +13,7 @@ const Comment = ({comment, songId, removeComment, auth:{user, loading}}) => {
             {
                 !loading && <Fragment>
                     <div className="comment-label">
-                <div className="post-label">{comment.avatar.charAt(0) == "/" ? <img src={comment.avatar} height="24px" /> : <img src={require(`../../uploads/avatar/${comment.avatar}`)} height="24px" />} {comment.name} {moment(comment.date).format("YYYY-MM-DD HH:mm:ss")}</div>
+                <div className="post-label">{comment.avatar.charAt(0) == "/" ? <img src={comment.avatar} height="24px" /> : <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${comment.avatar}`} height="24px" />} {comment.name} {moment(comment.date).format("YYYY-MM-DD HH:mm:ss")}</div>
                 <div className="comment-text"> {comment.text} </div>
                 {
                     comment.user == user._id && <Fragment>

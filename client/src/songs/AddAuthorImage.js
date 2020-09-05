@@ -29,7 +29,7 @@ const AddAuthorImage = ({setAlert, imageInputView, setImageInputView, author, ad
         e.preventDefault();
         addAuthorImage(author._id, file);
 
-        setUploadedFile({name: fileName, path: `/uploads/authors/image/${file.name}`});
+        setUploadedFile({name: fileName});
         setFileName('Choose File');
 
         setImageInputView(false);
@@ -57,7 +57,7 @@ const AddAuthorImage = ({setAlert, imageInputView, setImageInputView, author, ad
                         
                         <label className="add-avatar" htmlFor="image">
                         {
-                            file ? file.name : author.image && <img src={require(`../../uploads/authors/image/${author.image}`)} height="30px" />
+                            file ? file.name : author.image && <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${author.image}`} height="30px" />
                         }
                         </label>
 
