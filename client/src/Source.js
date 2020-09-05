@@ -26,7 +26,7 @@ const Personal = ({user, profile}) => {
             <p>name - {user.name}</p>
             <p>age - {profile.age}</p>
             <p>status - {profile.status}</p>
-            <p>avatar - {user.name}</p>
+            <p>avatar - {user.avatar}</p>
             <p>e-mail - {user.email}</p>
         </div>
     </Fragment>

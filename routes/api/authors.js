@@ -6,10 +6,23 @@ const axios = require('axios');
 const bcrypt = require('bcryptjs');
 
 const uploadExpress = require('express-fileupload');
+const multer = require('multer')
+const {v4: uuid} = require('uuid')
+const AWS = require('aws-sdk')
+const path = require('path')
+const multerS3 = require('multer-s3')
+
 
 const User = require('../../models/User');
 const Author = require('../../models/Author');
 const Profile = require('../../models/Profile');
+const upload = require('../../middleware/upload');
+
+// connect with aws amazon storage
+const s3 = new AWS.S3({
+    accessKeyId: process.env.AWS_ID,
+    secretAccessKey: process.env.AWS_SECRET
+})
 
 // route post   api/authors
 // description  post new author
@@ -166,12 +179,15 @@ router.post('/album/:id', [auth, [
     }
 });
 
-router.post('/image/:id', auth, async(req, res) => {
-    try{
-        const file = req.files.file;
 
-        if(req.files === null){
-            return res.status(400).json({msg: 'No file uploaded.'});
+
+
+
+router.post('/image/:id', auth, upload, async(req, res) => {
+        
+    try{
+        if(!req.files){
+            return res.status(400).json({msg: 'File not found.'})
         }
 
         const user = await User.findById(req.user.id);
@@ -181,22 +197,38 @@ router.post('/image/:id', auth, async(req, res) => {
 
         let author = await Author.findById(req.params.id)
 
-        //let fileName = file.name;
-        //const salt = await bcrypt.genSalt(10);
-        //fileName = await bcrypt.hash(fileName, salt);
+        let myFile = req.files.image.name.split(".")
+        const fileType = myFile[myFile.length - 1]
+        
+        const encodedName = `${uuid()}.${fileType}`
+
+        const params = {
+            Bucket: "onloud-storage/author/image",
+            Key: encodedName,
+            Body: req.files.image.data
+        }
 
         const newImage = {
             user: req.user.id,
-            image: file.name
+            image: encodedName
         }
         await author.images.unshift(newImage);
         
-        file.mv(`./client/uploads/authors/image/${file.name}`, err => {
-            if(err){
-                console.error(err);
-                return res.status(500).send(err);
+        s3.upload(params, (error, data) => {
+            if(error){
+                return res.status(400).send('File is not valid.')
             }
+            
         });
+
+        //file.mv(`./client/uploads/authors/image/${file.name}`, err => {
+        //    if(err){
+        //        console.error(err);
+        //        return res.status(500).send(err);
+        //    }
+        //});
+
+
         await author.save();
         
         res.json(author.images)
@@ -228,6 +260,7 @@ router.post('/edit/:id', [auth, [
     if(genres) authorFields.genres = req.body.genres;
     if(instruments) authorFields.instruments = req.body.instruments;
     if(bio) authorFields.bio = req.body.bio;
+    
 
     try{
         
@@ -253,7 +286,7 @@ router.post('/edit/:id', [auth, [
         const name = author.charAt(0).toUpperCase() + author.slice(1);
 
         if(author) authorFields.author = name;
-
+        authorFields.avatar = user.avatar
 
 
         currentAuthor = await Author.findByIdAndUpdate({_id:req.params.id}, authorFields, {new:true})
@@ -272,10 +305,9 @@ router.post('/edit/:id', [auth, [
 // description  post album image
 // access       private
 
-router.post('/albumImage/:author_id/:id', auth, async(req, res) => {
+router.post('/albumImage/:author_id/:id', auth, upload, async(req, res) => {
     try{
-        const file = req.files.file;
-
+        
         if(req.files === null){
             return res.status(400).json({msg: 'No file uploaded.'});
         }
@@ -290,25 +322,31 @@ router.post('/albumImage/:author_id/:id', auth, async(req, res) => {
             return res.status(400).json({ msg: 'Author not found.'})
         }
         let album = author.albums.filter(album => album._id == req.params.id)
-        //let fileName = file.name;
-        //const salt = await bcrypt.genSalt(10);
-        //fileName = await bcrypt.hash(fileName, salt);
         
-        
+        let albumFile = req.files.image.name.split('.');
+        const fileType = albumFile[albumFile.length - 1];
+
+        const encodedName = `${uuid()}.${fileType}`
+
+        const params = {
+            Bucket: 'onloud-storage/author/album/image',
+            Key: encodedName,
+            Body: req.files.image.data
+        }
+
+        s3.upload(params, (error, data) => {
+            if(error){
+                return res.status(400).send('File is not valid.')
+            }
+        })
+
         const newImage = {
             user: req.user.id,
-            image: file.name
+            image: encodedName
         }
 
         album[0].images.unshift(newImage)
 
-
-        file.mv(`./client/uploads/authors/album/${file.name}`, err => {
-            if(err){
-                console.error(err);
-                return res.status(500).send(err);
-            }
-        });
         author.albums.map(a => a._id == req.params.id ? album : a)
         await author.save();
 
@@ -337,11 +375,19 @@ router.post('/albumEdit/:author_id/:id', [auth, [
     
     try{
         let author = await Author.findById(req.params.author_id);
-        
+        if(!author){
+            return res.status(400).json({msg: 'Author is not found.'})
+        }
+        const user = await User.findById(req.user.id)
+        if(!user){
+            return res.status(400).json({msg: 'User not authorised.'})
+        }
+
         let album = author.albums.filter(album => album._id == req.params.id)
 
         album[0].album = req.body.album,
-        album[0].year = req.body.year
+        album[0].year = req.body.year,
+        album[0].avatar = user.avatar
         
         await author.save()
 

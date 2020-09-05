@@ -41,7 +41,7 @@ const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, 
                         song.title && <Link to={`/${labelUrl}/${song._id}`}>{index + 1}. {song.title} - {song.author}</Link>
                     }
                     {
-                        song.bio && <Link to={`/${labelUrl}/${song._id}`}>{song.images[0] ? <img src={require(`../uploads/authors/image/${song.images[0].image}`)} /> : <img src={require("./style/guitar.png")} />}</Link>
+                        song.bio && <Link to={`/${labelUrl}/${song._id}`}>{song.images[0] ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${song.images[0].image}`} /> : <img src={require("./style/guitar.png")} />}</Link>
                     }
                     
                     {

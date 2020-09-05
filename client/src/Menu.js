@@ -12,7 +12,7 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
         <div className="user-menu">
             <div className="user-menu-nickname">
             
-                {user ? <>{user.avatar.charAt(0) == "/" ? <img src={user.avatar} className="add-mrg-right" height="90%" /> : <img src={require(`../uploads/avatar/${user.avatar}`)} className="add-mrg-right" height="90%" />}{user.name}</> : "nickname"}
+                {user ? <>{user.avatar.charAt(0) == "/" ? <img src={user.avatar} className="add-mrg-right" height="90%" /> : <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${user.avatar}`} className="add-mrg-right" height="90%" />}{user.name}</> : "nickname"}
             </div>
                 <hr />
             <Link to='/' onClick={e=>setMenu(!menu)}><div className="user-menu-btn">

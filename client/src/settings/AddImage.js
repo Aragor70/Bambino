@@ -56,7 +56,7 @@ const AddImage = ({setAlert, imageView, setImageView, user, addAvatar}) => {
                         
                         <label className="add-avatar" htmlFor="avatar">
                         {
-                            file ? file.name : user.avatar && user.avatar.charAt(0) == "/" ? <img src={user.avatar} height="30px" /> : <img src={require(`../../uploads/avatar/${user.avatar}`)} height="30px" />
+                            file ? file.name : user.avatar && user.avatar.charAt(0) == "/" ? <img src={user.avatar} height="30px" /> : <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${user.avatar}`} height="30px" />
                         }
                         </label>
 
@@ -64,14 +64,11 @@ const AddImage = ({setAlert, imageView, setImageView, user, addAvatar}) => {
                             <input type="file" name="avatar" id="avatar" onChange={e=>fileSelectHandler(e)}/>
                             <label htmlFor="avatar" className="fileInput" >{fileName}</label>
                         </form>
-                        
-                        
 
                         <Alert />
                         {
                             fileName !== 'Choose file' ? <button type="button" className="nextButton add-mrg-right" onClick={e=>{setField({default:!field.default, submit:!field.submit})}}>Next -></button> : <button type="button" className="nextButton add-mrg-right" onClick={e=>{setAlert("File cannot be empty.", "danger")}}>Next -></button>
                         }
-
 
                         <button type="button" className="nextButton" onClick={e=>setImageView(!imageView)}>Cancel</button>
                     </Fragment>

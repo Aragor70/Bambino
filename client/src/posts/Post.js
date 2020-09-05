@@ -72,7 +72,7 @@ const Post = ({match, history, post:{post, loading, posts}, addLike, removeLike,
                             }
                             
                         </div>
-                        <div className="post-label">{post.avatar.charAt(0) == "/" ? <img src={post.avatar} height="24px" /> : <img src={require(`../../uploads/avatar/${post.avatar}`)} height="24px" />} {post.name}, <Moment format="YYYY-MM-DD">{post.date}</Moment> </div>
+                        <div className="post-label">{post.avatar.charAt(0) == "/" ? <img src={post.avatar} height="24px" /> : <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${post.avatar}`} height="24px" />} {post.name}, <Moment format="YYYY-MM-DD">{post.date}</Moment> </div>
                         </div>
                         {
                 toggleComment == true && <Fragment> 

@@ -17,7 +17,7 @@ const TopList = ({getSongs, getAuthors, getProfiles, profile:{profiles}, auth:{u
         getSongs()
         getAuthors()
         getProfiles()
-    }, []);
+    }, [getSongs, getAuthors, getProfiles]);
 
     const [titleView, setTitleView] = useState(true);
     const [authorView, setAuthorView] = useState(false);

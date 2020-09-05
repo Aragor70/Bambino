@@ -117,7 +117,7 @@ const Library = ({getSongs, getAuthors, getViews, auth:{user}, author:{authors},
                                         songsArray.map((song, index) => <Fragment key={index}>
                                             <div className="liked-box">
                                             <div className="boxed-song" key={index}>
-                                                <div className="liked-avatar">{readyAuthors[index] && readyAuthors[index]  ? <img src={require(`../../uploads/authors/image/${readyAuthors[index]}`)} height="32px" /> : <img src={require("../style/guitar.png")} height="32px" />}</div>
+                                                <div className="liked-avatar">{readyAuthors[index] && readyAuthors[index]  ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/${authorImage}`} height="32px" /> : <img src={require("../style/guitar.png")} height="32px" />}</div>
                                                 <div className="liked-author">{song.author}</div>
                                                 <div className="liked-title"><Link to={`/songs/${song._id}`}> {song.title} </Link></div>
 

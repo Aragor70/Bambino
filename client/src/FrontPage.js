@@ -21,14 +21,14 @@ import FrontPictures from './FrontPictures';
 import FrontPicture from './FrontPicture';
 import { getProfiles } from './actions/profile';
 
-const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSongs, profile:{profiles}, quote:{quotes}, song:{songs}, auth:{user}, addLike, removeLike}) => {
+const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSongs, profile:{profiles}, quote:{quotes}, song:{songs, loading}, auth:{user}, addLike, removeLike}) => {
 
     useEffect(()=> {
         getAuthors();
         getQuotes()
         getSongs()
         getProfiles()
-    }, []);
+    }, [getSongs, loading]);
 
     
     
