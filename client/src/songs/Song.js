@@ -97,7 +97,10 @@ const Song = ({videoUrl, history, match, song:{song, loading, songs}, author: {a
                         
                             {
                                 user && song.user == user._id && <Fragment><div className="mod-song-buttons">
-                                    <button className="edit-song-button"><img src={ require('../style/uploadPhoto.png') } height="24px" onClick={e=>setImageInputView(!imageInputView)} /></button>
+                                    {
+                                        //<button className="edit-song-button"><img src={ require('../style/uploadPhoto.png') } height="24px" onClick={e=>setImageInputView(!imageInputView)} /></button>
+                                    }
+                                    
                                     <button className="edit-song-button"><img src={ require('../style/edit.png') } height="24px" onClick={e=>setEditInputView(!editInputView)} /></button>
                                     <button onClick={e=> {removeSong(song._id), history.push('/')}} className="rm-song-button">X</button>
                                     </div>

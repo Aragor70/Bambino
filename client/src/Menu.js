@@ -19,7 +19,7 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
                 home
             </div></Link>
             
-            <Link to="top_songs" onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
+            <Link to="/top_songs" onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
                 top list
             </div></Link>
             <Link to="/library" onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
