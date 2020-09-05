@@ -2,3 +2,5 @@ node_modules/
 default.json
 /build
 /client/node_modules
+/uploads
+/client/uploads
