@@ -470,7 +470,7 @@ router.post('/avatar', auth, upload, async(req, res) => {
             return res.status(400).json({msg: 'No file uploaded.'})
         }
         
-        let avatarFile = req.files.image.name.split('.');
+        let avatarFile = req.files.file.name.split('.');
         const fileType = avatarFile[avatarFile.length - 1];
 
         const encodedName = `${uuid()}.${fileType}`;
@@ -478,7 +478,7 @@ router.post('/avatar', auth, upload, async(req, res) => {
         const params = {
             Bucket: 'onloud-storage/profile/avatar',
             Key: encodedName,
-            Body: req.files.image.data
+            Body: req.files.file.data
         }
         
 
@@ -558,7 +558,7 @@ router.post('/pictures', auth, upload, async(req, res) => {
             return res.status(400).json({msg: 'User not authorised.'})
         }
         
-        let pictureFile = req.files.image.name.split('.');
+        let pictureFile = req.files.file.name.split('.');
         const fileType = pictureFile[pictureFile.length - 1];
 
         const encodedName = `${uuid()}.${fileType}`;
@@ -566,7 +566,7 @@ router.post('/pictures', auth, upload, async(req, res) => {
         const params = {
             Bucket: 'onloud-storage/profile/picture',
             Key: encodedName,
-            Body: req.files.image.data
+            Body: req.files.file.data
         }
         
 
