@@ -186,6 +186,7 @@ router.post('/album/:id', [auth, [
 router.post('/image/:id', auth, upload, async(req, res) => {
         
     try{
+        
         if(!req.files){
             return res.status(400).json({msg: 'File not found.'})
         }
@@ -197,7 +198,7 @@ router.post('/image/:id', auth, upload, async(req, res) => {
 
         let author = await Author.findById(req.params.id)
 
-        let myFile = req.files.image.name.split(".")
+        let myFile = req.files.file.name.split(".")
         const fileType = myFile[myFile.length - 1]
         
         const encodedName = `${uuid()}.${fileType}`
@@ -205,7 +206,7 @@ router.post('/image/:id', auth, upload, async(req, res) => {
         const params = {
             Bucket: "onloud-storage/author/image",
             Key: encodedName,
-            Body: req.files.image.data
+            Body: req.files.file.data
         }
 
         const newImage = {
