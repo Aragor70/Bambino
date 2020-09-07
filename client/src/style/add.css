@@ -25,7 +25,7 @@
     background-color: #2a2a2a;
     min-width: auto;
     min-height: 30vh;
-    z-index: 9;
+    z-index: 10;
     border: 1vh solid #252525;
     box-sizing: border-box;
     margin-left: 15px;
@@ -303,7 +303,7 @@ button
     background-color: #2a2a2a;
     min-width: auto;
     min-height: 30vh;
-    z-index: 9;
+    z-index: 10;
     border: 1vh solid #252525;
     box-sizing: border-box;
     margin-left: 0;
