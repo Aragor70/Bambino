@@ -70,7 +70,7 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
                                     </div>
 
                                     
-                                    <div className="head-view-avatar">{readyAuthors[index] && readyAuthors[index]  ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/${readyAuthors[index]}`} height="32px" /> : <img src={require("../style/guitar.png")} height="32px" />}</div>
+                                    <div className="head-view-avatar">{readyAuthors[index] && readyAuthors[index]  ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${readyAuthors[index]}`} height="32px" /> : <img src={require("../style/guitar.png")} height="32px" />}</div>
                                     <div className="head-view-author">{song.author}</div>
                                     <div className="head-view-title"><Link to={`/songs/${song._id}`}> {song.title} </Link></div>
                                 
@@ -81,7 +81,7 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
                                     {
                                         song.image && <Fragment>
                                             <div className="song-image-view">
-                                                <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/authors/image/${song.image}`} />
+                                                <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${song.image}`} />
                                             </div>
                                         </Fragment>
                                     }
