@@ -298,6 +298,7 @@
     font-size: 19.5px;
     position: relative;
     background-color: #121212;
+    font-family: 'Concert One', cursive;
 }
 .pop-category > a
 {
@@ -351,6 +352,7 @@
     
     font-size: 19.5px;
     position: relative;
+    font-family: 'Concert One', cursive;
 }
 .pop-info
 {
@@ -1477,7 +1479,7 @@
         text-align: center;
         margin-bottom: 0;
         background-color: #252525;
-        font-size: 20.5px;
+        font-size: 25.5px;
     }
     
     
@@ -1494,7 +1496,7 @@
         text-align: center;
         margin-bottom: 0;
         
-        font-size: 19.5px;
+        font-size: 25.5px;
     }
     .pop-info
     {
