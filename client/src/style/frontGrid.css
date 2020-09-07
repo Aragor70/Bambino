@@ -670,6 +670,15 @@
 {
     background-color: #2a2a2a;
 }
+.newSign
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    font-size: 14.5px;
+    color: #49c500;
+}
 
 @media (min-width: 640px){
     .front-top
@@ -1167,6 +1176,15 @@
     margin: 30px;
 }
 
+.newSign
+{
+    position: absolute;
+    top: 0;
+    right: 15%;
+    z-index: 0;
+    font-size: 14.5px;
+    color: #49c500;
+}
 
 }
 @media (min-width: 1023px){

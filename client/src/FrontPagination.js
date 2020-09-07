@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import Moment from 'react-moment';
+import moment from 'moment';
 
 const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, songsLimitPerPage }) => {
 
+    
 
     const [currentSongs, setCurrentSongs] = useState([]);
 
@@ -38,7 +39,7 @@ const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, 
                 
                 <div className="pop-info" key={song._id} >
                     {
-                        song.title && <Link to={`/${labelUrl}/${song._id}`}>{index + 1}. {song.title} - {song.author}</Link>
+                        song.title && <Link to={`/${labelUrl}/${song._id}`}>{index + 1}. {song.title} - {song.author} {moment(song.date).format("YYYY-MM-DD") >= moment().subtract('days', 7).format("YYYY-MM-DD") && <div className="newSign">NEW</div>}</Link>
                     }
                     {
                         song.bio && <Link to={`/${labelUrl}/${song._id}`}>{song.images[0] ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${song.images[0].image}`} /> : <img src={require("./style/guitar.png")} />}</Link>
