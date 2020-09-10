@@ -37,6 +37,7 @@ import PropTypes from 'prop-types';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
 import Alert from './Alert';
+import Games from './Games';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
@@ -73,7 +74,6 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
         author:[]
 
     });
-
     
 
     return(
@@ -162,6 +162,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 </Route>
                 <Route exact path="/forgotpassword/">
                     <ForgotPassword />
+                </Route>
+                <Route exact path="/games">
+                    <Games />
                 </Route>
             </main>
             </Router>

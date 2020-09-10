@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+  }
+  header {
+    text-align: center;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+  }
+  .grid-wrapper {
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .grid {
+    align-items: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 550px;
+    width: 600px;
+    padding: 5px;
+    position: relative;
+    background-image: url('./sky6.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 20.5px
+  }
+  .frontPage > p
+  {
+    width: 100%;
+    font-size: 17.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .p1
+  {
+    
+    position: absolute;
+    bottom: 55%;
+    left: 0;
+  }
+  .p2
+  {
+    
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+  }
+  .p3
+  {
+    
+    position: absolute;
+    bottom: 45%;
+    left: 0;
+  }
+
+  .spaceSpan
+  {
+    width: auto;
+    height: 22px;
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+    font-size: 17.5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+  .moveSpan
+  {
+    width: auto;
+    height: 22px;
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    font-size: 17.5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .grid > div {
+    
+    flex-grow: 1;
+    height: 10%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shooter img
+  {
+    width: 30px;
+    height: 30px;
+  }
+  .baloon img
+  {
+    width: 40px;
+    height: 45px;
+  }
+  .toxic img
+  {
+    width: 50px;
+    height: 55px;
+  }
+  .shot img
+  {
+    width: 50px;
+    height: 25px;
+  }
+  .bullet
+  {
+    width: 50px;
+    height: 25px;
+    font-weight: bold;
+    position: absolute;
+    animation-timing-function: linear;
+    animation: mymove 3.5s;
+    z-index: 0;
+  }
+  @keyframes mymove {
+    from {left: 10%;}
+    to {left: 105%;}
+  }
+
+  .startBtn
+  {
+    font-size: 25.5px;
+    height: 12vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 2px solid green;
+    position: absolute;
+    top: 20vh;
+    left: 25%;
+    right: 25%;
+  }
+  .defeat, .victory
+  {
+    font-size: 25.5px;
+    height: 12vh;
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid green;
+    margin-bottom: 15px;
+  }
+
+  .score
+  {
+    min-width: 60px;
+    height: 30px;
+    float: left;
+    position: absolute;
+    top: 0;
+    right: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35.5px;
+    padding: 5%;
+    color: #fff;
+  }
+  .timer
+  {
+    min-width: 65px;
+    height: 30px;
+    float: left;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35.5px;
+    padding: 5%;
+    color: #fff;
+  }
+  .smoke img
+  {
+    width: 50px;
+    height: 40px;
+    z-index: 2;
+  }
+  .grid .space
+  {
+    width: 14vh;
+    height: 14vh;
+    float: left;
+    position: absolute;
+    bottom: 20%;
+    right: 17%;
+  }
+  .keyUp
+  {
+    width: 5vh;
+    height: 5vh;
+    float: left;
+    position: absolute;
+    bottom: 16.75%;
+    right: 10%;
+  }
+  .keyDown
+  {
+    width: 5vh;
+    height: 5vh;
+    float: left;
+    position: absolute;
+    bottom: 11.25%;
+    right: 10%;
+  }
+  .frontPage
+  {
+    display: block;
+    float: left;
+  }

@@ -1,5 +1,7 @@
 node_modules/
+/config/default.json
 /build
 /client/node_modules
 /uploads
 /client/uploads
+/config/config.env
