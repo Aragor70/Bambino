@@ -20,6 +20,7 @@ import FrontPagination from './FrontPagination';
 import FrontPictures from './FrontPictures';
 import FrontPicture from './FrontPicture';
 import { getProfiles } from './actions/profile';
+import FrontNav from './FrontNav';
 
 const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSongs, profile:{profiles}, quote:{quotes}, song:{songs, loading}, auth:{user}, addLike, removeLike}) => {
 
@@ -33,12 +34,12 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
     
     
     const [frontAdd, setFrontAdd] = useState(false);
+    const [frontNav, setFrontNav] = useState(false);
 
     const [frontAuthors, setFrontAuthors] = useState(true);
     const [frontAuthor, setFrontAuthor] = useState(false);
     const [authorContent, setAuthorContent] = useState([]);
 
-    console.log(authorContent)
 
     const [quoteView, setQuoteView] = useState(false);
     const [songInputView, setSongInputView] = useState(false);
@@ -116,8 +117,10 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
             <div className="shield-personal">
             
                 <div className="front-top">
-                    <div className="page-title" >HOME</div>
-
+                    <div className="page-title" onClick={e=>setFrontNav(!frontNav)}>HOME</div>
+                    {
+                        frontNav && <FrontNav frontNav={frontNav} setFrontNav={setFrontNav} />
+                    }
                     {
                         user ? <button id="front-addSong-button" onClick={e=>setFrontAdd(!frontAdd)}><img src={require('./style/plus.png')} /></button> : <Link to="/login" id="front-login-button" ><img src={require('./style/log_in.png')} />{ReactHtmlParser('&nbsp')} Log in</Link>
                     }
