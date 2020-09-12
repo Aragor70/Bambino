@@ -113,7 +113,7 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
 
 
     return (
-        <Fragment>
+        <Fragment >
             <div className="shield-personal">
             
                 <div className="front-top">
@@ -122,7 +122,7 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
                         frontNav && <FrontNav frontNav={frontNav} setFrontNav={setFrontNav} />
                     }
                     {
-                        user ? <button id="front-addSong-button" onClick={e=>setFrontAdd(!frontAdd)}><img src={require('./style/plus.png')} /></button> : <Link to="/login" id="front-login-button" ><img src={require('./style/log_in.png')} />{ReactHtmlParser('&nbsp')} Log in</Link>
+                        user ? <button id="front-addSong-button" onClick={e=>{setFrontAdd(!frontAdd), setFrontNav(false)}} ><img src={require('./style/plus.png')} /></button> : <Link to="/login" id="front-login-button" ><img src={require('./style/log_in.png')} />{ReactHtmlParser('&nbsp')} Log in</Link>
                     }
                     
                     
@@ -154,7 +154,7 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
                 </div>
             </div>
 
-                <div className="shield-personal">
+                <div className="shield-personal" onClick={e => setFrontNav(false)}>
                 
 
                     <div className="front-content">

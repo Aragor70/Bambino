@@ -37,7 +37,8 @@ import PropTypes from 'prop-types';
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
 import Alert from './Alert';
-import Games from './Games';
+import Games from './games/Games';
+import Balloons from './games/Balloons';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
@@ -165,6 +166,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 </Route>
                 <Route exact path="/games">
                     <Games />
+                </Route>
+                <Route exact path="/games/balloons">
+                    <Balloons />
                 </Route>
             </main>
             </Router>

@@ -104,6 +104,12 @@
     border-bottom: 1px solid #2a2a2a;
     background-color: #1a1a1a;
     z-index: 7;
+    position: relative;
+}
+.profile-nav .nav img
+{
+    position: absolute;
+    right: 15px;
 }
 
 .profile-mid
