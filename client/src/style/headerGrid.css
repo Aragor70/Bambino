@@ -189,6 +189,7 @@
     margin-left: 10%;
     border: none;
     border-bottom: 1px solid #121212;
+    z-index: 2;
 }
 #search-no-user
 {
@@ -211,6 +212,7 @@
     margin-left: 10%;
     border: none;
     border-bottom: 1px solid #121212;
+    z-index: 2;
 }
 .game-sticker
 {
@@ -275,6 +277,7 @@
     margin-left: calc(10% + 30px);
     border: none;
     border-bottom: 1px solid #121212;
+    z-index: 2;
 }
 #search-no-user
 {
@@ -297,6 +300,7 @@
     margin-left: calc(10% + 30px);
     border: none;
     border-bottom: 1px solid #121212;
+    z-index: 2;
 }
 
 }
