@@ -20,6 +20,7 @@ import './style/profileAdd.css';
 import './style/quoteGrid.css';
 import './style/pictureProjects.css';
 import './style/albumGrid.css';
+import './style/gamesGrid.css';
 
 import './style/profileTop.css';
 import './style/profileMain.css';

@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect } from 'react';
 
-import gun from './style/balloons/gun.png'
-import bullet1 from './style/balloons/bullet1.png'
-import smoke from "./style/balloons/smoke.png"
+import gun from '../style/balloons/gun.png'
+import bullet1 from '../style/balloons/bullet1.png'
+import smoke from "../style/balloons/smoke.png"
+import { Link } from 'react-router-dom';
 
 const Balloons = () => {
 
@@ -17,6 +18,7 @@ const Balloons = () => {
             var time = 0
             var timerId
             var baloonsId
+            
             const grid = document.querySelector('.grid')
             let frontPage = document.createElement('div')
     
@@ -50,7 +52,7 @@ const Balloons = () => {
             
             const spaceKey = document.createElement('img')
             spaceKey.className = 'space'
-            spaceKey.src = require("./style/balloons/space.png")
+            spaceKey.src = require("../style/balloons/space.png")
         
             frontPage.appendChild(spaceKey)
         
@@ -66,33 +68,33 @@ const Balloons = () => {
         
             const upKey = document.createElement('img')
             upKey.className = 'keyUp'
-            upKey.src = require("./style/balloons/keyUp.png")
+            upKey.src = require("../style/balloons/keyUp.png")
             
         
             frontPage.appendChild(upKey)
         
             const downKey = document.createElement('img')
             downKey.className = 'keyDown'
-            downKey.src = require("./style/balloons/keyDown.png")
+            downKey.src = require("../style/balloons/keyDown.png")
         
             frontPage.appendChild(downKey)
 
             var endAudio = document.querySelector('#endAudio')
         function balloonPop() {
             const balloonAudio = document.querySelector('#balloonPop')
-            balloonAudio.src = require('./style/balloons/pop.wav')
+            balloonAudio.src = require('../style/balloons/pop.wav')
             balloonAudio.volume = 0.2
             balloonAudio.play()
           }
           function toxicPop() {
             const toxicAudio = document.querySelector('#balloonPop')
-            toxicAudio.src = require('./style/balloons/cut.wav')
+            toxicAudio.src = require('../style/balloons/cut.wav')
             toxicAudio.volume = 0.2
             toxicAudio.play()
           }
           function shooterShot() {
             const shooterAudio = document.querySelector('#shooterShot')
-            shooterAudio.src = require('./style/balloons/shooting.wav')
+            shooterAudio.src = require('../style/balloons/shooting.wav')
             shooterAudio.volume = 0.1
             shooterAudio.play()
           }
@@ -250,7 +252,7 @@ const Balloons = () => {
                 if(result) result.textContent = `${score}/10`
                 }, 200)
                 if(score === 7){
-                  endAudio.src= require("./style/balloons/UEFA.mp3")
+                  endAudio.src= require("../style/balloons/UEFA.mp3")
                   endAudio.volume= 0.2;
                   endAudio.play()
                 }
@@ -366,13 +368,13 @@ const Balloons = () => {
                 let baloonPosition = Math.floor(Math.random() * (99 - 91 + 1)) + 91
                 let baloonImages = new Array()
                     
-                baloonImages[1] = require('./style/balloons/yellow.png')
-                baloonImages[2] = require('./style/balloons/blue.png')
-                baloonImages[3] = require('./style/balloons/red.png')
+                baloonImages[1] = require('../style/balloons/yellow.png')
+                baloonImages[2] = require('../style/balloons/blue.png')
+                baloonImages[3] = require('../style/balloons/red.png')
                 let toxicImages = new Array()
                 
-                toxicImages[1] = require('./style/balloons/toxic2.png')
-                toxicImages[2] = require('./style/balloons/toxic1.png')
+                toxicImages[1] = require('../style/balloons/toxic2.png')
+                toxicImages[2] = require('../style/balloons/toxic1.png')
             
                 let toxic = Math.random() < 0.2
                 let createImage
@@ -393,12 +395,15 @@ const Balloons = () => {
               }
 
               function updateTime(time){
-
+                
                 let timer = document.querySelector('.timer')
-                timer.innerText = `${time}/30`
+                
+                if (!timer) return
+
+                  timer.innerText = `${time}/30`
           
                 if (time === 30){
-                  endAudio.src=require("./style/balloons/defeat.wav");
+                  endAudio.src=require("../style/balloons/defeat.wav");
                   endAudio.volume = 0.2
                   endAudio.play()
                   clearInterval(baloonsId)
@@ -419,13 +424,13 @@ const Balloons = () => {
                 shooter.innerHTML = `<img src=${gun} width="30px"/>`
                 cells[shootPoint].appendChild(shooter)
               }
-            
         }, []);
 
         
 
     return (
     <Fragment>
+        <Link to="/games" className="back-arrow">{"<-"} Go to the other games</Link>
         <div className="grid-wrapper">
         <div className="grid"></div>
         </div>
