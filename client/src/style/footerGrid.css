@@ -1,0 +1,210 @@
+.footer
+{
+    width: 100%;
+    min-height: 25vh;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: grid;
+    
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.footer-content
+{
+    grid-column: 1/10;
+    grid-row: 2/10;
+    background-color: #49c500;
+    justify-content: center;
+    -webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    padding: 30px 50px 30px 50px;
+    margin: 0 -50px 0 -50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+    box-sizing: border-box;
+}
+.footer-content img
+{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 30px;
+    right: calc(50px + 15px);
+    cursor: pointer;
+    box-sizing: border-box;
+    transform: rotate(5deg);
+    transform-origin: 100%;
+
+}
+.footer-content div
+{
+    
+    transform: rotate(5deg);
+    transform-origin: 100%;
+    border-radius: 15px;
+    color: #121212;
+    font-size: 17.5px;
+    box-sizing: border-box;
+    
+}
+
+.links
+{
+    order: 1;
+    width: 70%;
+    min-height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.links > h1
+{
+    margin-bottom: 15px;
+}
+.links > p
+{
+    margin-bottom: 5px;
+    width: 100%;
+    height: 22px;
+    float: left;
+    box-sizing: border-box;
+    color: #121212;
+    
+}
+.message
+{
+    order: 2;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #121212;
+    margin-left: 30px;
+    margin-right: calc(30px + 30px);
+}
+
+@media (min-width: 1023px) {
+
+
+    .footer
+    {
+        width: 100%;
+        min-height: 50vh;
+        float: left;
+        box-sizing: border-box;
+        font-size: 14.5px;
+        position: relative;
+        background-color: #121212;
+        color: #7f7f7f;
+        display: grid;
+        
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(10,1fr);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    
+    .footer-content
+    {
+        grid-column: 1/10;
+        grid-row: 2/10;
+        background-color: #49c500;
+        justify-content: center;
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+        padding: 30px 50px 30px 50px;
+        margin: 0 -50px 0 -50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .footer-content img
+    {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 30px;
+        right: calc(50px + 15px);
+        cursor: pointer;
+        box-sizing: border-box;
+        transform: rotate(5deg);
+        transform-origin: 100%;
+    
+    }
+    .footer-content div
+    {
+        
+        transform: rotate(5deg);
+        transform-origin: 100%;
+        border-radius: 15px;
+        color: #121212;
+        font-size: 17.5px;
+        box-sizing: border-box;
+        
+    }
+    
+    .links
+    {
+        order: 1;
+        width: 70%;
+        min-height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px;
+        box-sizing: border-box;
+        margin-top: 50px;
+        margin-right: 0;
+        margin-bottom: 30px;
+        margin-left: 30px;
+    }
+    .message
+    {
+        order: 2;
+        width: 100%;
+        height: 12vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+        margin: 0;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #121212;
+        margin-left: 30px;
+        margin-right: calc(30px + 30px);
+    }
+}
