@@ -39,6 +39,7 @@ import ResetPassword from './ResetPassword';
 import Alert from './Alert';
 import Games from './games/Games';
 import Balloons from './games/Balloons';
+import Footer from './Footer';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
@@ -171,6 +172,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     <Balloons />
                 </Route>
             </main>
+            <footer className="footer">
+                <Footer user={user} />
+            </footer>
             </Router>
         </Fragment>
     );
