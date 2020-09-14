@@ -167,7 +167,7 @@ router.post('/forgotpassword', [
             message
         }) */ 
 
-        sgMail.setApiKey('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');
+        sgMail.setApiKey(process.env.SENGRID_KEY);
         const msg = {
           to: user.email,
           from: 'mikey.prus@gmail.com',
