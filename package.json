@@ -16,6 +16,7 @@
   "author": "Nicolai",
   "license": "MIT",
   "dependencies": {
+    "@sendgrid/mail": "^7.2.5",
     "aws-sdk": "^2.744.0",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
@@ -33,6 +34,7 @@
     "nodemailer": "^6.4.11",
     "path": "^0.12.7",
     "proxy": "^1.0.1",
+    "pug": "^3.0.0",
     "request": "^2.88.2",
     "uuid": "^8.3.0"
   },
