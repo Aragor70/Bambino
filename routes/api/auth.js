@@ -150,14 +150,14 @@ router.post('/forgotpassword', [
     // create url for reset
     const resetUrl = `${req.protocol}://${req.get('host')}/resetpassword/${resetToken}`;
     const message = `
-    Hi ${user.name},\n \n 
+    Hi ${user.name},<br /><br /> 
     You are receiving this email, because you (or someone else) requested to reset of a password. 
-    <b>Please click the address below to reset the password:</b> \n \n 
-    ${resetUrl} \n \n 
-    If you did not request a password reset, then please ignore this email or reply to let us know. \n
-    This password reset is only valid for the next 10 minutes. \n \n
-    Thank you, \n
-    Mikołaj: OnLoud.uk team \n
+    <b>Please click the address below to reset the password:</b> <br /><br /> 
+    ${resetUrl} <br /><br /> 
+    If you did not request a password reset, then please ignore this email or reply to let us know. <br />
+    This password reset is only valid for the next 10 minutes. <br /><br /> 
+    Thank you, <br />
+    Mikołaj: OnLoud.uk team <br />
     `;
     // ${req.protocol}://${req.get('host')}/api/auth/resetpassword/${resetToken}
     try {
