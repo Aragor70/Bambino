@@ -8,6 +8,9 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const {check, validationResult} = require('express-validator');
 const sendEmail = require('../../utils/sendEmail');
+const sgMail = require('@sendgrid/mail');
+
+const appMailer = require('../../mailers/appMailer');
 
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
@@ -58,6 +61,23 @@ router.post('/', [
             return res.status(400).json({ errors: [ { msg: 'Invalid Credentials.' } ] })
         }
 
+        /* 
+        // send notification
+        await appMailer.applicationNotify({
+            email: email.toLowerCase(),
+            data: {name: user.name.toLowerCase()}
+        }) */
+
+
+       /*  sgMail.setApiKey('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');
+        const msg = {
+          to: email,
+          from: 'mikey.prus@gmail.com',
+          subject: 'Bambino',
+          text: 'Ciao bambino'
+        };
+        sgMail.send(msg); */
+
 
         // return jsonwebtoken
 
@@ -85,6 +105,16 @@ router.post('/', [
             profile.logs.unshift(newLog)
             await profile.save()
         }
+
+        /* const application = {
+            'name': user.name,
+            'email': email.toLowerCase(),
+            'message': req.body.message
+        }
+        await User.create(application) */
+
+
+        
         
 
     }
@@ -131,11 +161,28 @@ router.post('/forgotpassword', [
     `;
     // ${req.protocol}://${req.get('host')}/api/auth/resetpassword/${resetToken}
     try {
-        await sendEmail({
+        /* await sendEmail({
             email: user.email,
             subject: 'OnLoad reset password.',
             message
-        })
+        }) */ 
+
+        sgMail.setApiKey('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');
+        const msg = {
+          to: user.email,
+          from: 'mikey.prus@gmail.com',
+          subject: 'OnLoad reset password.',
+          text: message
+        };
+        sgMail.send(msg);
+
+
+        /* // send notification
+        await appMailer.applicationNotify({
+            email: user.email.toLowerCase(),
+            data: {name: user.name.toLowerCase()}
+        }) */
+
         res.json('Email sent.')
     }
     catch(err) {
