@@ -151,7 +151,7 @@ router.post('/forgotpassword', [
     const resetUrl = `${req.protocol}://${req.get('host')}/resetpassword/${resetToken}`;
     const message = `
     Hi ${user.name},<br /><br /> 
-    You are receiving this email, because you (or someone else) requested to reset of a password. 
+    You are receiving this email, because you (or someone else) requested to reset of a password. <br /> 
     <b>Please click the address below to reset the password:</b> <br /><br /> 
     ${resetUrl} <br /><br /> 
     If you did not request a password reset, then please ignore this email or reply to let us know. <br />
