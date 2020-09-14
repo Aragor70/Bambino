@@ -172,7 +172,7 @@ router.post('/forgotpassword', [
           to: user.email,
           from: 'mikey.prus@gmail.com',
           subject: 'OnLoad reset password.',
-          text: message
+          html: message
         };
         sgMail.send(msg);
 
