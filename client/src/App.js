@@ -40,6 +40,7 @@ import Alert from './Alert';
 import Games from './games/Games';
 import Balloons from './games/Balloons';
 import Footer from './Footer';
+import Support from './support/Support';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
@@ -170,6 +171,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 </Route>
                 <Route exact path="/games/balloons">
                     <Balloons />
+                </Route>
+                <Route exact path="/support">
+                    <Support />
                 </Route>
             </main>
             <footer className="footer">

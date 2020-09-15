@@ -1,0 +1,45 @@
+.support-content
+{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+}
+.support-mid-tab
+{
+    grid-column: 4/7;
+    grid-row: 3/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.support-mid-tab > p
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 35px;
+    font-size: 23.5px;
+    font-family: 'Concert One', cursive;
+}
+.support-mid-tab > .support-input
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 35px;
+    font-size: 17.5px;
+}
