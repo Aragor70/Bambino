@@ -35,6 +35,7 @@ if(process.env.NODE_ENV === "production") {
     app.use('/api/authors', require('./routes/api/authors'));
     app.use('/api/newsletters', require('./routes/api/newsletters'));
     app.use('/api/quotes', require('./routes/api/quotes'));
+    app.use('/api/mails', require('./routes/api/mails'));
 
     
     app.get('*', (req, res) => {
