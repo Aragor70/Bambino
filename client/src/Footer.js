@@ -63,6 +63,7 @@ class Footer extends Component {
                             this.state.feedbackView && <Fragment>
                                 <div className='feedback-content'>
                                     <form onSubmit={e=>this.onSubmit(e)}>
+                                        <button type='button' className="x-top-right" onClick={e=>this.setState({feedbackView: false})}>X</button>
                                     <p>Feedback message</p>
                                     <div className="feedback-title">Please provide your opinion below.</div>
                                     
@@ -88,7 +89,7 @@ class Footer extends Component {
                             </Fragment>
                         }
                     <div className="message" onClick={e=>this.setState({ feedbackView: !this.state.feedbackView })}>
-                        send your feedback
+                        Feedback message
                     </div>
 
                     <div className="network-contant">
