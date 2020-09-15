@@ -97,7 +97,7 @@
 {
     order: 2;
     width: 100%;
-    height: 12vh;
+    height: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@
     top: 10vh;
     left: 9%;
     right: 9%;
-    bottom: -10vh;
+    bottom: -5vh;
     background-color: #2a2a2a;
     min-width: auto;
     min-height: 45vh;
@@ -129,7 +129,7 @@
     display: block;
     color: #fff;
 }
-.feedback-content > p
+.feedback-content p
 {
     margin: 0;
     padding: 0;
@@ -249,6 +249,15 @@
     align-items: center;
     font-size: 17.5px;
 }
+.feedback-content .x-top-right
+{
+    width: 35px;
+    height: 35px;
+    color: #fff;
+}
+
+
+
 @media (min-width: 640px) {
 .footer-content
 {
@@ -287,7 +296,7 @@
     margin-right: 15px;
     display: block;
 }
-.feedback-content > p
+.feedback-content p
 {
     margin: 0;
     padding: 0;
@@ -485,8 +494,8 @@
     .message
     {
         order: 2;
-        width: 100%;
-        height: 12vh;
+        width: 50%;
+        height: 9vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -515,7 +524,233 @@
         margin-right: 15px;
         display: block;
     }
-    .feedback-content > p
+    .feedback-content p
+    {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #2a2a2a;
+        width: auto;
+        height: 5.5vh;
+        z-index: 3;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        font-family: 'Concert One', cursive;
+        margin-bottom: 15px;
+    }
+    .feedback-title
+    {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        width: auto;
+        height: 4.5vh;
+        z-index: 3;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        color: #fff;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .radio-box
+    {
+        width: 50%;
+        width: auto;
+        height: 4.5vh;
+        z-index: 3;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        color: #fff;
+        float: left;
+        margin-bottom: 15px; 
+    
+    }
+    .feedback-content .radio-exp
+    {
+        display: block;
+        float: left;
+        margin-left: 20px;
+        width: 15px;
+        height: 15px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        
+    }
+    .feedback-message
+    {
+        resize: none;
+        width: 100%;
+        text-align: left;
+        display: block;
+        float: left;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+    
+    .feedback-input
+    {
+        resize: none;
+        width: 100%;
+        min-height: 4.5vh;
+        text-align: left;
+        display: block;
+        float: left;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        display: block;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .feedback-input input
+    {
+        width: 50%;
+        height: 4.5vh;
+        float: left;
+    }
+    .feedback-input span
+    {
+        width: 50%;
+        height: 4.5vh;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (min-width: 1300px) {
+
+    .footer
+    {
+        width: 100%;
+        min-height: 50vh;
+        float: left;
+        box-sizing: border-box;
+        font-size: 14.5px;
+        position: relative;
+        background-color: #121212;
+        color: #7f7f7f;
+        display: grid;
+        
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(10,1fr);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    
+    .footer-content
+    {
+        grid-column: 1/10;
+        grid-row: 2/10;
+        background-color: #49c500;
+        justify-content: center;
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+        padding: 30px 50px 30px 50px;
+        margin: 0 -50px 0 -50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .footer-content img
+    {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 30px;
+        right: calc(50px + 15px);
+        cursor: pointer;
+        box-sizing: border-box;
+        transform: rotate(5deg);
+        transform-origin: 100%;
+    
+    }
+    .footer-content > div
+    {
+        
+        transform: rotate(5deg);
+        transform-origin: 100%;
+        border-radius: 15px;
+        color: #121212;
+        font-size: 17.5px;
+        box-sizing: border-box;
+        
+    }
+    
+    .links
+    {
+        order: 1;
+        width: 100%;
+        min-height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px;
+        box-sizing: border-box;
+        margin-top: 50px;
+        margin-right: 0;
+        margin-bottom: 30px;
+        margin-left: 30px;
+    }
+    .message
+    {
+        order: 2;
+        width: 50%;
+        height: 12vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+        margin: 0;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #121212;
+        margin-left: 30px;
+        margin-right: calc(30px + 30px);
+    }
+    .feedback-content
+    {
+        margin-top: 0px;
+        position: absolute;
+        top: 10vh;
+        left: 45%;
+        right: 9%;
+        bottom: 11vh;
+        background-color: #2a2a2a;
+        min-width: auto;
+        min-height: 45vh;
+        border: 1vh solid #252525;
+        box-sizing: border-box;
+        margin-left: 0;
+        margin-right: 15px;
+        display: block;
+    }
+    .feedback-content p
     {
         margin: 0;
         padding: 0;
