@@ -259,10 +259,27 @@
 
 
 @media (min-width: 640px) {
+.footer
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: grid;
+    
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(10,1fr);
+    overflow: hidden;
+    box-sizing: border-box;
+}
 .footer-content
 {
     grid-column: 1/10;
-    grid-row: 2/10;
+    grid-row: 3/10;
     background-color: #49c500;
     justify-content: center;
     -webkit-transform: rotate(-5deg);
@@ -281,12 +298,12 @@
 }
 .feedback-content
 {
-    margin-top: 70px;
+    margin-top: 50px;
     position: absolute;
-    top: 10vh;
+    top: 0vh;
     left: 9%;
     right: 9%;
-    bottom: -10vh;
+    bottom: 0vh;
     background-color: #2a2a2a;
     min-width: auto;
     min-height: 45vh;
@@ -509,15 +526,15 @@
     }
     .feedback-content
     {
-        margin-top: 50px;
+        margin-top: 0px;
         position: absolute;
-        top: 10vh;
-        left: 9%;
-        right: 9%;
-        bottom: 0;
+        top: 0vh;
+        left: 40%;
+        right: 10%;
+        bottom: 10vh;
         background-color: #2a2a2a;
         min-width: auto;
-        min-height: 45vh;
+        min-height: 50vh;
         border: 1vh solid #252525;
         box-sizing: border-box;
         margin-left: 0;

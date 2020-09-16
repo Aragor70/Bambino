@@ -31,7 +31,6 @@ const FrontPictures = ({authors, profiles, labelUrl, authorsLimitPerPage, author
     }
     
 
-
     const [currentAuthors, setCurrentAuthors] = useState([]);
 
     const [currentPage, setCurrentPage] = useState(1);
