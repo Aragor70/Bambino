@@ -222,7 +222,7 @@
 
 .front-left-side
 {
-    
+    width: 100%;
     height: auto;
     
     box-sizing: border-box;
@@ -247,7 +247,7 @@
 }
 .front-right-side
 {
-    width: 100%;
+    
     height: auto;
     
     box-sizing: border-box;
@@ -753,6 +753,7 @@
 #front-login-button
 {
     
+    width: auto;
     height: 35px;
 
     grid-column: 7/11;
@@ -875,6 +876,7 @@
 
 .front-left-side
 {
+    width: auto;
     grid-column: 1/10;
     
     box-sizing: border-box;
@@ -896,6 +898,7 @@
 
 .front-right-side
 {
+    width: auto;
     grid-column: 1/10;
     
     box-sizing: border-box;
@@ -1163,6 +1166,7 @@
 }
 .front-author-side
 {
+    width: auto;
     grid-column: 1/10;
     box-sizing: border-box;
     
