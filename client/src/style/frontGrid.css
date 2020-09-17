@@ -222,7 +222,7 @@
 
 .front-left-side
 {
-    width: 100%;
+    
     height: auto;
     
     box-sizing: border-box;
@@ -447,46 +447,34 @@
 
 .grid-left-1
 {
-    width: 100%;
-    height: auto;
     
     display: block;
 }
 
 .grid-right-1
 {
-    width: 100%;
-    height: auto;
     
     display: block;
 }
 .grid-left-2
 {
-    width: 100%;
-    height: auto;
     
     display: block;
 }
 
 .grid-right-2
 {
-    width: 100%;
-    height: auto;
     
     display: block;
 }
 .grid-left-3
 {
-    width: 100%;
-    height: auto;
     
     display: block;
 }
 
 .grid-right-3
 {
-    width: 100%;
-    height: auto;
     
     display: block;
 }
