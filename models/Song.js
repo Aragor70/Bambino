@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const SongSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user'
     },
     name:{
         type: String
@@ -44,7 +44,7 @@ const SongSchema = new mongoose.Schema({
     images:[{
         user:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'user'
         },
         image:{
             type: String
@@ -57,7 +57,7 @@ const SongSchema = new mongoose.Schema({
     views: [{
         user:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'user'
         },
         song:{
             type: String
@@ -73,7 +73,7 @@ const SongSchema = new mongoose.Schema({
     likes: [{
         user:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'user'
         },
         date:{
             type: Date,
@@ -89,7 +89,7 @@ const SongSchema = new mongoose.Schema({
     comments: [{
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'user'
         },
         name: {
             type: String

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const AuthorSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user'
     },
     name:{
         type: String
@@ -13,7 +13,7 @@ const AuthorSchema = new mongoose.Schema({
     },
     author:{
         type: String,
-        isRequired: true
+        required: true
     },
     bio:{
         type: String
@@ -33,7 +33,7 @@ const AuthorSchema = new mongoose.Schema({
     images:[{
         user:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'user'
         },
         image:{
             type: String
@@ -42,7 +42,7 @@ const AuthorSchema = new mongoose.Schema({
         albums:[{
                 user: {
                     type: mongoose.Schema.Types.ObjectId,
-                    ref: 'users'
+                    ref: 'user'
                 },
                 name: {
                     type: String
@@ -61,7 +61,7 @@ const AuthorSchema = new mongoose.Schema({
                 images:[{
                     user:{
                         type: mongoose.Schema.Types.ObjectId,
-                        ref: 'users'
+                        ref: 'user'
                     },
                     image:{
                         type: String
