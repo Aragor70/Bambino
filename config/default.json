@@ -1,6 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://Nicolai:Krollol12@cluster0-g0cde.mongodb.net/test?retryWrites=true&w=majority",
-    "mongoPublicURI": "mongodb+srv://Nicolai:krolteothen@cluster0.ied4h.mongodb.net/public?retryWrites=true&w=majority",
-    "jwtSecret": "bambinotoken",
-    "githubToken": "fedc5652c08bad464ea19f3fde345346daf9f44b"
-}
