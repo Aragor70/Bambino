@@ -9,6 +9,7 @@ import FavoriteSong from './FavoriteSong';
 import SortViews from './SortViews';
 import { getAuthors } from '../actions/author';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 const Library = ({getSongs, getAuthors, getViews, auth:{user}, author:{authors}, song:{songs, loading}, profile:{views}, addLike, removeLike, removeView}) => {
 
@@ -153,6 +154,19 @@ const Library = ({getSongs, getAuthors, getViews, auth:{user}, author:{authors},
         
         
     );
+}
+Library.propTypes = {
+    auth: PropTypes.object.isRequired,
+    song: PropTypes.object.isRequired,
+    author: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired,
+    getSongs: PropTypes.func.isRequired, 
+    getViews: PropTypes.func.isRequired, 
+    removeLike: PropTypes.func.isRequired, 
+    addLike: PropTypes.func.isRequired, 
+    removeSong: PropTypes.func.isRequired, 
+    getAuthors: PropTypes.func.isRequired, 
+    removeView: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     auth: state.auth,

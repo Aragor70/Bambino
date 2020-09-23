@@ -6,6 +6,7 @@ import moment from 'moment';
 import ReactHtmlParser from 'react-html-parser';
 import SortViews from './SortViews';
 import { getAuthors } from '../actions/author';
+import PropTypes from 'prop-types';
 
 const History = ({getAuthors, getSongs, getViews, auth:{user}, author, song:{songs, loading}, profile:{views}, removeView, addLike, removeLike, removeSong}) => {
 
@@ -57,6 +58,19 @@ const History = ({getAuthors, getSongs, getViews, auth:{user}, author, song:{son
         </div>
 
     );
+}
+History.propTypes = {
+    auth: PropTypes.object.isRequired,
+    song: PropTypes.object.isRequired,
+    author: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired,
+    addLike: PropTypes.func.isRequired,
+    removeLike: PropTypes.func.isRequired,
+    removeSong: PropTypes.func.isRequired,
+    getSongs: PropTypes.func.isRequired,
+    getViews: PropTypes.func.isRequired,
+    getAuthors: PropTypes.func.isRequired,
+    removeView: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     auth: state.auth,

@@ -24,10 +24,11 @@ class Footer extends Component {
 
             try {
                 await this.setState({ feedbackView: !this.state.feedbackView });
-
+                    console.log(this.state.feedbackView)
                 if(this.scrollTo.current) {
                     this.scrollTo.current.scrollIntoView({ behavior:'smooth', block:'center', inline:'nearest'})
                 }
+                    
             } catch(err) {
                 console.log('Could not scroll it.')
             }

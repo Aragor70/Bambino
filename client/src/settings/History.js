@@ -18,8 +18,8 @@ const History = ({auth:{user}, profile:{profile}, setPersonalView, personalView}
                         {
                             !profile ? <div onClick={e=>setPersonalView(!personalView)}>Create profile.</div> : <Fragment>
                                 {
-                                    profile.logs.map((log, index) => <Fragment>
-                                        <div className="settings-info">
+                                    profile.logs.map((log, index) => <Fragment key={index}>
+                                        <div className="settings-info" key={index}>
                                             {index + 1}. {moment().subtract('days', log.date).format("dddd")} || {moment(log.date).format('YYYY-MM-DD HH:mm:ss')} 
                                         </div>
                                         </Fragment>)

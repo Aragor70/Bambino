@@ -61,23 +61,6 @@ router.post('/', [
             return res.status(400).json({ errors: [ { msg: 'Invalid Credentials.' } ] })
         }
 
-        /* 
-        // send notification
-        await appMailer.applicationNotify({
-            email: email.toLowerCase(),
-            data: {name: user.name.toLowerCase()}
-        }) */
-
-
-       /*  sgMail.setApiKey('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');
-        const msg = {
-          to: email,
-          from: 'mikey.prus@gmail.com',
-          subject: 'Bambino',
-          text: 'Ciao bambino'
-        };
-        sgMail.send(msg); */
-
 
         // return jsonwebtoken
 
@@ -105,16 +88,6 @@ router.post('/', [
             profile.logs.unshift(newLog)
             await profile.save()
         }
-
-        /* const application = {
-            'name': user.name,
-            'email': email.toLowerCase(),
-            'message': req.body.message
-        }
-        await User.create(application) */
-
-
-        
         
 
     }

@@ -1,20 +1,41 @@
 require('dotenv').config({ path: './config/config.env' })
 
+/* const jwt = require('jsonwebtoken')
+const config = require('config'); */
+
 const express = require('express');
+
 const connect = require('./config/db');
 const fileUpload = require('express-fileupload');
-const multer = require('multer');
-const {v4: uuid} = require('uuid');
-const AWS = require('aws-sdk')
 
 const path = require('path')
 
 const app = express();
 
+
 // serve sattic assets if in production
 if(process.env.NODE_ENV === "production") {
     // set static folder
     app.use(express.static('client/build'))
+
+
+    /* app.get('/test', function (req, res, next) {
+        console.log('LOGGED')
+        const token = req.header('x-auth-token')
+        if(!token) {
+            return res.status(401).json({msg: 'No token, authorisation denied.'});
+        }
+        // verify token
+        const decoded = jwt.verify(token, config.get('jwtSecret')) 
+        req.user = decoded.user
+        next()
+
+      }, async(req, res) => {
+        const users = await User.findById(req.user.id)
+        
+        res.json(users);
+      })  */
+
 
     // connect Mongo database
     connect();
@@ -37,6 +58,7 @@ if(process.env.NODE_ENV === "production") {
     app.use('/api/quotes', require('./routes/api/quotes'));
     app.use('/api/mails', require('./routes/api/mails'));
 
+    
     
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))

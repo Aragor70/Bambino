@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const QuoteSchema = new mongoose.Schema({
     user:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user'
     },
     name:{
         type: String
@@ -26,7 +26,7 @@ const QuoteSchema = new mongoose.Schema({
     likes:[{
         user:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'user'
         },
         quote:{
             type: String
