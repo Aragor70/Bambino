@@ -249,8 +249,7 @@
 
 .profile-comment
 {
-    grid-column: 1/10;
-    min-height: 6/11;
+    width: 100%;
     float: left;
     box-sizing: border-box;
     font-size: 14.5px;
@@ -497,8 +496,7 @@
 
 .profile-comment
 {
-    grid-column: 1/10;
-    min-height: 6/11;
+    width: 100%;
     float: left;
     box-sizing: border-box;
     font-size: 14.5px;
@@ -512,7 +510,7 @@
 
 .comment-label
 {
-    width: 100%;
+    grid-column: 1/10;
     min-height: 9vh;
     float: left;
     box-sizing: border-box;

@@ -1,0 +1,74 @@
+.front-songs-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 0;
+}
+.front-songs-side
+{
+    width: 100%;
+    height: auto;
+    
+    box-sizing: border-box;
+    
+    
+    float: left;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    padding: 15px;
+    
+    background-color: #252525;
+    margin: 15px;
+}
+
+
+@media (min-width: 640px){
+.front-songs-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 14.5px;
+    position: relative;
+    background-color: #121212;
+    color: #7f7f7f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 0;
+}
+.front-songs-side
+{
+    width: 100%;
+    height: auto;
+    
+    box-sizing: border-box;
+    
+    
+    float: left;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    padding: 15px;
+    
+    background-color: #252525;
+    margin: 15px;
+    margin-left: 0;
+    margin-right: 0;
+}
+}

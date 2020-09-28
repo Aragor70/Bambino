@@ -11,10 +11,10 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTIION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [
-    "dymy"
+    "how to read music"
   ],
   "author": "Nicolai",
-  "license": "MIT",
+  "license": "BSD",
   "dependencies": {
     "@sendgrid/mail": "^7.2.5",
     "aws-sdk": "^2.744.0",

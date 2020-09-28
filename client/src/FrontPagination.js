@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 
-const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, songsLimitPerPage }) => {
+const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, songsLimitPerPage, front=true }) => {
 
     
 
@@ -60,12 +60,15 @@ const FrontPagination = ({user, songs, removeLike, addLike, labelUrl, category, 
                 
                 
             </Fragment>)}
-                <div className="front-more">
+                {
+                    front && <div className="front-more">
                     {
                         user ? <Link to={`/top_songs`}>Check more !</Link> : <Link to={`/login`}>Check more !</Link>
                     }
                     
-                </div>
+                    </div>
+                }
+                
             </Fragment>
         }
         

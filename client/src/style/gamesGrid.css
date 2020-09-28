@@ -1,73 +1,78 @@
-.games
+.games-content
 {
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(14, 1fr);
-    padding-left: 15px;
-    padding-right: 15px;
-    column-gap: 30px;
-    row-gap: 30px;
-}
-.game-grid
-{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 30px;
     background-color: #252525;
 }
-.game-grid:hover
+.game
+{
+    width: 100%;
+    min-height: 5.5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #252525;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.game:hover
 {
     background-color: #2a2a2a;
 }
-.game-slider
-{
-    grid-column: 1/5;
-    grid-row: 1/7;
-}
 
 
-.game0
+.count-wrapper
 {
-    grid-column: 5/9;
-    grid-row: 1/4;
-}
-.game1
-{
-    grid-column: 5/9;
-    grid-row: 4/7;
-}
-.game2
-{
-    grid-column: 6/9;
-    grid-row: 7/9;
-}
-
-
-.game-post-section
-{
-    grid-column: 1/5;
-    grid-row: 7/14;
-}
-
-.back-arrow
-{
-    height: 35px;
-    width: 18vw;
-    color: #7f7f7f;
-    font-weight: 400;
-    text-align: justify;
-    z-index: 5;
-    font-size: 20.5px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #2a2a2a;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    height: auto;
     justify-content: center;
-    position: absolute;
-    top: 30px;
-    left: 30px;
+    display: flex;
+    padding: 30px;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.task-list
+{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.task
+{
+    width: 100%;
+    min-height: 5.5vh;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 17.5px;
+    display: flex;
+}
+
+.user-input
+{
+    width: 50%;
+    height: 9vh;
+    align-items: center;
+    font-size: 17.5px;
+    margin-left: 25%;
+    margin-right: 25%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    text-align: center;
 }

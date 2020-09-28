@@ -52,9 +52,9 @@ const ProfilePictures = ({ profile, setProfileNav, profileNav, pictureLimit='10'
                     </Fragment>
                 }
         
-        
-        
-        <div className="shield" onClick={e=> setProfileNav(false)}>
+        {
+            !official && <Fragment>
+                <div className="shield" onClick={e=> setProfileNav(false)}>
                 
                 {
                     pictures.length == 1 && official == false && <Fragment>
@@ -228,7 +228,12 @@ const ProfilePictures = ({ profile, setProfileNav, profileNav, pictureLimit='10'
                 }
                 
                 
-        </div>
+                </div>
+            </Fragment>
+
+        }
+        
+        
         </Fragment>
     );
 }

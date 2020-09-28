@@ -23,6 +23,7 @@ import './style/albumGrid.css';
 import './style/gamesGrid.css';
 import './style/footerGrid.css';
 import './style/supportGrid.css';
+import './style/frontSongs.css';
 
 import './style/profileTop.css';
 import './style/profileMain.css';
