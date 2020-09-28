@@ -175,9 +175,14 @@ body
     float: right;
 }
 
-input:focus, button:focus
+input:focus, button:focus, textarea:focus
 {
     outline: none;
+    box-sizing: border-box;
 }
-
+textarea
+{
+    padding: 15px;
+    box-sizing: border-box;
+}
 

@@ -30,7 +30,7 @@ import AllFavorites from './userAccount/AllFavorites';
 import TopList from './TopList';
 import Quote from './quotes/Quote';
 import Album from './songs/Album';
-import { getCurrentProfile } from './actions/profile';
+import { getCurrentProfile, getProfiles } from './actions/profile';
 import FrontSubscribes from './FrontSubscribes';
 import ReactHtmlParser from 'react-html-parser';
 import PropTypes from 'prop-types';
@@ -41,6 +41,10 @@ import Games from './games/Games';
 import Balloons from './games/Balloons';
 import Footer from './Footer';
 import Support from './support/Support';
+import MainSongs from './songs/MainSongs';
+import FrontTop from './FrontTop';
+import Counting from './games/Counter/Counting';
+import Core from './games/Counter/Core';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
@@ -61,7 +65,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
     }, [scrollTo])
 
     const [filterUser, setFilterUser] = useState({
-        name:[],    
+        name:[],
         id:[],
         avatar:[]
 
@@ -75,15 +79,20 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
     const [filterAuthor, setFilterAuthor] = useState({
         id:[],
         author:[]
-
     });
-    
+
+    const [frontAdd, setFrontAdd] = useState(false);
+    const [frontNav, setFrontNav] = useState(false);
+    const [frontNavValue, setFrontNavValue] = useState("HOME")
+
+    const [quoteView, setQuoteView] = useState(false);
+    const [songInputView, setSongInputView] = useState(false);
+    const [authorInputView, setAuthorInputView] = useState(false);
 
     return(
         <Fragment>
             <Router>
             <header className="header" >
-                
                 
                 <TopNav menu={menu} setMenu={setMenu} filterUser={filterUser} setFilterUser={setFilterUser} filterSong={filterSong} setFilterSong={setFilterSong} filterAuthor={filterAuthor} setFilterAuthor={setFilterAuthor} />
             </header>
@@ -105,7 +114,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     </Fragment>
                 }
             <main className="output" ref={scrollTo} onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
-
+                <Alert />
                 {
                     isAuthenticated ? 
                     <Fragment>
@@ -135,8 +144,10 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     </Route>
 
                     <Route exact path="/">
-                        
-                        <FrontPage />
+                        <FrontTop frontNavValue="HOME" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+        
+                        <FrontPage setFrontNav={setFrontNav} />
+
                     </Route>
                     </Switch>
                     
@@ -145,7 +156,10 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     <Fragment>
                         <Switch>
                             <Route exact path="/">
-                                <FrontPage />
+                                
+                                <FrontTop frontNavValue="HOME" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+                                
+                                <FrontPage setFrontNav={setFrontNav} />
                                 
                             </Route>
                             <Route exact path="/about" component={About} />
@@ -167,13 +181,23 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     <ForgotPassword />
                 </Route>
                 <Route exact path="/games">
+                    <FrontTop frontNavValue="GAME ZONE" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
                     <Games />
                 </Route>
                 <Route exact path="/games/balloons">
                     <Balloons />
                 </Route>
+                <Route exact path="/games/counting">
+                    <Core />
+                </Route>
+
                 <Route exact path="/support">
                     <Support />
+                </Route>
+                <Route exact path="/songs">
+                    <FrontTop frontNavValue="NEW TITLES" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+        
+                    <MainSongs user={user} />
                 </Route>
             </main>
             <footer className="footer">

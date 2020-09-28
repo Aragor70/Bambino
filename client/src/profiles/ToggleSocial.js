@@ -6,7 +6,6 @@ const ToggleSocial = () => {
     return (
         <Fragment>
             <div className="toggle-social-yt">
-rfeavg
 
             </div>
 
