@@ -43,7 +43,7 @@
 .task-list
 {
     width: 100%;
-    height: auto;
+    height: 50vh;
     padding: 30px;
     box-sizing: border-box;
     display: flex;
@@ -54,13 +54,13 @@
 .task
 {
     width: 100%;
-    min-height: 5.5vh;
+    min-height: 12.5vh;
     justify-content: center;
     align-items: center;
     background-color: lightblue;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 17.5px;
+    font-size: 19.5px;
     display: flex;
 }
 
@@ -75,4 +75,14 @@
     box-sizing: border-box;
     margin-top: 10px;
     text-align: center;
+}
+
+.countBtn
+{
+    width: 15%;
+    height: 35px;
+    margin-left: 42.5%;
+    
+    margin-right: 42.5%;
+    box-sizing: border-box;
 }
