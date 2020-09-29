@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useRef } from 'react'
 
 
 const Core = () => {
 
+    const quest = useRef(null)
     const [play, setPlay] = useState(false)
 
     const [score, setScore] = useState(0)
@@ -37,12 +38,20 @@ const Core = () => {
         return Math.floor(Math.random() * max)  
     }
     if(userAnswer && userAnswer == tasks[0].answer) {
+        if(quest.current){
+            quest.current.style.color = '#49c500'
+            quest.current.style.fontWeight = 'bold'
+        }
         setTimeout(() => {
             
             setUserAnswer('')
             
             setTasks(tasks.slice(1))
             setScore(score + 1)
+            if(quest.current){
+                quest.current.style.color = '#7f7f7f'
+                quest.current.style.fontWeight = 'normal'
+            }
 
         }, 500)
         console.log("correct")
@@ -71,7 +80,7 @@ const Core = () => {
                     play && <Fragment>
                         <div className="task-list">
                             
-                                <div className="task">{tasks[0].quest}</div>
+                                <div className="task" ref={quest}>{tasks[0].quest}</div>
                         
                         <input type="text" className="user-input" value={userAnswer} onChange={e => handleChange(e)} />
                         
