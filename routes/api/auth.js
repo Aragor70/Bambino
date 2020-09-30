@@ -147,7 +147,7 @@ router.post('/forgotpassword', [
           subject: 'OnLoad reset password.',
           html: message
         };
-        sgMail.send(msg);
+        await sgMail.send(msg);
 
 
         /* // send notification

@@ -13,6 +13,7 @@ import NoProfile from './NoProfile';
 import AddPersonal from './settings/AddPersonal';
 import Security from './settings/Security';
 import Connections from './settings/Connections';
+import ContentControl from './settings/ContentControl';
 
 
 const Control = ({getCurrentProfile, getNewsletters, auth:{user}, profile, newsletter:{newsletters, newsletter}}) => {
@@ -42,7 +43,7 @@ const Control = ({getCurrentProfile, getNewsletters, auth:{user}, profile, newsl
                                 <Link to={`/settings/tab_log`}><div className="mark">Account history</div></Link>
                                 <Link to={`/settings/security`}><div className="mark">Password and security</div></Link>
                                 <Link to={`/settings/connections`}><div className="mark">Connections</div></Link>
-                                    <div className="mark">Content Control</div>
+                                <Link to={`/settings/content_control`}><div className="mark">Content Control</div></Link>
                                     
                                 </div>
                                 
@@ -75,8 +76,16 @@ const Control = ({getCurrentProfile, getNewsletters, auth:{user}, profile, newsl
                                 <Connections profile={profile} user={user} />
                             </Fragment>
                             </Route>
+
+                            <Route exact path={"/settings/content_control"}>
+                            <Fragment>
+                                <ContentControl profile={profile} user={user} />
+                            </Fragment>
+                            </Route>
                             
                             <Route exact path="/settings/profile_create" component={CreateProfile} />
+                            
+
                             
                             </Switch>
                         

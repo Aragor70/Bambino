@@ -97,21 +97,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 <TopNav menu={menu} setMenu={setMenu} filterUser={filterUser} setFilterUser={setFilterUser} filterSong={filterSong} setFilterSong={setFilterSong} filterAuthor={filterAuthor} setFilterAuthor={setFilterAuthor} />
             </header>
                 {
-                    menu && <Menu menu={menu} setMenu={setMenu} setList={setList} />
-                }
-                {
-                    user && profile && !list && <div className="hidden-list" onClick={e => setList(!list)}></div>
-                }
-                {
-                    user && loading ? null : profile == null ? null : list && <Fragment>
-                        <div className="left-side-list">
-                            <div className="front-list-category">SUBSCRIBTIONS</div>
-                            {
-                                <FrontSubscribes profile={profile} setList={setList} />
-                            }
-                            <div className="border-list" onClick={e => setList(false)}></div>
-                        </div>
-                    </Fragment>
+                    menu && <Menu menu={menu} setMenu={setMenu} setList={setList} profile={profile} />
                 }
             <main className="output" ref={scrollTo} onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
                 <Alert />

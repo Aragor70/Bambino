@@ -62,6 +62,7 @@
 #front-addSong-button:hover
 {
     background-color: #2a2a2a;
+    color: #08fdd8;
 }
 #front-addSong-button img
 {
@@ -237,14 +238,21 @@
     padding: 15px;
     background-color: #252525;
     margin: 15px;
+    
 }
 .front-left-side:hover
 {
     background-color: #2a2a2a;
+    
+    color: #08fdd8;
 }
 .song-like-buttons button
 {
     color: #7f7f7f;
+}
+.pop-info:hover > .song-like-buttons > button
+{
+    background-color: #2a2a2a;
 }
 .front-right-side
 {
@@ -270,6 +278,8 @@
 .front-right-side:hover
 {
     background-color: #2a2a2a;
+    
+    color: #08fdd8;
 }
 .front-right-side img
 {
@@ -303,6 +313,9 @@
     position: relative;
     background-color: #121212;
     font-family: 'Concert One', cursive;
+    cursor: default;
+    
+    transition: all ease-in 0.5s;
 }
 .pop-category > a
 {
@@ -407,6 +420,8 @@
 .front-author-side:hover
 {
     background-color: #2a2a2a;
+    
+    color: #08fdd8;
 }
 .front-author-side:hover button
 {
@@ -605,12 +620,14 @@
 {
     width: 100%;
     height: 5.5vh;
-    text-align: left;
+    text-align: center;
     box-sizing: border-box;
     font-size: 15.5px;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: #49c500;
 }
 .border-list
 {
@@ -626,12 +643,18 @@
 .sub-row
 {
     min-width: 100%;
-    height: 4.5vh;
+    height: 5.5vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     overflow: hidden;
     overflow-x: auto;
+    font-size: 15.5px;
+    padding-left: 10px;
+}
+.sub-row:hover
+{
+    color: lightblue;
 }
 .sub-row::-webkit-scrollbar
 {
@@ -911,10 +934,6 @@
     font-size: 19.5px;
     background-color: #252525;
 }
-.pop-category:hover
-{
-    background-color: #2a2a2a;
-}
 .slider-category
 {
     width: 100%;
@@ -930,10 +949,6 @@
     
     font-size: 19.5px;
     background-color: #252525;
-}
-.front-left-side:hover .slider-category
-{
-    background-color: #2a2a2a;
 }
 
 .pop-info
@@ -1141,7 +1156,7 @@
 .sub-row
 {
     min-width: 100%;
-    height: 4.5vh;
+    height: 5.5vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -1172,38 +1187,12 @@
     color: #49c500;
 }
 
-.front-right-side:hover .pop-category
+.pop-info:hover
 {
     background-color: #2a2a2a;
 }
-.front-right-side:hover .pop-info
-{
-    background-color: #2a2a2a;
-}
-.front-left-side:hover .pop-category
-{
-    background-color: #2a2a2a;
-}
-.front-left-side:hover .pop-info
-{
-    background-color: #2a2a2a;
-}
-.front-left-side:hover .front-more
-{
-    background-color: #2a2a2a;
-}
-.front-right-side:hover .front-more
-{
-    background-color: #2a2a2a;
-}
-.front-right-side:hover button
-{
-    background-color: #2a2a2a;
-}
-.front-left-side:hover button
-{
-    background-color: #2a2a2a;
-}
+
+
 
 }
 @media (min-width: 1023px){
@@ -1475,14 +1464,7 @@
         box-sizing: border-box;
         background-color: #252525;
     }
-    .pop-left-label:hover 
-    {
-        background-color: #2a2a2a;
-    }
-    .pop-left-label:hover button
-    {
-        background-color: #2a2a2a;
-    }
+    
     .pop-category
     {
         width: 100%;
@@ -1731,7 +1713,7 @@
 .sub-row
 {
     min-width: 100%;
-    height: 4.5vh;
+    height: 5.5vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -1809,7 +1791,7 @@
 .sub-row
 {
     min-width: 100%;
-    height: 4.5vh;
+    height: 5.5vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;

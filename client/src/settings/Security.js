@@ -32,6 +32,7 @@ const Security = ({auth:{user}, profile:{profile}}) => {
                         <div className="settings-info">
                             Two-factor authentication requires you to enter additional code in login process, which increase the protection of your account against unauthorized access.
                         </div>
+                        <img src={require('../style/soon.png')} className="comming-soon" />
                     </div>
                 </div>
         </Fragment>

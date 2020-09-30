@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {getAuthors} from './actions/author';
 import ReactHtmlParser from 'react-html-parser';
 
-const FrontSubscribes = ({history, profile, author:{authors}, getAuthors, setList}) => {
+const FrontSubscribes = ({history, profile, author:{authors}, getAuthors, menu, setMenu}) => {
 
     useEffect(() => {
         getAuthors();
@@ -26,8 +26,8 @@ const FrontSubscribes = ({history, profile, author:{authors}, getAuthors, setLis
         <Fragment>
             {
                 theList.map((author, index) => <Fragment key={author._id}>
-                    <div className="sub-row" key={author._id}>
-                <Link to={`/authors/${author._id}`} onClick={e=>setList(false)}>{author.image !== null ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${author.image}`} height="15.5px" /> : <img src={require("./style/guitar.png")} height="15.5px" />}{ReactHtmlParser('&nbsp')} {author.author}</Link>
+                    <div className="user-menu-btn" style={{justifyContent: 'flex-start', paddingLeft: '10px'}} key={author._id}>
+                <Link to={`/authors/${author._id}`} onClick={e=>setMenu(!menu)}>{author.image !== null ? <img src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/author/image/${author.image}`} height="15.5px" /> : <img src={require("./style/guitar.png")} height="15.5px" />}{ReactHtmlParser('&nbsp')} {author.author}</Link>
                     </div>
                     </Fragment>)
             }
