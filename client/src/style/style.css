@@ -179,6 +179,7 @@ input:focus, button:focus, textarea:focus
 {
     outline: none;
     box-sizing: border-box;
+    
 }
 textarea
 {
@@ -191,4 +192,9 @@ textarea
     width: 30%;
     margin-left: 35%;
     margin-left: 35%;
+}
+button
+{
+    
+    transition: all ease-in 0.3s;
 }
