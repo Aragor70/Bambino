@@ -32,6 +32,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    
+    transition: all ease-in 0.3s;
 }
 
 #front-addSong-button
@@ -249,6 +251,8 @@
 .song-like-buttons button
 {
     color: #7f7f7f;
+    transition: all ease-in 0.3s;
+
 }
 .pop-info:hover > .song-like-buttons > button
 {
@@ -315,7 +319,7 @@
     font-family: 'Concert One', cursive;
     cursor: default;
     
-    transition: all ease-in 0.5s;
+    transition: all ease-in 0.3s;
 }
 .pop-category > a
 {
@@ -338,6 +342,7 @@
     font-size: 19.5px;
     position: relative;
     font-family: 'Concert One', cursive;
+    transition: all ease-in 0.3s;
 }
 .pop-info
 {
@@ -352,6 +357,7 @@
     font-size: 17.5px;
     position: relative;
     background-color: #252525;
+    transition: all ease-in 0.5s;
 }
 .display-label
 {
