@@ -3,8 +3,9 @@ import {Link, BrowserRouter as Router, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { logout } from './actions/auth';
 import PropTypes from 'prop-types';
+import FrontSubscribes from './FrontSubscribes'
 
-const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, history}) => {
+const Menu = ({auth: {user, isAuthenticated, loading}, profile, logout, menu, setMenu, history}) => {
 
     
 
@@ -25,7 +26,7 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
             <Link to="/library" onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
                 my library
             </div></Link>
-            <hr />
+            
             {
             //    <Link to ="/my_uploading"><div className="user-menu-btn">
             //    my uploading
@@ -34,7 +35,7 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
             <Link to='/history' onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
                 history
             </div></Link>
-
+            <hr />
             <Link to='/profile' onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
                 my account
             </div></Link>
@@ -44,6 +45,12 @@ const Menu = ({auth: {user, isAuthenticated, loading}, logout, menu, setMenu, hi
             <Link><div className="user-menu-btn" onClick={e=>{logout(), setMenu(!menu), history.push('/')}}>
                 logout
             </div></Link>
+            <hr />
+            <div className="front-list-category">SUBSCRIBED</div>
+            {
+                profile && <FrontSubscribes profile={profile} setMenu={setMenu} menu={menu} />
+            }
+                
         </div>
         )
         

@@ -17,6 +17,8 @@ const Connections = ({ auth:{user}, profile:{profile} }) => {
                         <div className="settings-info">
                             Use the tabs below to manage permissions and linked accounts. Your passwords and billing informations will be never shared with third party apps.
                         </div>
+                        
+                        <img src={require('../style/soon.png')} className="comming-soon" />
 
                     </div>
                 </div>
