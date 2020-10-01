@@ -43,6 +43,8 @@
 {
     color: #7f7f7f;
     font-weight: 500;
+    
+    transition: all ease-in 0.3s;
 }
 .user-menu-btn > a:hover
 {
