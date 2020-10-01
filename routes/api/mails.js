@@ -3,7 +3,7 @@ const router = express.Router();
 
 const sgMail = require('@sendgrid/mail');
 
-router.post('/feedback', (req, res) => {
+router.post('/feedback', async (req, res) => {
 
     try {
         
@@ -25,14 +25,14 @@ router.post('/feedback', (req, res) => {
         `; 
 
 
-        sgMail.setApiKey(process.env.SENGRID_KEY);
+        await sgMail.setApiKey(process.env.SENGRID_KEY);
         const msg = {
             to: 'mikey.prus@gmail.com',
             from: 'mikey.prus@gmail.com',
             subject: 'onLoud Feedback',
             text: message
         }
-        sgMail.send(msg)
+        await sgMail.send(msg)
         res.json('Email sent')
 
     } catch(err) {

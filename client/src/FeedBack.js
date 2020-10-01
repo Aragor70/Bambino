@@ -1,13 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import {connect} from 'react-redux';
+import { addFeedback } from './actions/mail';
 
-const FeedBack = ({scrollTo, onChange, setView, onSubmit}) => {
+const FeedBack = ({scrollTo, setView, addFeedback }) => {
 
-
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+        exp: ''
+    })
+    const { name, email, message, exp } = formData
+    const onChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+    console.log(formData)
+    const onSubmit = (e) => {
+        e.preventDefault()
+        addFeedback(formData)
+        setView(false)
+    }
     return (
         <Fragment>
             <div className='feedback-content' ref={scrollTo}>
             <form onSubmit={e=>onSubmit(e)}>
-                    <button type='button' className="x-top-right" onClick={e=>setView(e)}>X</button>
+                    <button type='button' className="x-top-right" onClick={e=>setView(false)}>X</button>
                 <p>Feedback message</p>
                 <div className="feedback-title">Please provide your opinion below.</div>
                 
@@ -17,15 +34,15 @@ const FeedBack = ({scrollTo, onChange, setView, onSubmit}) => {
                 <input type="radio" name="exp" className="radio-exp" value="average" onChange={e=>onChange(e)}/> average
                 <input type="radio" name="exp" className="radio-exp" value="good" onChange={e=>onChange(e)}/> good
                 </div>
-                <textarea type="textarea" name="message" className="feedback-message" placeholder=" .Here" maxLength="6000" rows="7" onChange={e=>onChange(e)} ></textarea>
+                <textarea type="textarea" name="message" className="feedback-message" value={message} placeholder=" .Here" maxLength="6000" rows="7" onChange={e=>onChange(e)} ></textarea>
 
                 <label htmlFor="name" className="feedback-input">
                     <span>Name</span>
-                <input type="text" name="name" placeholder=" (optional) " onChange={e=>onChange(e)} />
+                <input type="text" name="name" placeholder=" (optional) " value={name} onChange={e=>onChange(e)} />
                 </label>
                 <label htmlFor="email" className="feedback-input">
                     <span>E-mail</span>
-                <input type="text" name="email" placeholder=" (optional) " onChange={e=>onChange(e)} />
+                <input type="text" name="email" placeholder=" (optional) " value={email} onChange={e=>onChange(e)} />
                 </label>
                 <button className="nextButton">Send</button>
             </form>                     
@@ -33,4 +50,4 @@ const FeedBack = ({scrollTo, onChange, setView, onSubmit}) => {
         </Fragment>
     )
 }
-export default FeedBack;
+export default connect(null, {addFeedback})(FeedBack);
