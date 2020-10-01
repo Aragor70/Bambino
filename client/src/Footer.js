@@ -9,13 +9,7 @@ class Footer extends Component {
         super(),
         this.scrollTo = createRef()
         this.state = {
-            feedbackView: false,
-            formData: {
-                name: '',
-                email: '',
-                message: '',
-                exp: ''
-            }
+            feedbackView: false
         }
     }
 
@@ -34,20 +28,9 @@ class Footer extends Component {
             }
         }) 
     }
-    
-
-    onChange = (e) => {
-        this.setState({formData:{...this.state.formData, [e.target.name]: e.target.value}})
-    }
-
-    onSubmit = (e) => {
-        e.preventDefault()
-        addFeedback(this.state.formData)
-        this.setState({feedbackView: false})
-    }
 
     setView = (e) => {
-        this.setState({ feedbackView: false })
+        this.setState({ feedbackView: e })
     }
 
     render() {
@@ -84,7 +67,7 @@ class Footer extends Component {
                     </div>
                         {
                             this.state.feedbackView && <Fragment>
-                                <FeedBack scrollTo={this.scrollTo} onChange={this.onChange} setView={this.setView} />
+                                <FeedBack scrollTo={this.scrollTo} setView={this.setView} />
                             </Fragment>
                         }
                     <div className="message" onClick={e=>this.handleButton(e) }>
