@@ -212,6 +212,7 @@ export const turnFactors = () => async dispatch => {
 
     } catch (err) {
         dispatch({type: User_Error, payload: {msg: err.response.statusText, status: err.response.status }})
+        dispatch(setAlert('Authorization error.', 'danger'))
     }
 
 }
@@ -223,12 +224,17 @@ export const checkLogin = (formData, id, history) => async dispatch => {
     }
     try {
         const res = await axios.put(`/api/auth/two_factor/${id}`, formData, config);
-        dispatch({type: Login_Success, payload: res.data})
+        
+        
+        
+        await dispatch({type: Login_Success, payload: res.data})
         
         dispatch(loadUser());
-        history.push('/')
+
+        return history.push('/')
 
     } catch (err) {
         dispatch({type: User_Error, payload: {msg: err.response.statusText, status: err.response.status }})
+        dispatch(setAlert('Invalid credentials.', 'danger'))
     }
 }

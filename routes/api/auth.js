@@ -92,6 +92,11 @@ router.post('/', [
             await user.save()
             await sgMail.send(msg)
             
+            setTimeout(async() => {
+                user.twoFactorKey = null;
+                await user.save()
+            }, 900000)
+
             return res.json({user: user._id})
         }
 
@@ -132,15 +137,30 @@ router.post('/', [
 //route PUT    api/auth/two_factor/:id
 //description  accept code from email two factor auth
 //access       Public
-router.put('/two_factor/:id', async (req, res) => {
-    const key = req.body.toString();
+router.put('/two_factor/:id', [
+    check('key', 'Key is required')
+    .not()
+    .isEmpty()
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()){
+        return res.status(400).json({ errors: errors.array() });
+    }
+    
     const { id } = req.params;
     try {
+        let key = req.body.key.join(',')
+
+        if (!key) {
+            return res.status(401).json({msg: 'User not authorised.'})
+        }
         const user = await User.findById(id);
         if ( !user ) {
             return res.status(401).json({msg: 'User not authorised.'})
         }
-        if ( key !== user.twoFactorKey.toString() ) {
+        if ( key.toString() !== user.twoFactorKey.toString() ) {
+            
+            
             return res.status(401).json({msg: 'User not authorised.'})
         }
         user.twoFactorKey = null;

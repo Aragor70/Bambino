@@ -21,10 +21,10 @@ export default function(state= initialState, action) {
             return {...state, isAuthenticated: true, loading: false, user: payload}
         case Auth_Error:
             localStorage.removeItem('token');
-            return {...state, token: null, isAuthenticated:false, loading: false}
+            return {...state, token: null, isAuthenticated:false, user: null, loading: false}
         case Two_Factor:
             localStorage.removeItem('token');
-            return {...state, ...payload, isAuthenticated: false, loading: false}
+            return {...state, ...payload, isAuthenticated: false, user: null, loading: false}
         case Login_Success:
             localStorage.setItem('token', payload.token);
             return {...state, ...payload, isAuthenticated: true, loading: false}
@@ -42,7 +42,7 @@ export default function(state= initialState, action) {
         case Add_Avatar:
             return {...state, user: payload, isAuthenticated: true, loading: false}
         case User_Error:
-            return {...state, errors: payload, isAuthenticated: true, loading: false}
+            return {...state, errors: payload, isAuthenticated: false, user: null, loading: false}
 
             default:
             return state;
