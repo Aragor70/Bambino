@@ -36,13 +36,13 @@ const TwoFactor = ({checkLogin, match, history, isAuthenticated, location}) => {
     }
     const onSubmit = async (e) => {
         e.preventDefault()
-        const data = []
+        const data = {key: []}
         
         for( let i in formData) {
-            data.push(formData[i])
+            data.key.push(formData[i])
         }
-        await checkLogin(data, match.params.id, history)
-
+        checkLogin(data, match.params.id, history)
+        
     }
 
     useEffect( ()=> {
