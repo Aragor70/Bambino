@@ -14,6 +14,7 @@ const appMailer = require('../../mailers/appMailer');
 
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
+const key = require('../../utils/key');
 
 
 //route get    api/auth
@@ -46,9 +47,9 @@ router.post('/', [
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const {email, password} = req.body;
+    const { email, password } = req.body;
 
-    try{
+    try {
         // if user exists
         let user = await User.findOne(({email}));
         if(!user){
@@ -60,9 +61,41 @@ router.post('/', [
         if(!isMatch){
             return res.status(400).json({ errors: [ { msg: 'Invalid Credentials.' } ] })
         }
+        
+        if (user.twoFactor) {
+            sgMail.setApiKey(process.env.SENGRID_KEY);
 
+            const twoFactorKey = await key(6)
+            
+            user.twoFactorKey = twoFactorKey;
 
-        // return jsonwebtoken
+            const address = `${req.protocol}://${req.get('host')}/two_factor/${user._id}?key=${twoFactorKey}`; // <- create token insted of user._id
+
+            const message = `
+                Welcome again ${user.name}, please click the button to log in the webSite. \n\n
+                ${address}\n\n
+                , or paste you two factor key to the browser. \n\n
+                ${twoFactorKey}\n\n
+
+                I am glad to see you again. \n\n
+
+                Mikolaj from onLoud.uk
+
+            `;
+
+            const msg = {
+                from: 'mikey.prus@gmail.com',
+                to: user.email,
+                subject: 'Onloud Authorization Process',
+                text: message
+            }
+            await user.save()
+            await sgMail.send(msg)
+            
+            return res.json({user: user._id})
+        }
+
+        // if regular auth return jsonwebtoken
 
         const payload = {
             user: {
@@ -88,8 +121,6 @@ router.post('/', [
             profile.logs.unshift(newLog)
             await profile.save()
         }
-        
-
     }
     catch(err){
         console.error(err.message);
@@ -97,6 +128,74 @@ router.post('/', [
     }
     
 });
+
+//route PUT    api/auth/two_factor/:id
+//description  accept code from email two factor auth
+//access       Public
+router.put('/two_factor/:id', async (req, res) => {
+    const key = req.body.toString();
+    const { id } = req.params;
+    try {
+        const user = await User.findById(id);
+        if ( !user ) {
+            return res.status(401).json({msg: 'User not authorised.'})
+        }
+        if ( key !== user.twoFactorKey.toString() ) {
+            return res.status(401).json({msg: 'User not authorised.'})
+        }
+        user.twoFactorKey = null;
+        const payload = {
+            user: {
+                id: user.id
+            }
+        }
+        jwt.sign(payload, process.env.jwtSecret, { expiresIn: 360000 },
+        (err, token) => {
+            if(err) {
+                throw err
+            }
+            res.json({ token });
+        });
+        
+        let profile = await Profile.findOne({user:user.id})
+        if(profile){
+            const newLog = {
+                user: user.id,
+                name: user.name,
+                avatar: user.avatar
+            }
+            profile.logs.unshift(newLog)
+            await profile.save()
+        }
+        await user.save()
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error.');
+    }
+})
+
+//route POST   api/auth/two_factor
+//description  two factor request initial two factor authorization process
+//access       Private
+router.post('/two_factor', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id)
+        if(!user) {
+            return res.status(401).json({msg: 'Not authorised.'})
+        }
+        user.twoFactor = !user.twoFactor;
+        user.twoFactorKey = null
+        await user.save()
+
+        res.json(user)
+
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send('Server error.')
+    }
+})
+
 
 //route POST   api/users/password
 //description  forgot user password process, send email

@@ -3,8 +3,33 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import UpdatePassword from './UpdatePassword';
+import SwitchButton from './SwitchButton';
+import {turnFactors} from '../actions/auth';
 
-const Security = ({auth:{user}, profile:{profile}}) => {
+const Security = ({auth:{user}, profile:{profile}, turnFactors}) => {
+    
+    const [styles, setStyles] = useState({})
+    const [value, setValue] = useState('')
+    
+    const handleClick = (e) => {
+        turnFactors(e)
+    }
+    useEffect( () => {
+        if (user.twoFactor) {
+            setStyles({
+                right: '55%',
+                backgroundColor: '#49c500'
+            })
+            setValue('ON')
+        } else {
+            setStyles({
+                right: '0%',
+                backgroundColor: '#2a2a2a'
+            })
+            setValue('OFF')
+        }
+
+    },[user.twoFactor])
     
     return (
         <Fragment>
@@ -26,13 +51,14 @@ const Security = ({auth:{user}, profile:{profile}}) => {
                         </div>
                         
 
-
-
                         <div className="top-bar"> Two-factor authentication </div>
                         <div className="settings-info">
                             Two-factor authentication requires you to enter additional code in login process, which increase the protection of your account against unauthorized access.
                         </div>
-                        <img src={require('../style/soon.png')} className="comming-soon" />
+                        <div className="security-content">
+                            <SwitchButton user={user} styles={styles} value={value} handleClick={handleClick} />
+                            
+                        </div>
                     </div>
                 </div>
         </Fragment>
@@ -46,4 +72,4 @@ Security.propTypes = {
 const mapStateToProps = state => ({
     auth: state.auth
 })
-export default connect(mapStateToProps, {})(Security);
+export default connect(mapStateToProps, {turnFactors})(Security);

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Register_Success, Register_Fail, User_Loaded, Auth_Error, Login_Success, Login_Fail, Logout, Clear_Profile, User_Error, Update_User, Add_Avatar} from './types';
+import {Register_Success, Register_Fail, User_Loaded, Auth_Error, Login_Success, Login_Fail, Logout, Clear_Profile, User_Error, Update_User, Add_Avatar, Two_Factor} from './types';
 
 import {setAlert} from './alert';
 import setAuthToken from '../utils/setAuthToken';
@@ -52,7 +52,7 @@ export const register = ({name, email, password}) => async dispatch => {
 
 
 // Login user
-export const login = (email, password) => async dispatch => {
+export const login = (email, password, history) => async dispatch => {
     const config = {
         headers: {
             'Content-type': 'application/json'
@@ -62,11 +62,24 @@ export const login = (email, password) => async dispatch => {
     try{
         const res = await axios.post('/api/auth', body, config);
 
-        dispatch({
-            type: Login_Success,
-            payload: res.data
-        })
-        dispatch(loadUser());
+        if (res.data.user) {
+            
+            dispatch({
+                type: Two_Factor,
+                payload: res.data
+            })
+            history.push(`/two_factor/${res.data.user}`)
+            return dispatch(setAlert('Email sent.', 'success'))
+
+        } 
+
+            await dispatch({
+                type: Login_Success,
+                payload: res.data
+            })
+
+            dispatch(loadUser());
+            history.push('/')
         
     }
     catch(err){
@@ -163,11 +176,11 @@ export const forgotPassword = (formData) => async dispatch => {
     }
     try{
         await axios.post(`/api/auth/forgotpassword`, formData, config);
-        setAlert('Email sent.', 'success')
+        dispatch(setAlert('Email sent.', 'success'))
     }
     catch(err){
         console.log('Server error.');
-        setAlert('Email cound not be sent.', 'danger')
+        dispatch(setAlert('Email cound not be sent.', 'danger'))
     }
 }
 export const resetPassword = (resettoken, formData) => async dispatch => {
@@ -187,4 +200,35 @@ export const resetPassword = (resettoken, formData) => async dispatch => {
         console.log('Server error.');
         setAlert('Password cound not be changed.', 'danger')
     } 
+}
+
+// switch two factor auth
+
+export const turnFactors = () => async dispatch => {
+    try {
+        const res = await axios.post('/api/auth/two_factor');
+        dispatch({type: Update_User, payload: res.data})
+        dispatch(setAlert('Authorization changed.', 'success'))
+
+    } catch (err) {
+        dispatch({type: User_Error, payload: {msg: err.response.statusText, status: err.response.status }})
+    }
+
+}
+export const checkLogin = (formData, id, history) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }
+    try {
+        const res = await axios.put(`/api/auth/two_factor/${id}`, formData, config);
+        dispatch({type: Login_Success, payload: res.data})
+        
+        dispatch(loadUser());
+        history.push('/')
+
+    } catch (err) {
+        dispatch({type: User_Error, payload: {msg: err.response.statusText, status: err.response.status }})
+    }
 }

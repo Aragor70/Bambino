@@ -45,6 +45,7 @@ import MainSongs from './songs/MainSongs';
 import FrontTop from './FrontTop';
 import Counting from './games/Counter/Counting';
 import Core from './games/Counter/Core';
+import TwoFactor from './TwoFactor';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
@@ -100,7 +101,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     menu && <Menu menu={menu} setMenu={setMenu} setList={setList} profile={profile} />
                 }
             <main className="output" ref={scrollTo} onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
-                <Alert />
+                
                 {
                     isAuthenticated ? 
                     <Fragment>
@@ -166,6 +167,11 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 <Route exact path="/forgotpassword/">
                     <ForgotPassword />
                 </Route>
+                <Route exact path="/two_factor/:id">
+                    <TwoFactor />
+                </Route>
+
+
                 <Route exact path="/games">
                     <FrontTop frontNavValue="GAME ZONE" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
                     <Games />
