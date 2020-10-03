@@ -20,8 +20,7 @@ const Login = ({login, auth: {isAuthenticated}, history}) => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        login(email, password);
-        if(isAuthenticated)history.push('/');
+        await login(email, password, history);
        
     }   
 
