@@ -124,6 +124,11 @@ router.post('/', [
                 avatar: user.avatar
             }
             profile.logs.unshift(newLog)
+            
+            if(profile.logs.length) {
+                profile.logs = await profile.logs.slice(0, 10)
+            }
+
             await profile.save()
         }
     }
@@ -185,6 +190,11 @@ router.put('/two_factor/:id', [
                 avatar: user.avatar
             }
             profile.logs.unshift(newLog)
+            
+            if(profile.logs.length) {
+                profile.logs = await profile.logs.slice(0, 10)
+            }
+            
             await profile.save()
         }
         await user.save()
