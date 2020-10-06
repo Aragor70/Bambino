@@ -13,7 +13,8 @@ const AuthorSchema = new mongoose.Schema({
     },
     author:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     bio:{
         type: String

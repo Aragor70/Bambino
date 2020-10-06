@@ -4,8 +4,10 @@ require('dotenv').config({ path: './config/config.env' })
 const config = require('config'); */
 
 const express = require('express');
+const colors = require('colors')
 
 const connect = require('./config/db');
+
 const fileUpload = require('express-fileupload');
 
 const path = require('path');
@@ -88,6 +90,9 @@ app.post('/upload', (req, res)=>{
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started in ${process.env.NODE_ENV} mode on port ${PORT}.`));
+const server = app.listen(PORT, () => console.log(`Server started in ${process.env.NODE_ENV} mode on port ${PORT}.`.green));
 
-
+process.on('unhandledRejection', (err, _promise) => {
+    console.log(`Error message: ${err.message}`.red)
+    server.close(() => process.exit(1))
+})

@@ -101,8 +101,6 @@ router.post('/', [auth, [
         profile = new Profile(profileFields);
         await profile.save();
         res.json(profile);
-
-
     }
     catch(err){
         console.error(err.message);
@@ -423,7 +421,11 @@ router.post('/footer', [auth, [
         res.status(500).send('Server error.');
     }
 });
-// upload test
+
+// route post   api/profile/upload
+// description  upload test route
+// access       Private
+
 router.post('/upload', auth, async(req, res) => {
     
     if(req.files === null){
@@ -459,6 +461,9 @@ router.post('/upload', auth, async(req, res) => {
 
 });
 
+// route post   api/profile/avatar
+// description  upload user avatar
+// access       Private
 router.post('/avatar', auth, upload, async(req, res) => {
     
     try{
