@@ -93,14 +93,14 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
     return(
         <Fragment>
             <Router>
-            <header className="header" >
+            <header className="header" ref={scrollTo}>
                 
                 <TopNav menu={menu} setMenu={setMenu} filterUser={filterUser} setFilterUser={setFilterUser} filterSong={filterSong} setFilterSong={setFilterSong} filterAuthor={filterAuthor} setFilterAuthor={setFilterAuthor} />
             </header>
                 {
                     menu && <Menu menu={menu} setMenu={setMenu} setList={setList} profile={profile} />
                 }
-            <main className="output" ref={scrollTo} onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
+            <main className="output"  onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
                 
                 {
                     isAuthenticated ? 
