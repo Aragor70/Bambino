@@ -13,8 +13,16 @@
     display: block;
     box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
     border-radius: 3px;
-
+    overflow-x: hidden;
+    animation-name: example;
+    animation-duration: 0.3s;
 }
+@keyframes example {
+    from {width: 0;}
+    to {width: 60vw;}
+}
+
+
 .user-menu-nickname
 {
     width: 100%;
@@ -26,6 +34,7 @@
     box-sizing: border-box;
     align-items: center;
     display: flex;
+    overflow-x: hidden;
 }
 .user-menu-btn
 {
@@ -38,11 +47,13 @@
     align-items: center;
     display: flex;
     cursor: pointer;
+    overflow-x: hidden;
 }
 .user-menu-btn > a
 {
     color: #7f7f7f;
     font-weight: 500;
+    overflow-x: hidden;
     
     transition: all ease-in 0.3s;
 }
@@ -72,6 +83,7 @@
     display: block;
     box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
     border-radius: 3px;
+    overflow-x: hidden;
 }
 .navi-menu a
 {
@@ -151,7 +163,7 @@ hr
         position: absolute;
         top: 9vh;
         right: 0;
-        font-size: 30.5px;
+        font-size: 25.5px;
         opacity: 0.9;
         z-index: 10;
         background-color: #121212;
@@ -159,8 +171,14 @@ hr
         display: block;
         box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
         border-radius: 3px;
-    
+        animation-name: example;
+        animation-duration: 0.3s;
     }
+    @keyframes example {
+        from {width: 0;}
+        to {width: 43vw;}
+    }
+
     .navi-menu
     {
         width: 43vw;
@@ -168,7 +186,7 @@ hr
         position: absolute;
         top: 9vh;
         right: 0;
-        font-size: 30.5px;
+        font-size: 25.5px;
         opacity: 0.9;
         z-index: 10;
         background-color: #121212;
@@ -198,8 +216,14 @@ hr
         display: block;
         box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
         border-radius: 3px;
-    
+        animation-name: example;
+        animation-duration: 0.3s;
     }
+    @keyframes example {
+        from {width: 0;}
+        to {width: 43vw;}
+    }
+
     .navi-menu
     {
         width: 43vw;
@@ -236,8 +260,14 @@ hr
         color: #fff;
         display: block;
         box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
-        border-radius: 3px;
+        border-radius: 3px;animation-name: example;
+        animation-duration: 0.3s;
     }
+    @keyframes example {
+        from {width: 0;}
+        to {width: 16vw;}
+    }
+
 .user-menu-btn
 {
     width: 100%;
