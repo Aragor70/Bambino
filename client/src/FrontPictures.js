@@ -86,7 +86,6 @@ const FrontPictures = ({authors, profiles, labelUrl, authorsLimitPerPage, author
         pageNumbers.push(i)
     }
 
-    console.log(selectedAuthors)
 
 
 

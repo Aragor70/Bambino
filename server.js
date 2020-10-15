@@ -59,7 +59,7 @@ if(process.env.NODE_ENV === "production") {
     app.use('/api/newsletters', require('./routes/api/newsletters'));
     app.use('/api/quotes', require('./routes/api/quotes'));
     app.use('/api/mails', require('./routes/api/mails'));
-
+    app.use('/api/chat', require('./routes/api/chat'));
     
     
     app.get('*', (req, res) => {

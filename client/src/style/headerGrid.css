@@ -134,9 +134,102 @@
     grid-row: 1/4;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: row;
+}
+.notifyImage
+{
+    
+    display: flex;
+    align-items: center;
     justify-content: center;
     box-sizing: border-box;
     position: relative;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.notify-cloud
+{
+    
+    width: 70vw;
+    min-height: 13vh;
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    font-size: 17.5px;
+    opacity: 0.9;
+    z-index: 10;
+    background-color: #121212;
+    color: #49c500;
+    display: flex;
+    box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
+    border-radius: 3px;
+    overflow-x: hidden;
+    animation-name: notify;
+    animation-duration: 0.3s;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+.notify-cloud span
+{
+    font-size: 13.5px;
+    text-align: left;
+    position: absolute;
+    top: -2.5px;
+    left: 10px;
+
+
+
+}
+
+
+@keyframes notify {
+    from {height: 0;}
+    to {min-height: 13vh;}
+}
+
+.user-notify-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    float: left;
+    justify-content: center;
+    
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    overflow-x: hidden;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    
+}
+
+.user-notify-btn > a
+{
+    color: #7f7f7f;
+    font-weight: 500;
+    overflow-x: hidden;
+    font-size: 14.5px;
+    
+    transition: all ease-in 0.3s;
+}
+.user-notify-btn > a:hover
+{
+    color: lightblue;
+}
+.user-notify-btn:hover
+{
+    color: lightblue;
 }
 
 
@@ -146,7 +239,7 @@
     position: absolute;
     top: 7px;
     left: 75%;
-    color: green;
+    color: #49c500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,6 +263,7 @@
 
     box-sizing: border-box;
 }
+
 #search-user
 {
     float: right;
@@ -230,6 +324,90 @@
     font-family: Arial, Helvetica, sans-serif;
     transform: rotate(20deg);
 }
+.webname
+{
+    grid-column: 1/4;
+    grid-row: 1/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: row;
+}
+.notifyImage
+{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: 15px;
+    
+}
+.notify-cloud
+{
+    
+    width: 50vw;
+    min-height: 13vh;
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    font-size: 17.5px;
+    opacity: 0.9;
+    z-index: 10;
+    background-color: #121212;
+    color: #49c500;
+    display: flex;
+    box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
+    border-radius: 3px;
+    overflow-x: hidden;
+    animation-name: notify;
+    animation-duration: 0.3s;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+.notify-cloud span
+{
+    font-size: 13.5px;
+    text-align: left;
+    position: absolute;
+    top: -2.5px;
+    left: 10px;
+
+
+
+}
+
+
+@keyframes notify {
+    from {width: 0;}
+    to {width: 50vw;}
+}
+
+.user-notify-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    float: left;
+    justify-content: center;
+    
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    overflow-x: hidden;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    
+}
     
 }
 
@@ -244,8 +422,83 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    flex-direction: row;
+}
+.notifyImage
+{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: 15px;
+    
+}
+
+.notify-cloud
+{
+    
+    width: calc(100vw / 64 * 8 + 15px);
+    min-height: 13vh;
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    font-size: 17.5px;
+    opacity: 0.9;
+    z-index: 10;
+    background-color: #121212;
+    color: #49c500;
+    display: flex;
+    box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
+    border-radius: 3px;
+    overflow-x: hidden;
+    animation-name: notify;
+    animation-duration: 0.3s;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
 
 }
+.notify-cloud span
+{
+    font-size: 13.5px;
+    text-align: left;
+    position: absolute;
+    top: -2.5px;
+    left: 10px;
+
+
+
+}
+
+
+@keyframes notify {
+    from {height: 0;}
+    to {min-height: 13vh;}
+}
+
+.user-notify-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    float: left;
+    justify-content: center;
+    
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    overflow-x: hidden;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    
+}
+
 .header-user-navi
 {
     display: flex;

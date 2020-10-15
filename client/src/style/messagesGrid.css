@@ -1,0 +1,785 @@
+.messager-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 15.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    text-align: justify;
+    font-family: 'lato', sans-serif;
+}
+.messager-content span
+{
+    cursor: default;
+}
+.messager-content a:link
+{
+    font-size: 15.5px;
+}
+.messager-content a:visited
+{
+    font-size: 15.5px;
+}
+#hidden
+{
+    display: none;
+}
+.messages-left
+{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+    position: relative;
+}
+.topChat-content
+{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+}
+.messages-nav
+{
+    width: 100%;
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+.messages-nav img
+{
+    position: absolute;
+    right: 15px;
+}
+.messages-nav:hover
+{
+    border-left: 5px solid #fff;
+    color: #fff;
+}
+
+
+.messages-right
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    
+    min-height: auto;
+    
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.content-messages
+{
+    width: 100%;
+    height: 65vh;
+    float: left;
+    background-color: #1a1a1a;
+    box-sizing: border-box;
+    border-top: 1px solid #2a2a2a;
+    border-left: 1px solid #2a2a2a;
+    border-right: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 25px;
+    padding-right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 30px;
+}
+.content-messages > h1
+{
+    margin-top: 0;
+}
+.content-messages > p
+{
+    margin: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 15.5px;
+    position: relative;
+}
+.content-messages > p:hover
+{
+    font-weight: bold;
+    color: #fff;
+}
+.msg-text
+{
+    width: 70%;
+    height: 3.5vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-right: 5px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14.5px;
+}
+
+.msg-date
+{
+    max-width: 30%;
+    height: 3.5vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14.5px;
+}
+.full-width-message
+{
+    width: 100%;
+    min-height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.content-messages .message-row
+{
+    width: auto;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 17.5px;
+    position: relative;
+    overflow-x: auto;
+    margin-bottom: 1.5px;
+    padding: 15px;
+    padding-top: 30px;
+    
+}
+.message-row .message-name
+{
+    width: auto;
+    min-height: 35px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 13.5px;
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.user-message .message-name
+{
+    left: auto;
+    right: 0;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.user-message 
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.user-notify-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    float: left;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.user-notify-btn > a
+{
+    color: #7f7f7f;
+    font-weight: 500;
+    overflow-x: hidden;
+    
+    transition: all ease-in 0.3s;
+}
+.user-notify-btn span 
+{
+    width: calc(100% - 30px - 1vh);
+    overflow: hidden;
+}
+.user-notify-btn > a:hover
+{
+    color: lightblue;
+}
+.user-notify-btn:hover
+{
+    color: lightblue;
+}
+.user-notify-btn .x-top-right
+{
+    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    
+}
+.empty-center-box
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 9vh;
+    padding: 30px;
+}
+
+@media (min-width: 640px) {
+
+.messager-content
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    font-size: 15.5px;
+    position: relative;
+    background-color: #121212;
+    margin-bottom: 2vh;
+    color: #7f7f7f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    text-align: justify;
+    
+}
+.messager-content a:link
+{
+    font-size: 15.5px;
+}
+.messager-content a:visited
+{
+    font-size: 15.5px;
+}
+.messages-left
+{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+    position: relative;
+}
+.topChat-content
+{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    
+    justify-content: center;
+    text-align: justify;
+    float: left;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-size: 14.5px;
+    box-sizing: border-box;
+}
+.messages-nav
+{
+    width: 100%;
+    min-height: 7.5vh;
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 25px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+.messages-nav img
+{
+    position: absolute;
+    right: 15px;
+}
+
+.messages-right
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    
+    min-height: auto;
+    
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.content-messages
+    {
+        width: 100%;
+        height: 65vh;
+        float: left;
+        background-color: #1a1a1a;
+        box-sizing: border-box;
+        border-top: 1px solid #2a2a2a;
+        border-left: 1px solid #2a2a2a;
+        border-right: 1px solid #2a2a2a;
+        border-bottom: 1px solid #2a2a2a;
+        padding-bottom: 25px;
+        padding-right: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        padding: 30px;
+    }
+    .content-messages > h1
+    {
+        margin-top: 0;
+    }
+    .content-messages > p
+    {
+        margin: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        font-size: 15.5px;
+    }
+    .content-messages > p:hover
+    {
+        font-weight: bold;
+        color: #fff;
+    }
+.full-width-message
+{
+    width: 100%;
+    min-height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.content-messages .message-row
+{
+    width: auto;
+    min-height: 5.5vh;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 17.5px;
+    position: relative;
+    overflow-x: auto;
+    margin-bottom: 1.5px;
+    padding: 15px;
+    padding-top: 30px;
+    
+}
+.message-row .message-name
+{
+    width: auto;
+    min-height: 35px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 13.5px;
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.user-message .message-name
+{
+    left: auto;
+    right: 0;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.user-message 
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.user-notify-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    float: left;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.user-notify-btn > a
+{
+    color: #7f7f7f;
+    font-weight: 500;
+    overflow-x: hidden;
+    
+    transition: all ease-in 0.3s;
+}
+.user-notify-btn span 
+{
+    width: calc(100% - 30px - 1vh);
+    overflow: hidden;
+}
+.user-notify-btn > a:hover
+{
+    color: lightblue;
+}
+.user-notify-btn:hover
+{
+    color: lightblue;
+}
+.user-notify-btn .x-top-right
+{
+    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    
+}
+.empty-center-box
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 9vh;
+    padding: 30px;
+}
+}
+
+@media (min-width: 1023px) {
+
+    .messager-content
+    {
+        width: 100%;
+        height: 100vh;
+        float: left;
+        box-sizing: border-box;
+        font-size: 15.5px;
+        position: relative;
+        background-color: #121212;
+        margin-bottom: 2vh;
+        color: #7f7f7f;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px;
+        text-align: justify;
+        display: block;
+        
+    }
+    .messager-content a:link
+    {
+        font-size: 15.5px;
+    }
+    .messager-content a:visited
+    {
+        font-size: 15.5px;
+    }
+    .messages-left
+    {
+        width: 20%;
+        height: auto;
+        box-sizing: border-box;
+        margin-top: 2vh;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        float: left;
+        position: relative;
+        margin-right: 30px;
+    }
+    .topChat-content
+    {
+        box-sizing: border-box;
+        margin-top: 2vh;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        float: left;
+    }
+    .messages-navs
+    {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        float: left;
+        border-left: none;
+        cursor: pointer;
+        
+        margin-right: 0;
+    }
+    .messages-nav
+    {
+        width: 100%;
+        min-height: 7.5vh;
+        box-sizing: border-box;
+        float: left;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-left: 15px;
+        border-top: 1px solid #2a2a2a;
+        border-bottom: 1px solid #2a2a2a;
+        background-color: #1a1a1a;
+        margin-right: 0;
+    }
+    #hidden
+    {
+        display: flex;
+    }
+    .messages-nav img
+    {
+        position: absolute;
+        right: 15px;
+    }
+    
+    
+    
+    .messages-right
+    {
+        width: calc(80% - 30px);
+        height: auto;
+        float: left;
+        
+        min-height: auto;
+        
+        box-sizing: border-box;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 2vh;
+        margin-bottom: 0;
+    }
+    
+    .content-messages
+    {
+        width: 100%;
+        height: 65vh;
+        float: left;
+        background-color: #1a1a1a;
+        box-sizing: border-box;
+        border-top: 1px solid #2a2a2a;
+        border-left: 1px solid #2a2a2a;
+        border-right: 1px solid #2a2a2a;
+        border-bottom: 1px solid #2a2a2a;
+        padding-bottom: 25px;
+        padding-right: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        padding: 30px;
+    }
+    .content-messages > h1
+    {
+        margin-top: 0;
+    }
+    .content-messages > p
+    {
+        margin: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        font-size: 15.5px;
+    }
+    .content-messages > p:hover
+    {
+        font-weight: bold;
+        color: #fff;
+    }
+    .full-width-message
+    {
+        width: 100%;
+        min-height: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .content-messages .message-row
+    {
+        width: auto;
+        min-height: 5.5vh;
+        float: left;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        font-size: 17.5px;
+        position: relative;
+        overflow-x: auto;
+        margin-bottom: 1.5px;
+        padding: 15px;
+        padding-top: 30px;
+        margin-right: 0;
+        
+    }
+    .message-row .message-name
+    {
+        width: auto;
+        min-height: 35px;
+        float: left;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 13.5px;
+        position: relative;
+        overflow: hidden;
+        overflow-x: auto;
+        
+        padding-left: 15px;
+        padding-right: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    
+    .user-message .message-name
+    {
+        left: auto;
+        right: 0;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .user-message 
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    
+    .user-notify-btn
+    {
+        width: 100%;
+        height: 6.5vh;
+        float: left;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+    }
+    .user-notify-btn > a
+    {
+        color: #7f7f7f;
+        font-weight: 500;
+        overflow-x: hidden;
+        
+        transition: all ease-in 0.3s;
+    }
+    .user-notify-btn span 
+    {
+        width: calc(100% - 30px - 1vh);
+        overflow: hidden;
+    }
+    .user-notify-btn > a:hover
+    {
+        color: lightblue;
+    }
+    .user-notify-btn:hover
+    {
+        color: lightblue;
+    }
+    .user-notify-btn .x-top-right
+    {
+        border-radius: 25px;
+        width: 20px;
+        height: 20px;
+        
+    }
+    .empty-center-box
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 9vh;
+        padding: 30px;
+    }
+}

@@ -4,7 +4,7 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import AvatarScreen from './AvatarScreen';
 
-const ProfileTop = ({profile}) => {
+const ProfileTop = ({profile, auth: {user}}) => {
 
     const [pictureScreen, setPictureScreen] = useState(false)
     const [pictureContent, setPictureContent] = useState({
@@ -20,6 +20,7 @@ const ProfileTop = ({profile}) => {
                 
             </div>
             <div className="avatarField" >{profile && profile.user.avatar.charAt(0) == "/" ? <img onClick={e=>setPictureScreen(!pictureScreen)} src={profile.user.avatar} /> : <img onClick={e=>setPictureScreen(!pictureScreen)} src={`https://s3.eu-west-2.amazonaws.com/onloud-storage/profile/avatar/${profile.user.avatar}`} />}</div>
+            
             {
                 pictureScreen && <AvatarScreen pictureContent={pictureContent} setPictureContent={setPictureContent} pictureScreen={pictureScreen} setPictureScreen={setPictureScreen} />
             }
@@ -33,4 +34,7 @@ const ProfileTop = ({profile}) => {
 ProfileTop.propTypes = {
     profile: PropTypes.object.isRequired
 }
-export default ProfileTop;
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+export default connect(mapStateToProps, {})(ProfileTop);

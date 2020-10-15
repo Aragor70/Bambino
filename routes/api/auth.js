@@ -15,6 +15,7 @@ const appMailer = require('../../mailers/appMailer');
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
 const key = require('../../utils/key');
+const Notification = require('../../models/Notification');
 
 
 //route get    api/auth
@@ -61,6 +62,7 @@ router.post('/', [
         if(!isMatch){
             return res.status(400).json({ errors: [ { msg: 'Invalid Credentials.' } ] })
         }
+
         
         if (user.twoFactor) {
             sgMail.setApiKey(process.env.SENGRID_KEY);
@@ -115,6 +117,20 @@ router.post('/', [
             res.json({ token }); 
                 
         });
+        // welcome notify
+        let notify = await Notification.findOne({user: user.id})
+        
+        if(notify && notify.turnOn) {
+            const newMessage = {
+                user: user.id,
+                from: 'OnLoud service',
+                text: `Welcome again.`
+            }
+            
+        await notify.service.unshift(newMessage)
+        await notify.save()
+        }
+        
 
         let profile = await Profile.findOne({user:user.id})
         if(profile){

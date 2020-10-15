@@ -133,6 +133,7 @@ const Profile = ({auth: {user, loading}, profile:{profile}, getSongs, getPosts, 
                         {
                             profileNav && <ProfileNav profile={profile} profileNav={profileNav} setProfileNav={setProfileNav} />
                         }
+                        
                     </div>
                 </div>
 

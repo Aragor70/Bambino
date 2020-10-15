@@ -46,13 +46,20 @@ import FrontTop from './FrontTop';
 import Counting from './games/Counter/Counting';
 import Core from './games/Counter/Core';
 import TwoFactor from './TwoFactor';
+import Notify from './userAccount/Notify';
+import Messages from './userAccount/Messages';
+import UserChat from './userAccount/UserChat';
+import { getNotifies } from './actions/chat';
+import UsersPage from './userAccount/UsersPage';
+import MessagesSent from './userAccount/MessagesSent';
 
 
-const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
+const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile, getNotifies}) => {
 
     useEffect(()=> {
         getCurrentProfile()
-    }, [isAuthenticated, user, loading, getCurrentProfile]);
+        getNotifies()
+    }, [isAuthenticated, user, loading, getCurrentProfile, getNotifies]);
     
     const [list, setList] = useState(false)
 
@@ -84,24 +91,36 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
 
     const [frontAdd, setFrontAdd] = useState(false);
     const [frontNav, setFrontNav] = useState(false);
-    const [frontNavValue, setFrontNavValue] = useState("HOME")
+    
+    const [notify, setNotify] = useState(false)
+    const [msgOptions, setMsgOptions] = useState(false)
+
 
     const [quoteView, setQuoteView] = useState(false);
     const [songInputView, setSongInputView] = useState(false);
     const [authorInputView, setAuthorInputView] = useState(false);
 
+    
     return(
         <Fragment>
             <Router>
             <header className="header" ref={scrollTo}>
                 
-                <TopNav menu={menu} setMenu={setMenu} filterUser={filterUser} setFilterUser={setFilterUser} filterSong={filterSong} setFilterSong={setFilterSong} filterAuthor={filterAuthor} setFilterAuthor={setFilterAuthor} />
+                <TopNav menu={menu} setMenu={setMenu} filterUser={filterUser} setFilterUser={setFilterUser} filterSong={filterSong} setFilterSong={setFilterSong} filterAuthor={filterAuthor} setFilterAuthor={setFilterAuthor} notify={notify} setNotify={setNotify} />
+                
             </header>
+            
                 {
                     menu && <Menu menu={menu} setMenu={setMenu} setList={setList} profile={profile} />
                 }
-            <main className="output"  onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
+                {
+                    isAuthenticated && notify && <Fragment>
+                        <Notify notify={notify} setNotify={setNotify} />
+                    </Fragment>
+                }
                 
+            <main className="output"  onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
+            
                 {
                     isAuthenticated ? 
                     <Fragment>
@@ -112,7 +131,22 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     <PrivateRoute exact path="/create_recommendation" component={CreateRecommendation} />
                     <PrivateRoute exact path="/settings" component={Control} />
                     <Route exact path="/profile/:id" component={Profile} />
+                    
+                    
+                    <Route exact path={"/messages"}>
+                        <Messages msgOptions={msgOptions} setMsgOptions={setMsgOptions} />
+                    </Route>
+                    <Route exact path={"/messages/sent"} >
 
+                        <MessagesSent msgOptions={msgOptions} setMsgOptions={setMsgOptions} />
+                    </Route>
+                    <Route exact path={"/messages/users"} >
+                        <UsersPage msgOptions={msgOptions} setMsgOptions={setMsgOptions} />
+                    </Route>
+                    
+                
+                    <Route exact path={"/messages/:id"} component={UserChat} />
+                    
                     <Route exact path="/history">
                         
                         <History />
@@ -120,7 +154,6 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
 
                     
                     <Route exact path="/library">
-                        
                         <Library />
                     </Route>
                     <Route exact path={"/library/favorites"}>
@@ -170,8 +203,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 <Route exact path="/two_factor/:id">
                     <TwoFactor />
                 </Route>
-
-
+                
                 <Route exact path="/games">
                     <FrontTop frontNavValue="GAME ZONE" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
                     <Games />
@@ -210,4 +242,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-export default connect(mapStateToProps, {getCurrentProfile})(App);
+export default connect(mapStateToProps, {getCurrentProfile, getNotifies})(App);

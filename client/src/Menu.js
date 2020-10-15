@@ -36,6 +36,9 @@ const Menu = ({auth: {user, isAuthenticated, loading}, profile, logout, menu, se
                 history
             </div></Link>
             <hr />
+            <Link to='/messages' onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
+                messages
+            </div></Link>
             <Link to='/profile' onClick={e=>setMenu(!menu)}><div className="user-menu-btn">
                 my account
             </div></Link>
