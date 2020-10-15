@@ -43,7 +43,6 @@ import Footer from './Footer';
 import Support from './support/Support';
 import MainSongs from './songs/MainSongs';
 import FrontTop from './FrontTop';
-import Counting from './games/Counter/Counting';
 import Core from './games/Counter/Core';
 import TwoFactor from './TwoFactor';
 import Notify from './userAccount/Notify';
