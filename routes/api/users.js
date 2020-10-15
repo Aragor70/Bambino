@@ -9,6 +9,7 @@ const auth = require('../../middleware/auth');
 
 
 const User = require('../../models/User');
+const Notification = require('../../models/Notification');
 
 //route POST   api/users
 //description  register user
@@ -57,6 +58,16 @@ router.post('/', [
 
         await user.save();
 
+        // welcome notify
+        let notify = new Notification({
+            user: user.id,
+            service: {
+                user: user.id,
+                from: 'OnLoud service',
+                text: `Welcome in onLoud ${user.name}.`
+            }
+        })
+        await notify.save()
         // return jsonwebtoken
 
         const payload = {
@@ -72,7 +83,7 @@ router.post('/', [
             res.json({ token }); 
                 
         });
-
+        
     }
     catch(err){
         console.error(err.message);
@@ -163,5 +174,36 @@ router.post('/password/:id', [auth, [
 
 });
 
+//route GET    api/users/:id
+//description  get single user
+//access       private
+router.get('/:id', auth, async (req, res) => {
+    try{
+        const user = await User.findById(req.params.id).select('-password');
+        
+        res.json(user);
+
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Auth server error.')
+    }
+});
+
+//route GET    api/users
+//description  get all users
+//access       private
+router.get('/', auth, async (req, res) => {
+    try{
+        const users = await User.find().select('-password');
+        
+        res.json(users);
+
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Auth server error.')
+    }
+});
 
 module.exports = router;

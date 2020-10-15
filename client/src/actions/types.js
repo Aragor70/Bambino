@@ -64,3 +64,24 @@ export const Edit_Album = 'Edit_Album';
 export const Remove_Album = 'Remove_Album';
 export const Github_Error = 'Github_Error';
 export const Two_Factor = 'Two_Factor';
+export const Get_Messages = 'Get_Messages';
+export const Get_Notifies = 'Get_Notifies';
+export const Get_User_Chat = 'Get_User_Chat';
+export const Notify_Removed = 'Notify_Removed';
+export const Update_Notifies = 'Update_Notifies';
+export const Notify_Error = 'Notify_Error';
+export const Update_Message = 'Update_Message';
+export const Update_Notification = 'Update_Notification';
+export const Get_Client = 'Get_Client';
+export const Notfy_Removed_All = 'Notfy_Removed_All';
+export const Client_Error = 'Client_Error';
+export const Get_Clients = 'Get_Clients';
+
+
+
+
+
+
+
+
+

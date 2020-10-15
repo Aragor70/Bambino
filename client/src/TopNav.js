@@ -7,8 +7,11 @@ import {getProfiles} from './actions/profile';
 import PropTypes from 'prop-types';
 import { getSongs } from './actions/song';
 import { getAuthors } from './actions/author';
+import { getNotifies } from './actions/chat';
+import NavNotify from './userAccount/NavNotify';
 
-const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, profile:{ profiles }, getSongs, song:{songs}, getAuthors, author:{authors}, filterUser, setFilterUser, filterSong, setFilterSong, filterAuthor, setFilterAuthor}) => {
+
+const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, getNotifies, chat: { messages, notifies }, profile:{ profiles }, getSongs, song:{songs}, getAuthors, author:{authors}, filterUser, setFilterUser, filterSong, setFilterSong, filterAuthor, setFilterAuthor, notify, setNotify}) => {
 
 
     const scrollTo = useRef(null)
@@ -23,11 +26,24 @@ const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, p
         getProfiles();
         getSongs();
         getAuthors();
-    }, [] );
+        getNotifies();
+    }, []);
+    
+    
+    useEffect(() => {
+        
+        getNotifies();
+    }, [messages]);
+
+    useEffect(() => {
+
+        const interval = setInterval(() => getNotifies(), 7000);
+        
+        return () => clearInterval(interval);
+        }, []);
 
     const [searchValue, setSearchValue] = useState([]);
 
-    
 
     useEffect(() => {
         const allUsers = profiles.map((profile)=>(profile.user._id ,{id:profile.user._id, avatar:profile.user.avatar ,name:profile.user.name.toLowerCase()}))
@@ -112,9 +128,14 @@ const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, p
         setMenu(!menu)
     }
     
-    
     const userNav = (<>
-        <div className="webname"><Link to="/" style={{"color": "black"}}> OnLoud.uk </Link></div>
+        <div className="webname"><Link to="/" style={{"color": "black"}}> OnLoud.uk </Link> 
+        
+        <NavNotify setNotify={setNotify} notify={notify} />
+        
+        
+        </div>
+        
         <div className="grid-header header-user-navi" ref={scrollTo}>
             
             {
@@ -219,7 +240,8 @@ const mapStateToProps = state => ({
     auth: state.auth,
     profile: state.profile,
     song: state.song,
-    author: state.author
+    author: state.author,
+    chat: state.chat
 })
 
-export default connect(mapStateToProps, {getProfiles, getSongs, getAuthors})(TopNav);
+export default connect(mapStateToProps, {getProfiles, getSongs, getAuthors, getNotifies})(TopNav);

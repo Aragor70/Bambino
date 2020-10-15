@@ -14,6 +14,8 @@
     grid-template-rows: repeat(9,1fr);
     padding: 15px;
     text-align: justify;
+
+    
 }
 .login-label
 {

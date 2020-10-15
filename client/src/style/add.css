@@ -232,6 +232,10 @@ select:hover
     font-size: 15.5px;
     z-index: 1;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
 }
 button
 {

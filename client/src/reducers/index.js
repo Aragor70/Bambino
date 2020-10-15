@@ -7,6 +7,8 @@ import song from './song';
 import author from './author';
 import newsletter from './newsletter';
 import quote from './quote';
+import chat from './chat';
+import client from './client'
 
 export default combineReducers({
     alert,
@@ -16,5 +18,7 @@ export default combineReducers({
     song,
     author,
     newsletter,
-    quote
+    quote,
+    chat,
+    client
 });

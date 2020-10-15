@@ -28,7 +28,7 @@ import ProfileNav from './ProfileNav';
 import { getAuthors } from '../actions/author';
 
 
-const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts, getSongs, getQuotes, getAuthors, author:{authors}, quote:{quotes}, post:{posts}, song:{songs}, removeLike, addLike}) => {
+const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts, getSongs, getQuotes, getAuthors, author:{authors}, quote:{quotes}, post:{posts}, song:{songs}, removeLike, addLike, auth: {user}}) => {
 
     useEffect(() => {
         getProfileById(match.params.id)
@@ -109,6 +109,7 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
                 profile === null || loading  ? <p>loading...</p> : <Fragment>
                     <div className="shield">
                     <ProfileTop profile={profile} />
+                    
                     </div>
                                         
                 <Route exact path={`/profile/${profile.user._id}/songs/:id`} component={Song} />
@@ -188,6 +189,7 @@ const Profile = ({match, getProfileById, profile: { profile, loading }, getPosts
                 {
                     profileNav && <ProfileNav profile={profile} profileNav={profileNav} setProfileNav={setProfileNav} />
                 }
+                
             </div></div>        
 
             <div className="shield" onClick={e=> setProfileNav(false)}>

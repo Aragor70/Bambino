@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Register_Success, Register_Fail, User_Loaded, Auth_Error, Login_Success, Login_Fail, Logout, Clear_Profile, User_Error, Update_User, Add_Avatar, Two_Factor} from './types';
+import {Register_Success, Register_Fail, User_Loaded, Auth_Error, Login_Success, Login_Fail, Logout, Clear_Profile, User_Error, Update_User, Add_Avatar, Two_Factor, Get_Users, Get_User} from './types';
 
 import {setAlert} from './alert';
 import setAuthToken from '../utils/setAuthToken';
