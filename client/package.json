@@ -30,8 +30,7 @@
     "url-loader": "^4.1.0"
   },
   "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.0.0"
+    "node": "12.x"
   },
   "scripts": {
     "start": "react-scripts start",
