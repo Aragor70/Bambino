@@ -4,8 +4,8 @@
   "description": "Node app",
   "main": "server.js",
   "engines": {
-    "node": "13.11.0",
-    "npm": "6.14.4"
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
   },
   "scripts": {
     "start": "node server",
