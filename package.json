@@ -14,7 +14,7 @@
     "how to read music"
   ],
   "author": "Nicolai",
-  "license": "BSD",
+  "license": "MIT",
   "dependencies": {
     "@sendgrid/mail": "^7.2.5",
     "aws-sdk": "^2.744.0",
