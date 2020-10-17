@@ -113,7 +113,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     menu && <Menu menu={menu} setMenu={setMenu} setList={setList} profile={profile} />
                 }
                 {
-                    isAuthenticated && user && notify && <Fragment>
+                    isAuthenticated && notify && <Fragment>
                         <Notify notify={notify} setNotify={setNotify} />
                     </Fragment>
                 }
