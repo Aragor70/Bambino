@@ -23,23 +23,30 @@ const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, g
 
 
     useEffect(() => {
-        getProfiles();
-        getSongs();
-        getAuthors();
-        getNotifies();
+        if (isAuthenticated) {
+            getProfiles();
+            getSongs();
+            getAuthors();
+            getNotifies();
+        }
+        
     }, []);
     
     
     useEffect(() => {
+        if (isAuthenticated) {
+            getNotifies();
+        }
         
-        getNotifies();
     }, [messages]);
 
     useEffect(() => {
 
-        const interval = setInterval(() => getNotifies(), 7000);
+        if( isAuthenticated ) {
+            const interval = setInterval(() => getNotifies(), 7000);
         
-        return () => clearInterval(interval);
+            return () => clearInterval(interval);
+        }
         }, []);
 
     const [searchValue, setSearchValue] = useState([]);
