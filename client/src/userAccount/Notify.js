@@ -4,7 +4,7 @@ import { getNotifies, removeNotifies, removeNotify, seeNotify } from '../actions
 import Notification from './Notification';
 
 
-const Notify = ({ getNotifies, seeNotify, chat: { notifies, loading }, setNotify, notify, removeNotify, removeNotifies }) => {
+const Notify = ({ getNotifies, seeNotify, chat: { notifies }, setNotify, notify, removeNotify, removeNotifies }) => {
 
     useEffect(() => {
         getNotifies()
