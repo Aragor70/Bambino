@@ -1,30 +1,47 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getNotifies, removeNotifies, removeNotify } from '../actions/chat'
+import { getNotifies, removeNotifies, removeNotify, seeNotify } from '../actions/chat'
 import Notification from './Notification';
 
 
-const Notify = ({ getNotifies, chat: { notifies }, setNotify, notify, removeNotify, removeNotifies }) => {
+const Notify = ({ getNotifies, seeNotify, chat: { notifies, loading }, setNotify, notify, removeNotify, removeNotifies }) => {
 
     useEffect(() => {
         getNotifies()
-    }, [getNotifies])
+    }, [getNotifies, seeNotify])
 
+
+        const { messager, service } = notifies
+        
+    function compareFunction(a, b) {
+        const valueA = a.date
+        const valueB = b.date
+
+        let comparsion = 0;
+        if (valueA < valueB) {
+            comparsion = 1
+        }
+        if (valueA > valueB) {
+            comparsion = -1
+        }
+        return comparsion;
+    }
+
+        
+        const allNotifies = messager.concat(service)
+        const notifyList = allNotifies.sort(compareFunction)
+            
+        
 
     return (
         <Fragment>
             <div className="notify-cloud">
                 <div className="user-menu-btn" style={{ textAlign: 'center', justifyContent: 'center', display: 'flex', padding: 0 }}>
-                    Notify List <button onClick={e => removeNotifies()}>Remove All</button>
+                    Notify List <button className="x-top-right" style={{borderRadius: '25px'}} onClick={e => removeNotifies()}>CLEAR</button>
                 </div>
+
                 {
-                    notifies && notifies.messager ? notifies.messager.map(notification => <Notification key={notification._id} setNotify={setNotify} notify={notify} notification={notification} />)
-                    : <Fragment>
-                        empty
-                    </Fragment>
-                }
-                {
-                    notifies && notifies.service ? notifies.service.map(notification => <Notification key={notification._id} setNotify={setNotify} notify={notify} notification={notification} messager={false} />)
+                    notifies && notifyList ? notifyList.map(notification => <Notification key={notification._id} setNotify={setNotify} notify={notify} notification={notification} />)
                     : <Fragment>
                         empty
                     </Fragment>
@@ -36,6 +53,6 @@ const Notify = ({ getNotifies, chat: { notifies }, setNotify, notify, removeNoti
     )
 }
 const mapStateToProps = state => ({
-    chat: state.chat,
+    chat: state.chat
 })
-export default connect(mapStateToProps, { getNotifies, removeNotify, removeNotifies })(Notify)
+export default connect(mapStateToProps, { getNotifies, removeNotify, removeNotifies, seeNotify })(Notify)

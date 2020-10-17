@@ -182,7 +182,9 @@ router.put('/:feature/see/:id', auth, async (req, res) => {
             let notify = await Notification.findOne({user: user._id})
             let notification = notify.messager.filter(element => element.message && element.message == req.params.id)
             
-            if (message.to.toString() == user._id) {
+            console.log(`see msg ${message.text}`)
+            if (message.to && message.to._id.toString() == user._id) {
+                
                 message.seen = true
                 if( notification[0] ) {
                     await notification[0].remove()
