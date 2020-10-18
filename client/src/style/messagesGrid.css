@@ -32,6 +32,7 @@
 {
     display: none;
 }
+
 .messages-left
 {
     width: 100%;
@@ -265,11 +266,31 @@
 }
 .user-notify-btn .x-top-right
 {
-    border-radius: 25px;
-    width: 20px;
+    width: 20px; 
     height: 20px;
-    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    font-size: 14.5px;
+    border-radius: 25px;
 }
+.user-notify-header .x-top-right
+{
+    width: auto; 
+    height: 'auto';
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 5px;
+    font-size: 14.5px;
+    background-color: #121212;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
 .empty-center-box
 {
     display: flex;
@@ -280,6 +301,59 @@
     min-height: 9vh;
     padding: 30px;
 }
+
+.content-messages p a:hover
+{   
+    color: #fff;
+    font-weight: bold;
+}
+
+.message-form
+{
+    width: 100%;
+    min-height: 35px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 13.5px;
+    position: relative;
+    overflow: hidden;
+    flex-direction: row;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+.input-message
+{
+    width: calc(100% - 35px);
+    height: 30px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 13.5px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.button-message
+{
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+}
+
+
+
 
 @media (min-width: 640px) {
 
@@ -504,13 +578,7 @@
 {
     color: lightblue;
 }
-.user-notify-btn .x-top-right
-{
-    border-radius: 25px;
-    width: 20px;
-    height: 20px;
-    
-}
+
 .empty-center-box
 {
     display: flex;
@@ -728,7 +796,21 @@
         display: flex;
         justify-content: flex-end;
     }
-    
+    .user-notify-header
+    {
+        width: 100%;
+        height: 6.5vh;
+        float: left;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        padding-left: 10px;
+    }
     
     .user-notify-btn
     {
@@ -764,13 +846,6 @@
     .user-notify-btn:hover
     {
         color: lightblue;
-    }
-    .user-notify-btn .x-top-right
-    {
-        border-radius: 25px;
-        width: 20px;
-        height: 20px;
-        
     }
     .empty-center-box
     {

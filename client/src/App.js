@@ -51,6 +51,7 @@ import UserChat from './userAccount/UserChat';
 import { getNotifies } from './actions/chat';
 import UsersPage from './userAccount/UsersPage';
 import MessagesSent from './userAccount/MessagesSent';
+import NewMessage from './userAccount/NewMessage';
 
 
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile, getNotifies}) => {
@@ -142,7 +143,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     <Route exact path={"/messages/users"} >
                         <UsersPage msgOptions={msgOptions} setMsgOptions={setMsgOptions} />
                     </Route>
-                    
+                    <Route exact path={"/messages/new"} >
+                        <NewMessage msgOptions={msgOptions} setMsgOptions={setMsgOptions} />
+                    </Route>
                 
                     <Route exact path={"/messages/:id"} component={UserChat} />
                     
@@ -163,9 +166,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     </Route>
 
                     <Route exact path="/">
-                        <FrontTop frontNavValue="HOME" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+                        <FrontTop frontNavValue="HOME" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} setNotify={setNotify} />
         
-                        <FrontPage setFrontNav={setFrontNav} />
+                        <FrontPage setFrontNav={setFrontNav} setNotify={setNotify} />
 
                     </Route>
                     </Switch>
@@ -204,7 +207,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                 </Route>
                 
                 <Route exact path="/games">
-                    <FrontTop frontNavValue="GAME ZONE" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+                    <FrontTop frontNavValue="GAME ZONE" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} setNotify={setNotify} />
                     <Games />
                 </Route>
                 <Route exact path="/games/balloons">
@@ -218,7 +221,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     <Support />
                 </Route>
                 <Route exact path="/songs">
-                    <FrontTop frontNavValue="NEW TITLES" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+                    <FrontTop frontNavValue="NEW TITLES" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} setNotify={setNotify} />
         
                     <MainSongs user={user} />
                 </Route>

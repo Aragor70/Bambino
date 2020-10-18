@@ -12,11 +12,11 @@ const Notification = ({ notification, removeNotify, chat, setNotify, notify, see
         <Fragment>
             {
                 notification && notification.name ? <Fragment>
-                    <div className="user-notify-btn"><Link to={`/messages/${notification.from}`} onClick={e=> {setNotify(false), seeNotify(notification._id)}} style={notification.seen ? {color:'auto'} : {color: '#49c500'}}>
+                    <div className="user-notify-btn"><Link to={`/messages/${notification.from}`} onClick={e=> {setNotify(false), seeNotify(notification._id), setNotify(false)}} style={notification.seen ? {color:'auto'} : {color: '#49c500'}}>
                         <span>{notification.name}</span>{notification.text}</Link><button type='button' className="x-top-right" onClick={e=> removeNotify(notification._id)} >X</button>
                     </div>
                     </Fragment> : <Fragment>
-                        <div className="user-notify-btn"><Link onClick={e=> {setNotify(false), seeNotify(notification._id), getNotifies()}} style={notification.seen ? {color:'auto'} : {color: 'yellow'}}>
+                        <div className="user-notify-btn"><Link onClick={e=> {setNotify(false), seeNotify(notification._id), getNotifies(), setNotify(false)}} style={notification.seen ? {color:'auto'} : {color: 'yellow'}}>
                             <span>{notification.from}</span>{notification.text}</Link><button type='button' className="x-top-right" onClick={e=> removeNotify(notification._id)} >X</button>
                         </div>
                     </Fragment>

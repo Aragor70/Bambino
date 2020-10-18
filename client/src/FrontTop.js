@@ -8,11 +8,11 @@ import AddAuthor from './songs/AddAuthor';
 import FrontNav from './FrontNav';
 
 
-const FrontTop = ({ frontNav, setFrontNav, frontAdd, setFrontAdd, user, quoteView, setQuoteView, songInputView, setSongInputView, authorInputView, setAuthorInputView, frontNavValue, setFrontNavValue }) => {
+const FrontTop = ({ frontNav, setFrontNav, frontAdd, setFrontAdd, user, quoteView, setQuoteView, songInputView, setSongInputView, authorInputView, setAuthorInputView, frontNavValue, setFrontNavValue, setNotify }) => {
 
 
     return (
-        <div className="shield-personal">
+        <div className="shield-personal" onClick={e=> setNotify(false)}>
             
                 <div className="front-top">
                     <div className="page-title" onClick={e=>setFrontNav(!frontNav)}>{frontNavValue}</div>

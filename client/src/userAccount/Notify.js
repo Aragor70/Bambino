@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { getNotifies, removeNotifies, removeNotify, seeNotify } from '../actions/chat'
 import Notification from './Notification';
 
 
-const Notify = ({ getNotifies, seeNotify, chat: { notifies }, setNotify, notify, removeNotify, removeNotifies }) => {
+const Notify = ({ getNotifies, history, seeNotify, chat: { notifies }, setNotify, notify, removeNotify, removeNotifies }) => {
 
     useEffect(() => {
         getNotifies()
@@ -36,10 +37,13 @@ const Notify = ({ getNotifies, seeNotify, chat: { notifies }, setNotify, notify,
     return (
         <Fragment>
             <div className="notify-cloud">
-                <div className="user-menu-btn" style={{ textAlign: 'center', justifyContent: 'center', display: 'flex', padding: 0 }}>
-                    Notify List <button className="x-top-right" style={{borderRadius: '25px'}} onClick={e => removeNotifies()}>CLEAR</button>
+                <div className="user-notify-header" >
+                    Notify <button className="x-top-right" style={{borderRadius: '25px'}} onClick={e => {removeNotifies(), setNotify(false)}}>CLEAR</button>
                 </div>
-
+                <div className="user-notify-header" style={{ justifyContent: 'flex-end', marginBottom:'0px' }}>
+                    <img src={require('../style/received-message.png')} height="24px" style={{marginRight: "10px"}} onClick={e=> {history.push('/messages'), setNotify(false)}} />
+                    <img src={require('../style/send-message.png')} height="24px" style={{marginRight: "10px"}} onClick={e=> {history.push('/messages/users'), setNotify(false)}}/>
+                </div>
                 {
                     notifies && notifyList ? notifyList.map(notification => <Notification key={notification._id} setNotify={setNotify} notify={notify} notification={notification} />)
                     : <Fragment>
@@ -55,4 +59,4 @@ const Notify = ({ getNotifies, seeNotify, chat: { notifies }, setNotify, notify,
 const mapStateToProps = state => ({
     chat: state.chat
 })
-export default connect(mapStateToProps, { getNotifies, removeNotify, removeNotifies, seeNotify })(Notify)
+export default connect(mapStateToProps, { getNotifies, removeNotify, removeNotifies, seeNotify })(withRouter(Notify))

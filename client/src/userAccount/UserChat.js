@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
-import { getUserChat } from '../actions/chat';
+import { getUserChat, postMessage } from '../actions/chat';
 import { getClientUser } from '../actions/user'
 import Message from './Message';
 import TopChat from './TopChat';
 import UsersPage from './UsersPage';
 
-const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, match, client: {client}, auth: {user} }) => {
+const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, match, postMessage, client: {client}, auth: {user} }) => {
 
     const handleScroll = (e) => {
         if(e.target.scrollTop === 0) {
@@ -24,6 +24,23 @@ const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, ma
 
     const [msgOptions, setMsgOptions] = useState(false)
     
+    const [formData, setFormData] = useState({
+        text: ''
+    })
+    const {text} = formData
+
+    const handleChange = e => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+        
+    }
+    const handleSubmit = e => {
+        e.preventDefault();
+        postMessage(formData, match.params.id)
+
+    }
+
+    const once = [...new Set(messages)]
+
     return (
         <Fragment>
             
@@ -45,9 +62,14 @@ const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, ma
                                 
                                 <div className="content-messages" onScroll={e=>handleScroll(e)}>
                                     {
-                                        messages.length > 0 ? messages.map((message, index) => <Message message={message} key={index} index={index} messages={messages} match={match} client={client} user={user} />) : <div className="empty-center-box"> Share your first message with {client.name}. </div>
+                                        messages.length > 0 ? once.map((message, index) => <Message message={message} key={index} index={index} messages={messages} match={match} client={client} user={user} />) : <div className="empty-center-box"> Share your first message with {client.name}. </div>
                                     }
                                 </div>
+                                <form className="message-form" onSubmit={e=> handleSubmit(e)}>
+                                    <input className="input-message" type="text" placeholder=" .Type a message" name="text" value={text} onChange={e=> handleChange(e)} />
+                                    <button type="submit" className="button-message"><img type="submit" src={require('../style/send-message.png')} height="24px" /></button>
+
+                                </form>
                                 
                             </div>
                         </Fragment>
@@ -64,4 +86,4 @@ const mapStateToProps = state => ({
     client: state.client,
     auth: state.auth
 })
-export default connect(mapStateToProps, { getUserChat, getClientUser })(UserChat);
+export default connect(mapStateToProps, { getUserChat, getClientUser, postMessage })(UserChat);

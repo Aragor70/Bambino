@@ -237,6 +237,10 @@ select:hover
     display: flex;
     text-align: center;
 }
+.x-top-right:hover
+{
+    background-color: #252525;
+}
 button
 {
     cursor: pointer;
