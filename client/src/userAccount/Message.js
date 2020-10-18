@@ -18,7 +18,6 @@ const Message = ({message, seeMessage, index, messages, match, client, user }) =
         
     }, [obj, match.params.id, match.params.x])
 
-    console.log(message)
 
     return (
             <Fragment>
@@ -38,9 +37,16 @@ const Message = ({message, seeMessage, index, messages, match, client, user }) =
                         </Fragment>
                 }
                 {
+                    user._id === client._id && message.user._id == client._id && <Fragment>
+                        <div className="message-row" id={`scrollTo${index + 1}`}>
+                        <span className="message-name">You: {client.name} </span> <span className="message-txt">{message.text}</span>
+                        </div>
+                    </Fragment>
+                }
+                {
                     user._id === client._id && message.user._id == user._id && <Fragment>
                     <div className="message-row user-message" id={`scrollTo${index + 1}`}>
-                        <span className="message-name">{user.name} </span> <span className="message-txt">{message.text}</span>
+                        <span className="message-name">You: {user.name} </span> <span className="message-txt">{message.text}</span>
                         </div>
                         </Fragment>
                 }

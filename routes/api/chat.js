@@ -292,10 +292,11 @@ router.get('/:id/:x', auth, async (req, res) => {
             }
             
             let chat = await received.concat(sent)
+            
             chat = chat.sort(compareFunction)
             const number = -20 - req.params.x
             chat = chat.slice(number)
-            chat = [...new Set(chat)]
+            
             res.json(chat)
 
     } catch (err) {

@@ -9,16 +9,26 @@ import UsersPage from './UsersPage';
 
 const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, match, postMessage, client: {client}, auth: {user} }) => {
 
+    const scrollTo = useRef(null)
     const handleScroll = (e) => {
         if(e.target.scrollTop === 0) {
             console.log('get more messages')
             getUserChat(match.params.id, 20);
+            console.log('reload', messages)
         }
     }
 
     useEffect(() => {
+        if(scrollTo.current) {
+            scrollTo.current.scrollTo({bottom: 0})
+        }
+    }, [scrollTo])
+
+    useEffect(() => {
         getClientUser(match.params.id)
-        getUserChat(match.params.id, 0);
+            console.log('get new messages')
+            getUserChat(match.params.id, 0);
+                console.log(messages)
         
     }, [getUserChat, match.params.id, notifies.messager && notifies.messager.length])
 
@@ -38,8 +48,8 @@ const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, ma
         postMessage(formData, match.params.id)
 
     }
-
-    const once = [...new Set(messages)]
+    
+    
 
     return (
         <Fragment>
@@ -60,9 +70,9 @@ const UserChat = ({ getUserChat, getClientUser, chat: { messages, notifies }, ma
                             
                             <div className="messages-right">
                                 
-                                <div className="content-messages" onScroll={e=>handleScroll(e)}>
+                                <div className="content-messages" ref={scrollTo} onScroll={e=>handleScroll(e)}>
                                     {
-                                        messages.length > 0 ? once.map((message, index) => <Message message={message} key={index} index={index} messages={messages} match={match} client={client} user={user} />) : <div className="empty-center-box"> Share your first message with {client.name}. </div>
+                                        messages.length > 0 ? messages.map((message, index) => <Message message={message} key={index} index={index} messages={messages} match={match} client={client} user={user} />) : <div className="empty-center-box"> Share your first message with {client.name}. </div>
                                     }
                                 </div>
                                 <form className="message-form" onSubmit={e=> handleSubmit(e)}>
