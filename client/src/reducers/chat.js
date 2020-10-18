@@ -1,4 +1,4 @@
-import { Get_Messages, Get_Notifies, Get_User_Chat, Notify_Removed, Update_Notifies, Notify_Error, Update_Message, Update_Notification, Notfy_Removed_All } from "../actions/types";
+import { Get_Messages, Get_Notifies, Get_User_Chat, Notify_Removed, Update_Notifies, Notify_Error, Update_Message, Update_Notification, Notfy_Removed_All, Send_Message } from "../actions/types";
 
 
 const initialState = {
@@ -32,6 +32,8 @@ export default (state = initialState, action) => {
             return { ...state, messages: state.messages.map(message => message._id.toString() == payload.id ? payload.message : message) , loading: false }
         case Update_Notification:
             return { ...state, notifies: {...state.notifies, messager: state.notifies.messager.map(message => message._id.toString() == payload.id ? payload.message : message)}, loading: false }
+        case Send_Message:
+            return { ...state, messages: payload, loading: false }
 
         default:
             return state;

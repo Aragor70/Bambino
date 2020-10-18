@@ -23,6 +23,7 @@ router.post('/message/:id', auth, [
     const { text } = req.body;
     
     try {
+
         const from = await User.findById(req.user.id).select('-password')
         const to = await User.findById(req.params.id).select('-password')
 
@@ -294,7 +295,7 @@ router.get('/:id/:x', auth, async (req, res) => {
             chat = chat.sort(compareFunction)
             const number = -20 - req.params.x
             chat = chat.slice(number)
-            
+            chat = [...new Set(chat)]
             res.json(chat)
 
     } catch (err) {

@@ -13,7 +13,7 @@ import FrontPictures from './FrontPictures';
 import FrontPicture from './FrontPicture';
 import { getProfiles } from './actions/profile';
 
-const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSongs, profile:{profiles}, quote:{quotes}, song:{songs, loading}, auth:{user}, addLike, removeLike, frontNav, setFrontNav }) => {
+const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSongs, profile:{profiles}, quote:{quotes}, song:{songs, loading}, auth:{user}, addLike, removeLike, frontNav, setFrontNav, setNotify }) => {
 
     useEffect(()=> {
         getAuthors();
@@ -95,7 +95,7 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
 
     return (
         <Fragment>
-                <div className="shield-personal" onClick={e => setFrontNav(false)}>
+                <div className="shield-personal" onClick={e => {setFrontNav(false), setNotify(false)}}>
 
                     <div className="front-content">
 

@@ -7,7 +7,7 @@ import TopChat from './TopChat';
 
 
 
-const UsersPage = ({ client: {clients}, getClients, msgOptions, setMsgOptions }) => {
+const NewMessage = ({ client: {clients}, getClients, msgOptions, setMsgOptions }) => {
 
     useEffect(() => {
         getClients()
@@ -19,7 +19,7 @@ const UsersPage = ({ client: {clients}, getClients, msgOptions, setMsgOptions })
             <div className="shield-personal">
                 <div className="messager-content">
                 <div className="messages-left">
-                <div className="page-title" onClick={e=>setMsgOptions(!msgOptions)}>Users page</div>   
+                <div className="page-title" onClick={e=>setMsgOptions(!msgOptions)}>New message</div>   
                 {
                     msgOptions && <Fragment>
                         <TopChat msgOptions={msgOptions} setMsgOptions={setMsgOptions} toggle={true} topValue="options" />
@@ -33,7 +33,7 @@ const UsersPage = ({ client: {clients}, getClients, msgOptions, setMsgOptions })
                 <div className="content-messages" >
                     <h1>Users</h1>
                     {
-                        clients && clients.map((client, index) => <p key={client._id}><Link to={`/messages/${client._id}`} >{index + 1}. {client.name} <img src={require('../style/send-message.png')} height="15.5px" style={{marginLeft: '7.5px', marginBottom: '7.5px'}} /> </Link></p>)
+                        clients && clients.map((client, index) => <p><Link to={`/messages/${client._id}`} >{index + 1}. {client.name}</Link></p>)
                     }
                 </div>
             </div>
@@ -46,4 +46,4 @@ const UsersPage = ({ client: {clients}, getClients, msgOptions, setMsgOptions })
 const mapStateToProps = state => ({
     client: state.client
 })
-export default connect(mapStateToProps, {getClients})(UsersPage);
+export default connect(mapStateToProps, {getClients})(NewMessage);

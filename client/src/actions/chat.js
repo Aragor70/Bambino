@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Get_Messages, Get_Notifies, Get_User_Chat, Notify_Error, Notify_Removed, Update_Notifies, Update_Message, Update_Notification, Notfy_Removed_All } from './types'
+import { Get_Messages, Get_Notifies, Get_User_Chat, Notify_Error, Notify_Removed, Update_Notifies, Update_Message, Update_Notification, Notfy_Removed_All, Send_Message } from './types'
 
 
 export const getMessages = () => async dispatch => {
@@ -10,6 +10,21 @@ export const getMessages = () => async dispatch => {
     } catch (err) {
         dispatch({type: Notify_Error, payload: {msg: err.response.statusText, status: err.response.status }})
         
+    }
+}
+export const postMessage = (formData, id) => async dispatch => {
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    try {
+        const res = axios.post(`/api/chat/message/${id}`, formData, config)
+        dispatch({type: Send_Message, payload: res.data})
+
+    } catch (err) {
+        dispatch({type: Notify_Error, payload: {msg: err.response.statusText, status: err.response.status }})
+          
     }
 }
 
