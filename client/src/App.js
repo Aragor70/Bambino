@@ -179,7 +179,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                         <Switch>
                             <Route exact path="/">
                                 
-                                <FrontTop frontNavValue="HOME" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} />
+                                <FrontTop frontNavValue="HOME" frontNav={frontNav} setFrontNav={setFrontNav} frontAdd={frontAdd} setFrontAdd={setFrontAdd} user={user} quoteView={quoteView} setQuoteView={setQuoteView} songInputView={songInputView} setSongInputView={setSongInputView} authorInputView={authorInputView} setAuthorInputView={setAuthorInputView} setNotify={setNotify} />
                                 
                                 <FrontPage setFrontNav={setFrontNav} />
                                 

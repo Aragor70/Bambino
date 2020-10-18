@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
         case Update_Notification:
             return { ...state, notifies: {...state.notifies, messager: state.notifies.messager.map(message => message._id.toString() == payload.id ? payload.message : message)}, loading: false }
         case Send_Message:
-            return { ...state, messages: payload, loading: false }
+            return { ...state, messages: state.messages.push(payload), loading: false }
 
         default:
             return state;
