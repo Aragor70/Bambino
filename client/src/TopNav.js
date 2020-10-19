@@ -11,7 +11,7 @@ import { getNotifies } from './actions/chat';
 import NavNotify from './userAccount/NavNotify';
 
 
-const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, getNotifies, chat: { messages, notifies }, profile:{ profiles }, getSongs, song:{songs}, getAuthors, author:{authors}, filterUser, setFilterUser, filterSong, setFilterSong, filterAuthor, setFilterAuthor, notify, setNotify}) => {
+const TopNav = ({auth: {isAuthenticated, loading, user}, menu, setMenu, getProfiles, getNotifies, chat: { messages, notifies }, profile:{ profiles }, getSongs, song:{songs}, getAuthors, author:{authors}, filterUser, setFilterUser, filterSong, setFilterSong, filterAuthor, setFilterAuthor, notify, setNotify}) => {
 
 
     const scrollTo = useRef(null)
@@ -42,7 +42,7 @@ const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, g
 
     useEffect(() => {
 
-        if( isAuthenticated ) {
+        if( isAuthenticated, user ) {
             const interval = setInterval(() => getNotifies(), 7000);
         
             return () => clearInterval(interval);
@@ -138,7 +138,10 @@ const TopNav = ({auth: {isAuthenticated, loading}, menu, setMenu, getProfiles, g
     const userNav = (<>
         <div className="webname"><Link to="/" style={{"color": "black"}}> OnLoud.uk </Link> 
         
-        <NavNotify setNotify={setNotify} notify={notify} />
+        {
+            user && <NavNotify setNotify={setNotify} notify={notify} />
+        }
+        
         
         
         </div>
