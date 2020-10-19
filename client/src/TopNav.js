@@ -19,26 +19,25 @@ const TopNav = ({auth: {isAuthenticated, loading, user}, menu, setMenu, getProfi
       if(scrollTo.current){
         scrollTo.current.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'center'})
       }
-    },[])
+    },[isAuthenticated])
 
 
     useEffect(() => {
-        if (isAuthenticated) {
             getProfiles();
             getSongs();
             getAuthors();
-            getNotifies();
-        }
+            getProfiles();
         
     }, []);
     
     
     useEffect(() => {
-        if (isAuthenticated) {
+        if (isAuthenticated, user) {
             getNotifies();
+            
         }
         
-    }, [messages]);
+    }, [messages, isAuthenticated, user]);
 
     useEffect(() => {
 
@@ -47,7 +46,7 @@ const TopNav = ({auth: {isAuthenticated, loading, user}, menu, setMenu, getProfi
         
             return () => clearInterval(interval);
         }
-        }, []);
+    }, []);
 
     const [searchValue, setSearchValue] = useState([]);
 
