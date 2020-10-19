@@ -17,10 +17,7 @@
     animation-name: example;
     animation-duration: 0.3s;
 }
-@keyframes example {
-    from {width: 0;}
-    to {width: 60vw;}
-}
+
 
 
 .user-menu-nickname
@@ -85,6 +82,8 @@
     box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
     border-radius: 3px;
     overflow-x: hidden;
+    animation-name: example;
+    animation-duration: 0.3s;
 }
 .navi-menu a
 {
@@ -156,6 +155,11 @@ hr
     margin-left: 10px;
 }
 
+@keyframes example {
+    from {width: 0;}
+    to {width: 60vw;}
+}
+
 @media (min-width: 640px){
     .user-menu
     {
@@ -175,10 +179,7 @@ hr
         animation-name: example;
         animation-duration: 0.3s;
     }
-    @keyframes example {
-        from {width: 0;}
-        to {width: 43vw;}
-    }
+    
 
     .navi-menu
     {
@@ -195,9 +196,14 @@ hr
         display: block;
         box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
         border-radius: 3px;
+        animation-name: example;
+        animation-duration: 0.3s;
     }
 
-
+    @keyframes example {
+        from {width: 0;}
+        to {width: 43vw;}
+    }
 
 }
 
@@ -220,10 +226,7 @@ hr
         animation-name: example;
         animation-duration: 0.3s;
     }
-    @keyframes example {
-        from {width: 0;}
-        to {width: 43vw;}
-    }
+    
 
     .navi-menu
     {
@@ -240,9 +243,15 @@ hr
         display: block;
         box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
         border-radius: 3px;
+        animation-name: example;
+        animation-duration: 0.3s;
+        
     }
 
-
+    @keyframes example {
+        from {width: 0;}
+        to {width: 43vw;}
+    }
 
 }
 
@@ -264,10 +273,7 @@ hr
         border-radius: 3px;animation-name: example;
         animation-duration: 0.3s;
     }
-    @keyframes example {
-        from {width: 0;}
-        to {width: 16vw;}
-    }
+    
 
 .user-menu-btn
 {
@@ -297,6 +303,12 @@ hr
     display: block;
     box-shadow: rgb(140, 140, 140) -0.05em 0px 0.5em;
     border-radius: 3px;
+    animation-name: example;
+    animation-duration: 0.3s;
+}
+@keyframes example {
+    from {width: 0;}
+    to {width: 16vw;}
 }
 
 
