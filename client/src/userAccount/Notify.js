@@ -44,13 +44,14 @@ const Notify = ({ getNotifies, history, seeNotify, chat: { notifies }, setNotify
                     <img src={require('../style/received-message.png')} height="24px" style={{marginRight: "10px"}} onClick={e=> {history.push('/messages'), setNotify(false)}} />
                     <img src={require('../style/send-message.png')} height="24px" style={{marginRight: "10px"}} onClick={e=> {history.push('/messages/users'), setNotify(false)}}/>
                 </div>
+                <div className="notifies-box">
                 {
                     notifies && notifyList ? notifyList.map(notification => <Notification key={notification._id} setNotify={setNotify} notify={notify} notification={notification} />)
                     : <Fragment>
                         empty
                     </Fragment>
                 }
-                
+                </div>
             
             </div>
         </Fragment>

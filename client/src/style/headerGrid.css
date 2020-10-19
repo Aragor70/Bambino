@@ -155,7 +155,7 @@
 {
     
     width: 70vw;
-    min-height: 13vh;
+    max-height: 80vh;
     position: absolute;
     top: 9vh;
     left: 0;
@@ -172,10 +172,24 @@
     animation-duration: 0.3s;
     justify-content: center;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+.notifies-box
+{
+    width: 100%;
+    max-height: 61.5vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
 
+}
+.notifies-box::-webkit-scrollbar
+{
+    display: none;
 }
 .notify-cloud span
 {
@@ -192,7 +206,7 @@
 
 @keyframes notify {
     from {height: 0;}
-    to {min-height: 13vh;}
+    to {}
 }
 
 .user-notify-btn
@@ -350,7 +364,7 @@
 {
     
     width: 50vw;
-    min-height: 13vh;
+    max-height: 80vh;
     position: absolute;
     top: 9vh;
     left: 0;
@@ -367,7 +381,7 @@
     animation-duration: 0.3s;
     justify-content: center;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
 
@@ -440,7 +454,7 @@
 {
     
     width: calc(100vw / 64 * 8 + 15px);
-    min-height: 13vh;
+    max-height: 80vh;
     position: absolute;
     top: 9vh;
     left: 0;
@@ -457,7 +471,7 @@
     animation-duration: 0.3s;
     justify-content: center;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
 
