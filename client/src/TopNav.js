@@ -43,7 +43,7 @@ const TopNav = ({auth: {isAuthenticated, loading, user}, menu, setMenu, getProfi
 
         if( isAuthenticated, user ) {
             const interval = setInterval(() => getNotifies(), 7000);
-        
+            console.log('update nutifies')
             return () => clearInterval(interval);
         }
     }, []);
