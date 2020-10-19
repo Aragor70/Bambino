@@ -58,8 +58,8 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
 
     useEffect(()=> {
         getCurrentProfile()
-        getNotifies()
-    }, [isAuthenticated, user, loading, getCurrentProfile, getNotifies]);
+        
+    }, [isAuthenticated, user, loading, getCurrentProfile]);
     
     const [list, setList] = useState(false)
 

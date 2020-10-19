@@ -23,10 +23,10 @@ const TopNav = ({auth: {isAuthenticated, loading, user}, menu, setMenu, getProfi
 
 
     useEffect(() => {
-            getProfiles();
-            getSongs();
-            getAuthors();
-            getProfiles();
+        getProfiles();
+        getSongs();
+        getAuthors();
+            
         
     }, []);
     
