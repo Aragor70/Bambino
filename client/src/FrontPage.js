@@ -95,7 +95,7 @@ const FrontPage = ({getAuthors, author:{authors}, getProfiles, getQuotes, getSon
 
     return (
         <Fragment>
-                <div className="shield-personal" onClick={e => {setFrontNav(false), user && setNotify(false)}}>
+                <div className="shield-personal" onClick={e =>setFrontNav(false) }>
 
                     <div className="front-content">
 
