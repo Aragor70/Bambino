@@ -57,9 +57,7 @@ import NewMessage from './userAccount/NewMessage';
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile, getNotifies}) => {
 
     useEffect(()=> {
-        if(user) {
             getCurrentProfile()
-        }
         
     }, [isAuthenticated, user, loading, getCurrentProfile]);
     
