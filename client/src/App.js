@@ -48,18 +48,17 @@ import TwoFactor from './TwoFactor';
 import Notify from './userAccount/Notify';
 import Messages from './userAccount/Messages';
 import UserChat from './userAccount/UserChat';
-import { getNotifies } from './actions/chat';
 import UsersPage from './userAccount/UsersPage';
 import MessagesSent from './userAccount/MessagesSent';
 import NewMessage from './userAccount/NewMessage';
 
 
-const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile, getNotifies}) => {
+const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile}) => {
 
     useEffect(()=> {
         getCurrentProfile()
         
-    }, [user, getCurrentProfile]);
+    }, [isAuthenticated, loading, getCurrentProfile]);
     
     const [list, setList] = useState(false)
 
@@ -234,9 +233,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
     );
 }
 App.propTypes = {
-    user: PropTypes.object,
-    profile: PropTypes.object,
-    getCurrentProfile: PropTypes.func
+    user: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
@@ -244,4 +243,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-export default connect(mapStateToProps, {getCurrentProfile, getNotifies})(App);
+export default connect(mapStateToProps, {getCurrentProfile})(App);
