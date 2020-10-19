@@ -58,7 +58,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
     useEffect(()=> {
         getCurrentProfile()
         
-    }, [isAuthenticated, loading, getCurrentProfile]);
+    }, [user, getCurrentProfile]);
     
     const [list, setList] = useState(false)
 
@@ -118,7 +118,7 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
                     </Fragment>
                 }
                 
-            <main className="output"  onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
+            <main className="output" onClick={e=>{setMenu(false), setFilterUser(''), setFilterSong(''), setFilterAuthor(''), setList(false) }}>
             
                 {
                     isAuthenticated ? 
