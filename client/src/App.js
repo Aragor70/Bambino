@@ -57,7 +57,9 @@ import NewMessage from './userAccount/NewMessage';
 const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfile, getNotifies}) => {
 
     useEffect(()=> {
-        getCurrentProfile()
+        if(user) {
+            getCurrentProfile()
+        }
         
     }, [isAuthenticated, user, loading, getCurrentProfile]);
     
@@ -234,9 +236,9 @@ const App = ({isAuthenticated, user, profile:{profile, loading}, getCurrentProfi
     );
 }
 App.propTypes = {
-    user: PropTypes.object.isRequired,
-    profile: PropTypes.object.isRequired,
-    getCurrentProfile: PropTypes.func.isRequired
+    user: PropTypes.object,
+    profile: PropTypes.object,
+    getCurrentProfile: PropTypes.func
 }
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
