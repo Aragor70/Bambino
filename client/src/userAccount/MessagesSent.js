@@ -13,7 +13,7 @@ const MessagesSent = ({ msgOptions, setMsgOptions, chat: {messages}, getSentMess
     
     const handleScroll = (e) => {
 
-        if( element.scrollHeight - element.scrollTop === element.clientHeight ) {
+        if( e && e.scrollHeight - e.scrollTop === e.clientHeight ) {
             console.log('get more messages')
             getSentMessages(20);
         }

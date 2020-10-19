@@ -15,7 +15,7 @@ const Messages = ({ msgOptions, setMsgOptions, getReceivedMessages, chat: {messa
     }, [getReceivedMessages])
 
     const handleScroll = (e) => {
-        if( element.scrollHeight - element.scrollTop === element.clientHeight ) {
+        if( e.scrollHeight - e.scrollTop === e.clientHeight ) {
             getReceivedMessages(20)
         }
     }
