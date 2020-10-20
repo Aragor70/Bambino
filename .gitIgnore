@@ -3,3 +3,5 @@ node_modules/
 /client/node_modules
 /uploads
 /client/uploads
+config/default.json
+config/config.env
