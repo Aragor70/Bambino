@@ -189,7 +189,11 @@
     position: relative;
     display: flex;
     justify-content: center;
+    animation-name: shield;
+    animation-direction: 0.3s;
+    overflow: hidden;
 }
+
 .shield-personal
 {
     width: 100vw;
@@ -203,6 +207,13 @@
     background-color: #121212;
     position: relative;
     float: left;
+    animation-name: shield;
+    animation-duration: 0.3s;
+    
+}
+@keyframes shield {
+    from {width: 0;}
+    to {width: 100vw;}
 }
 
 .post
