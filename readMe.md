@@ -33,12 +33,7 @@ created by mikey.prus@gmail.com
 ---
 
 ### Screen 411 x 731 - Pixel 2 device
-<img src="./screens/project4.png"  />
-<img src="./screens/project6.png"  />
-<img src="./screens/project5.png"  />
-<img src="./screens/project8.png"  />
-<img src="./screens/project15.png"  />
-<img src="./screens/project16.png"  />
+<img src="./screens/project3.png"  />
 
 ---
 
@@ -52,6 +47,3 @@ created by mikey.prus@gmail.com
 
 * password and security
 <img src="./screens/project12.png"  />
-
-* feedback section
-<img src="./screens/project13.png"  />
