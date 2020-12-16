@@ -43,6 +43,7 @@ router.post('/', [
             s: '200', r: 'pg', d: 'mm'
         //  size, rating, default image
         });
+        
 
         user = new User({
             name,
@@ -116,7 +117,7 @@ router.post('/:id', [auth, [
     if(email) userFields.email = email;
     
     
-    try{
+    try {
         
         let user = await User.findById({_id: req.user.id})
         if(user){

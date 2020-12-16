@@ -20,12 +20,12 @@ const Notification = require('../../models/Notification');
 
 //route get    api/auth
 //description  test route
-//access       public
+//access       private
 router.get('/', auth, async (req, res) => {
     try{
-        const user = await User.findById(req.user.id).select('-password');
+        const users = await User.findById(req.user.id).select('-password');
         
-        res.json(user);
+        res.json(users);
 
     }
     catch(err){
