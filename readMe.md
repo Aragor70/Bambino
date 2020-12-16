@@ -1,6 +1,12 @@
 # onloud.herokuapp.com
 
-> Full-stack application which is a music and lyric website.
+> Full-stack application which is a music and lyric website. Provides contact and entertaiment.
+
+Application stack of technologies:
+* React, redux, node, express
+* MongoDB
+* Heroku, AWS Amazon s3
+* Sendgrid email service
 
 
 ## Usage
@@ -23,3 +29,29 @@ npm start
 - Licence BSD
 
 created by mikey.prus@gmail.com
+
+---
+
+### Screen 411 x 731 - Pixel 2 device
+<img src="./screens/project4.png"  />
+<img src="./screens/project6.png"  />
+<img src="./screens/project5.png"  />
+<img src="./screens/project8.png"  />
+<img src="./screens/project15.png"  />
+<img src="./screens/project16.png"  />
+
+---
+
+### Screen 1366 x 768 - Laptop device
+
+* user home page with the search bar
+<img src="./screens/project14.png"  />
+
+* user profile
+<img src="./screens/project10.png"  />
+
+* password and security
+<img src="./screens/project12.png"  />
+
+* feedback section
+<img src="./screens/project13.png"  />
